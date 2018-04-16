@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html  lang="es">
+
+<head>
+	    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.16.1/math.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/1.4.2/css/scroller.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/scroller/1.4.2/js/dataTables.scroller.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/plotly-latest.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="leaflet/leaflet.css" />
+    <script type="text/javascript" src="leaflet/leaflet.js"></script>
+    <script src="js/llamarAPI.js" type="text/javascript"></script>  
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Numeric JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <link rel="stylesheet" href="css/awesomplete.css" />
+    <script src="js/awesomplete.js" async></script>
+    <link href="css/cover.css" rel="stylesheet">
+    <script type="text/javascript" src="data/col_CP.js"></script><!--primero-->
+	
+
+	<script type="text/javascript" src="js/principalNuevo.js"></script>
+  <script type="text/javascript" src="data/CDMX.js"></script>
+  <script type="text/javascript" src="data/munCDMX.geojson.js"></script>
+  <script type="text/javascript" src="data/emision_referencia.js"></script>
+
+	
+  <script type="text/javascript" src="data/DataRetoH2Obis.geojson.js"></script>
+
+</head>
+<body>
+
+
+<div>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Prototipo en desarrollo</h3>
+          <div class ="row w-75">
+          	<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	          <img class= "imge" src="img/Logo-cdmx.png" >
+	        </div>
+	        <div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	          <img class= "imge"  src="img/sacmex.png"  >
+	        </div>
+	        <div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	          <img class= "imge"  src="img/logolab.png">
+	        </div>
+	        <div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+	          <img  class= "imge"  src="img/LogoCAD.png" >
+	         </div>
+          </div>
+          <div class="magentaobscuro cinta" ></div>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="#">Inicio</a>
+            <a class="nav-link" href="#">Más información</a>
+            <a class="nav-link" href="#">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Reto Agua.</h1>
+        <p class="lead">Las ciudades enfrentan cotidianamente la carencia de recursos hídricos... quienes recorremos sus calles y estamos comprometidos ... buscamos su grandeza... </p> 
+        <h4>Una ciudad sin agua es compleja ... pero una ciudad sin personas que la amen es imposible...</h4>
+        
+        <p class="lead">Queremos avanzar en una cultura hídrica, retormar los mensajes que conocemos, comprometernos con la viabilidad futura de la sociedad ... <br> Te invitamos a evaluar tu consumo de agua, conocer las oportunidades de acción y recomenzar un compromiso que permita a las generaciones actuales y futuras ejercer su derecho al acceso al agua en calidad, oportunidad y cantidad.</p>
+
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary">Autoevaluación</a>
+        </p>
+      </main>
+
+
+      
+
+      <div>
+
+      	<div class= "row">
+      		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      			<input type="button" value="Regresar al inicio" onclick="RegresarInicio()">
+      		</div>
+      		<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+      			<div id="dotsLine"></div>
+      		</div>
+
+      		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      			<input type="button" value="     Anterior     " onclick="pregAnterior()">
+      		</div>	
+      		<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      			<input type="button" value="   Siguiente   " onclick="pregSiguiente()">
+      		</div>	
+      	</div>
+
+      	<div class= "row">
+      		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			  <h3 id="preguntas" class= "pad30"></h3>
+			  <p id="silderVal"></p>
+          <div id = "inputCOL"> </div>
+		      <div id = "areaInput"> </div>
+		      <h5 id="alertInput"> </h5>
+		      <h4 id="contexto"></h4>
+		  </div>
+    	<div class= "row">
+    		    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    	    	  <div id = "Respuestas"></div>
+    	      </div>
+    	</div>
+	    </div>  	
+
+      </div>
+
+            <!--
+                    <div id="selColonias"> 
+                      <p>Colonia (por ejemplo busca SAN ANTONIO en diversas delegaciones)</p><br> 
+                      <input list="coloniasopt" id="inputColonia" style="width: 320px;">
+                      <button onclick="goColonia()">Buscar</button>
+                    </div>
+            -->
+
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </footer>
+    </div>
+
+</div>
+
+
+    <div class = "bleft">
+        <div class= "row">
+            <div id="Evaluados"> </div>
+        </div>
+
+        <div class= "row escala">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <h6>Responsable</h6>
+            <div class= "row">
+              <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 Responsable">
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <p>Consumo igual o menor al límite óptimo</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <h6>Sobrado</h6>
+            <div class= "row">
+              
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Sobrado">
+                    
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <p>Consumo entre al punto medio de la escala y el límite responsable </p>
+                    
+                </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <h6>Preocupante</h6>
+            <div class= "row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Preocupante">
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <p>Consumo entre al punto medio de la escala y el límite negligente </p>
+                </div>
+            </div>
+          </div>
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <h6>Negligente</h6>
+            <div class= "row">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Negligente">
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                    <p>Consumo igual o mayor a limite Negligente </p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class= "row" style="height: 480px;"">
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+              <div id="pastelote" style="height: 400px; width: 90%;"></div>
+            </div>
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+              <img id ="imgConcep" src=""   style="height: 45%; position: absolute; left: 18%; top: 35%;opacity: 0.10; ">
+              <div id="hoverinfo01" class= "hoverinfo">
+              </div>
+            </div>
+
+        </div>
+      <br>
+      <br>
+      <br>
+        <div class= "row">
+        </div>   
+
+
+
+                
+        <div class= "row">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                <div id="mapas" style="height: 400px; width: 600px;"> </div>
+            </div>
+             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+             <img id ="imgMun" src=""   style="height: 40%; position: absolute; left: 18%; top: 2%;opacity: 0.30; ">
+             <br>
+             <img id ="imgMun" src="img/A000.png"   style="height: 40%; position: absolute; left: 18%; top: 55%;opacity: 0.30; ">
+            </div>   
+        </div>
+          <div class= "row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="valorRefCOL"> </div>
+            </div>
+          </div>
+          <div class= "row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="plotref1" style="width: 900px; height: 700px;">
+                     <!-- Plotly chart will be drawn inside this DIV -->
+    
+                </div>
+            </div>
+          </div>
+          <div class= "row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="plotref2" style="width: 900px; height: 700px;">
+                     <!-- Plotly chart will be drawn inside this DIV -->
+    
+                </div>
+            </div>
+
+
+        </div>
+        <div class= "row" style="height: 150px;"" >
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            </div>   
+   
+
+        </div>
+</div>
+
+
+  
+
+
+<script type="text/javascript">
+
+</script>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    -->
+    <script > 
+      initmapas()
+  </script>
+
+</body>
+</html>
