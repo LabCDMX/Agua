@@ -739,14 +739,19 @@ $(document).ready(function($){
 	$("#preguntas").text(txtCuestionario[0]);
 	$("#contexto").text(txtContexto[0]);
 
-	creaColInput(0)
-	creaDots(0,txtCuestionario.length - 0)
+	creaColInput(0);
+	creaDots(0,txtCuestionario.length - 0);
 
 	$("#areaInput").keydown(function(event) {
     if (event.keyCode === 13) {
         $("#encuesta").click();
         $("#inputMulti").focus();
     }
+	});
+
+	$( "#boton-comenzar" ).on( "click", function() {
+		$( "#contenedor-intro" ).addClass("hidden");
+		$( "#contenedor-preguntas" ).removeClass("hidden");
 	});
 
 
@@ -756,7 +761,7 @@ $(document).ready(function($){
 // VERIFICADO cuestionario que se presenta en la evaluacion
 var txtCuestionario =[ 
 			/*0*/	    "¿En qué colonia vives?",
-			/*1*/		"¿Sabes cuanto pagas de agua?", 
+			/*1*/		"¿Sabes cuánto pagas de agua?", 
 			/*2*/		"¿Cuánto pagan de agua al bimestre?",
 			/*3*/		"¿Cuántas personas viven en tu residencia?",										
 			/*4*/		"¿Cuántos minutos te toma bañarte?",
@@ -856,7 +861,8 @@ function muestraPreg(preg){
 	$("#areaInput").empty();
 	$("#preguntas").text(txtCuestionario[pregActiva]);
 	$("#contexto").html(txtContexto[pregActiva]);
-	if (pregActiva !=0){
+	if (pregActiva !=0)
+	{
 		console.log(pregActiva)
 		$("#areaInput").append(txtTipoInput[pregActiva]);
 		$("#inputMulti").val(txtRespuestas[pregActiva][1]);
@@ -886,12 +892,12 @@ function muestraPreg(preg){
 					$("#btn-NO").prop("checked", true);
 				}
 				
-				
 			}
-
 		}
 		$('#inputCOL').addClass('hidden');
-	}else{
+	}
+	else
+	{
 		$('#inputCOL').removeClass('hidden');
 	};
 	creaDots(preg,txtCuestionario.length - pregActiva);
@@ -901,7 +907,7 @@ function muestraPreg(preg){
 
 // VERIFICADO regresa a la pregunta siguiente y en caso de ser la ultima despliega la evaluacion
 function pregSiguiente(){
-	var nvaPreg= pregActiva + 1;
+	var nvaPreg = pregActiva + 1;
 	if (nvaPreg > 12){
 		nvaPreg =12; 
 		pregActiva = preg
@@ -918,6 +924,8 @@ function pregSiguiente(){
 	if (nvaPreg >= 0 & nvaPreg < 12){
 		muestraPreg(nvaPreg);
 	}else{
+		$('#contenedor-preguntas').addClass('hidden');	
+		$('#contenedor-resultados').removeClass('hidden');
 		mostrarRespuestas()
 		evaluaConsumo()
 		mostrarEvaluado()
@@ -1214,13 +1222,14 @@ function creaColInput(pregunta){
 				'</div>'+
 			'</div>';
   //return salida;	
- $('#inputCOL').append(salida)
+ $('#inputCOL').append(salida);
 
 }
 
 
 // VERIFICADO evalua el cambio en la seleccion del selector de colonias
 function verificaColonia() {
+	console.log('verificaColonia');
 	var cali= lstCol.value
 	var cpO= cali.substr(cali.length - 5);
 	  if (arrVals.indexOf(lstCol.value) !=(-1)){

@@ -91,20 +91,17 @@
 				</div>
 			</header>
 
-			<main role="main" class="inner cover">
-				<h1 class="cover-heading">Reto Agua.</h1>
-				<p class="lead">Las ciudades enfrentan cotidianamente la carencia de recursos hídricos... quienes recorremos sus calles y estamos comprometidos ... buscamos su grandeza... </p> 
-				<h4>Una ciudad sin agua es compleja ... pero una ciudad sin personas que la amen es imposible...</h4>
-				
-				<p class="lead">Queremos avanzar en una cultura hídrica, retormar los mensajes que conocemos, comprometernos con la viabilidad futura de la sociedad ... <br> Te invitamos a evaluar tu consumo de agua, conocer las oportunidades de acción y recomenzar un compromiso que permita a las generaciones actuales y futuras ejercer su derecho al acceso al agua en calidad, oportunidad y cantidad.</p>
+			<div id="contenedor-intro" class="">
+				<h1>Consumo de agua responsable</h1>
 
-				<p class="lead">
-					<a href="#" class="btn btn-lg btn-secondary">Autoevaluación</a>
-				</p>
-			</main>
+				<p>El consumo de agua por persona es importante. Con esta encuesta podremos darte alguanas recomendaciones para mejorar tu consumo.</p>
 
-			<div>
+				<button id="boton-comenzar" class="btn btn-primary">Comenzar</button>
+			</div>
 
+			<div id="contenedor-preguntas" class="hidden">
+
+				<!-- Controles de desplazamiento entre preguntas -->
 				<div class= "row">
 					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 						<input type="button" value="Regresar al inicio" onclick="RegresarInicio()">
@@ -121,36 +118,32 @@
 					</div>	
 				</div>
 
+				<!-- Preguntas -->
 				<div class= "row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h3 id="preguntas" class= "pad30"></h3>
-				<p id="silderVal"></p>
-					<div id="inputCOL"> </div>
-					<div id="areaInput"> </div>
-					<h5 id="alertInput"> </h5>
-					<h4 id="contexto"></h4>
-			</div>
-			<div class= "row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<div id = "Respuestas"></div>
-						</div>
-			</div>
-			</div>  	
+						<h3 id="preguntas" class= "pad30"></h3>
+						<p id="silderVal"></p>
+						<div id="inputCOL"> </div>
+						<div id="areaInput"> </div>
+						<h5 id="alertInput"> </h5>
+						<h4 id="contexto"></h4>
+					</div>
+				</div>  	
 
 			</div>
 
-
-			<footer class="mastfoot mt-auto">
-				<div class="inner">
-					<p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-				</div>
-			</footer>
 		</div>
 
 	</div>
 
 
-		<div class = "bleft">
+		<div id="contenedor-resultados" class="bleft hidden">
+				<div class= "row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id="Respuestas"></div>
+					</div>
+				</div>
+
 				<div class= "row">
 						<div id="Evaluados"> </div>
 				</div>
@@ -200,7 +193,9 @@
 						</div>
 					</div>
 				</div>
+
 				<br>
+				
 				<div class= "row" style="height: 480px;"">
 						<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 							<div id="pastelote" style="height: 400px; width: 90%;"></div>
@@ -225,11 +220,6 @@
 						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
 								<div id="mapas" style="height: 400px; width: 600px;"> </div>
 						</div>
-						 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						 <img id ="imgMun" src=""   style="height: 40%; position: absolute; left: 18%; top: 2%;opacity: 0.30; ">
-						 <br>
-						 <img id ="imgMun" src="img/A000.png"   style="height: 40%; position: absolute; left: 18%; top: 55%;opacity: 0.30; ">
-						</div>   
 				</div>
 					<div class= "row">
 
