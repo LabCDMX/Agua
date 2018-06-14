@@ -73,7 +73,12 @@
 
 			<p>El consumo de agua por persona es importante. Con esta encuesta podremos darte algunas recomendaciones para mejorar tu consumo.</p>
 
-			<button id="boton-comenzar" class="btn btn-primary">Comenzar</button>
+			<div class="btns-container">
+				<button id="boton-comenzar" class="btn btn-primary">Comenzar</button>
+				<button id="boton-mapa-interactivo" class="btn btn-secondary">Mapa interactivo</button>
+			</div>
+			
+
 		</div>
 
 		<!-- Contenedor preguntas -->
@@ -81,18 +86,10 @@
 
 			<!-- Controles de desplazamiento entre preguntas -->
 			<div class= "row">
-				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-					<input type="button" value="Regresar al inicio" onclick="RegresarInicio()">
-				</div>
-				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<div class="col-md-12 text-center">
+					<img class="nav-questions prev" src="img/prev.png" onclick="pregAnterior()">
 					<div id="dotsLine"></div>
-				</div>
-
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-					<input type="button" value="     Anterior     " onclick="pregAnterior()">
-				</div>	
-				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-					<input type="button" value="   Siguiente   " onclick="pregSiguiente()">
+					<img class="nav-questions next" src="img/next.png" onclick="pregSiguiente()">
 				</div>	
 			</div>
 
@@ -104,10 +101,13 @@
 					<div id="inputCOL"> </div>
 					<div id="areaInput"> </div>
 					<h5 id="alertInput"> </h5>
-					<h4 id="contexto"></h4>
+					<!-- <h4 id="contexto"></h4> -->
 				</div>
 			</div>  	
-
+			<div class="btns-container">
+				<button class="btn btn-primary" onclick="pregSiguiente()">Siguiente</button>
+				<button id="boton-mapa-interactivo" class="btn btn-secondary">Mapa interactivo</button>
+			</div>
 		</div>
 		<!-- End contenedor preguntas -->
 

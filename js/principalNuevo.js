@@ -1250,16 +1250,10 @@ function verificaColonia() {
 
 // VERIFICADO crea codigo HTML ajustado para generar los botores SI NO 
 function creaSNbtn(preg){
-  var salida = '<div class="row" id="btsn">'+
-					 '<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">'+
-					 '</div>'+
-					 '<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3 ">'+
+  var salida = '<div class="row btns-si-no" id="btsn">'+
+					 '<div class="col-md-12 ">'+
 						'<input id="btn-SI" name="grpSN" type="radio" value= "SI" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-SI">Si</label>'+
-					 '</div>'+
-					 '<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">'+
 						'<input id="btn-NO" name="grpSN" type="radio" value = "NO" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-NO">No</label>'+
-					 '</div>'+
-					 '<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">'+
 					 '</div>'+
 			    '</div>';
 	return salida;
@@ -1269,30 +1263,25 @@ function creaSNbtn(preg){
 //VERIFICADO crea el onjeto slider y inputbox para las preguntas 
 function creaInptSlider(incr, mini,maxi,defa,swch,msg,preg){
 	var salida = '<div class ="row">'+
-						'<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+						'<div class="col-md-12 text-center">' +
                  			'<input id="inputMultiB" type="number"  min="'+mini+'" max="'+maxi+'" value="'+defa+'" oninput="ajustaInp('+preg+',this.value)" />'+
-                 		'</div>'+
-                 		'<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">' +
                  			'<input id="inputMulti" type="range"  min="'+mini+'" max="'+maxi+'" step="'+incr+'" oninput="ajustaBInp('+preg+',this.value)"   />'+
-				"</div></div>"
+                 		'</div>'+
+                 	'</div>';
 
 	if (swch==true){
 		var cls ='class="colmagt"'
 		if (msg.length > 39){
-			cls= 'class= " colmagt subetxt"'
+			cls= 'class= " colmagt"'
 		}
-		var ckh='<div class= "row ">'+
-							'<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>'+
-							'<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">' +
+		var ckh='<div class= "row switch-slider">'+
+							'<div class="col-md-12 text-center">' +
 								'<label class="switch">'+
 									' <input id= "sldchk" type="checkbox" onclick="asignaRespuesta(2,'+preg+',this.checked)"> '+
 									'<span class="slider round "></span>'+
 								'</label>'+
-							'</div>'+
-							'<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">' +
 								'<p '+cls+' >'+msg+'</p>'+
-							'</div>'+
-							'<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>'+					
+							'</div>'+					
 				'</div>';
 		salida = salida + ckh;				
 	}
