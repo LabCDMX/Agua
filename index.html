@@ -58,202 +58,185 @@
 
 	<script type="text/javascript" src="js/principalNuevo.js"></script>
 </head>
+
 <body>
-	<div>
-		<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-			<header class="masthead mb-auto">
-				<div class="inner">
-					
-					<h3 class="masthead-brand">Prototipo en desarrollo</h3>
-					
-					<div class ="row w-75">
-						<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
-							<img class= "imge" src="img/Logo-cdmx.png" >
-						</div>
-						<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
-							<img class= "imge"  src="img/sacmex.png"  >
-						</div>
-						<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
-							<img class= "imge"  src="img/logolab.png">
-						</div>
-						<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
-							<img  class= "imge"  src="img/LogoCAD.png" >
-						 </div>
-					</div>
+	<!-- Contenedor principal -->
+	<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+		<header class="masthead mb-auto">
+			<div class="inner">
+									
+				
+		</header>
 
-					<div class="magentaobscuro cinta" ></div>
-					
-					<nav class="nav nav-masthead justify-content-center">
-						<a class="nav-link active" href="#">Inicio</a>
-						<a class="nav-link" href="#">Más información</a>
-						<a class="nav-link" href="#">Contacto</a>
-					</nav>
-				</div>
-			</header>
+		<div id="contenedor-intro" class="">
+			<h1>Consumo de agua responsable</h1>
 
-			<div id="contenedor-intro" class="">
-				<h1>Consumo de agua responsable</h1>
+			<p>El consumo de agua por persona es importante. Con esta encuesta podremos darte algunas recomendaciones para mejorar tu consumo.</p>
 
-				<p>El consumo de agua por persona es importante. Con esta encuesta podremos darte alguanas recomendaciones para mejorar tu consumo.</p>
-
-				<button id="boton-comenzar" class="btn btn-primary">Comenzar</button>
-			</div>
-
-			<div id="contenedor-preguntas" class="hidden">
-
-				<!-- Controles de desplazamiento entre preguntas -->
-				<div class= "row">
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<input type="button" value="Regresar al inicio" onclick="RegresarInicio()">
-					</div>
-					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-						<div id="dotsLine"></div>
-					</div>
-
-					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-						<input type="button" value="     Anterior     " onclick="pregAnterior()">
-					</div>	
-					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-						<input type="button" value="   Siguiente   " onclick="pregSiguiente()">
-					</div>	
-				</div>
-
-				<!-- Preguntas -->
-				<div class= "row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h3 id="preguntas" class= "pad30"></h3>
-						<p id="silderVal"></p>
-						<div id="inputCOL"> </div>
-						<div id="areaInput"> </div>
-						<h5 id="alertInput"> </h5>
-						<h4 id="contexto"></h4>
-					</div>
-				</div>  	
-
-			</div>
-
+			<button id="boton-comenzar" class="btn btn-primary">Comenzar</button>
 		</div>
 
+		<!-- Contenedor preguntas -->
+		<div id="contenedor-preguntas" class="hidden">
+
+			<!-- Controles de desplazamiento entre preguntas -->
+			<div class= "row">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+					<input type="button" value="Regresar al inicio" onclick="RegresarInicio()">
+				</div>
+				<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+					<div id="dotsLine"></div>
+				</div>
+
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<input type="button" value="     Anterior     " onclick="pregAnterior()">
+				</div>	
+				<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+					<input type="button" value="   Siguiente   " onclick="pregSiguiente()">
+				</div>	
+			</div>
+
+			<!-- Preguntas -->
+			<div class= "row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<h3 id="preguntas" class= "pad30"></h3>
+					<p id="silderVal"></p>
+					<div id="inputCOL"> </div>
+					<div id="areaInput"> </div>
+					<h5 id="alertInput"> </h5>
+					<h4 id="contexto"></h4>
+				</div>
+			</div>  	
+
+		</div>
+		<!-- End contenedor preguntas -->
+
 	</div>
+	<!-- End contenedor principal -->
 
 
-		<div id="contenedor-resultados" class="bleft hidden">
+	<!-- Contenedor resultados -->
+	<div id="contenedor-resultados" class="bleft hidden">
+		<div class= "row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div id="Respuestas"></div>
+			</div>
+		</div>
+
+		<div class= "row">
+				<div id="Evaluados"> </div>
+		</div>
+
+		<div class= "row escala">
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<h6>Responsable</h6>
 				<div class= "row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div id="Respuestas"></div>
-					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 Responsable">
+						</div>
+						<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+								<p>Consumo igual o menor al límite óptimo</p>
+						</div>
 				</div>
-
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<h6>Sobrado</h6>
 				<div class= "row">
-						<div id="Evaluados"> </div>
-				</div>
-
-				<div class= "row escala">
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<h6>Responsable</h6>
-						<div class= "row">
-							<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 Responsable">
-								</div>
-								<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-										<p>Consumo igual o menor al límite óptimo</p>
-								</div>
-						</div>
-					</div>
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<h6>Sobrado</h6>
-						<div class= "row">
-							
-								<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Sobrado">
-										
-								</div>
-								<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-										<p>Consumo entre al punto medio de la escala y el límite responsable </p>
-										
-								</div>
-						</div>
-					</div>
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<h6>Preocupante</h6>
-						<div class= "row">
-								<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Preocupante">
-								</div>
-								<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-										<p>Consumo entre al punto medio de la escala y el límite negligente </p>
-								</div>
-						</div>
-					</div>
-					<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						<h6>Negligente</h6>
-						<div class= "row">
-								<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Negligente">
-								</div>
-								<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-										<p>Consumo igual o mayor a limite Negligente </p>
-								</div>
-						</div>
-					</div>
-				</div>
-
-				<br>
-				
-				<div class= "row" style="height: 480px;"">
-						<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-							<div id="pastelote" style="height: 400px; width: 90%;"></div>
-						</div>
-						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-							<img id ="imgConcep" src=""   style="height: 45%; position: absolute; left: 18%; top: 35%;opacity: 0.10; ">
-							<div id="hoverinfo01" class= "hoverinfo">
-							</div>
-						</div>
-
-				</div>
-			<br>
-			<br>
-			<br>
-				<div class= "row">
-				</div>   
-
-
-
+					
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Sobrado">
 								
+						</div>
+						<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+								<p>Consumo entre al punto medio de la escala y el límite responsable </p>
+								
+						</div>
+				</div>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<h6>Preocupante</h6>
 				<div class= "row">
-						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-								<div id="mapas" style="height: 400px; width: 600px;"> </div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Preocupante">
+						</div>
+						<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+								<p>Consumo entre al punto medio de la escala y el límite negligente </p>
 						</div>
 				</div>
-					<div class= "row">
-
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<div id="valorRefCOL"> </div>
+			</div>
+			<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<h6>Negligente</h6>
+				<div class= "row">
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2  Negligente">
 						</div>
-					</div>
-					<div class= "row">
+						<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+								<p>Consumo igual o mayor a limite Negligente </p>
+						</div>
+				</div>
+			</div>
+		</div>
 
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<div id="plotref1" style="width: 900px; height: 700px;">
-										 <!-- Plotly chart will be drawn inside this DIV -->
+		<br>
 		
-								</div>
-						</div>
+		<div class= "row" style="height: 480px;">
+			<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+				<div id="pastelote" style="height: 400px; width: 90%;"></div>
+			</div>
+
+			<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+				<img id ="imgConcep" src=""   style="height: 45%; position: absolute; left: 18%; top: 35%;opacity: 0.10; ">
+				<div id="hoverinfo01" class= "hoverinfo">
+				</div>
+			</div>
+		</div>
+
+		<!-- Contenedor mapa y gráficas -->
+		<div id="contenedor-cosas-raras">
+			<div class= "row">
+				<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+						<div id="mapas" style="height: 400px; width: 600px;"> </div>
+				</div>
+			</div>
+
+			<div class= "row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="valorRefCOL"> </div>
+				</div>
+			</div>
+
+			<div class= "row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="plotref1" style="width: 900px; height: 700px;">
+						<!-- Plotly chart will be drawn inside this DIV -->
 					</div>
-					<div class= "row">
+				</div>
+			</div>
 
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-								<div id="plotref2" style="width: 900px; height: 700px;">
-										 <!-- Plotly chart will be drawn inside this DIV -->
-		
-								</div>
+			<div class= "row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<div id="plotref2" style="width: 900px; height: 700px;">
+								 <!-- Plotly chart will be drawn inside this DIV -->
 						</div>
-
-
 				</div>
-				<div class= "row" style="height: 150px;"" >
-						<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-						</div>   
-	 
+			</div>
+		</div>
+		<!-- End contenedor mapa y gráficas -->
+	</div>
+	<!-- End Contenedor resultados --> 
 
-				</div>
-</div>
+	<footer>
+		<div class ="row w-75">
+			<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<img class= "imge" src="img/Logo-cdmx.png" >
+			</div>
+			<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<img class= "imge"  src="img/sacmex.png"  >
+			</div>
+			<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<img class= "imge"  src="img/logolab.png">
+			</div>
+			<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<img  class= "imge"  src="img/LogoCAD.png" >
+			 </div>
+		</div>
+	</footer>
 
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script> 
