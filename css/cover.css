@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
 body{
   font-family: 'Source Sans Pro', sans-serif;
+  background: #f7f7f7;
 }
 
 h1, h2, h3, h4, p, li{
@@ -64,6 +65,7 @@ a:hover {
 .btn{
   font-size: 24px;
   width: 262px;
+  outline: none;
 }
 
 .btn-secondary,
@@ -73,6 +75,7 @@ a:hover {
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
   border: 1px solid #979797;
+  outline: none;
 }
 
 .btn-primary,
@@ -81,7 +84,8 @@ a:hover {
   color: #fff;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #ff009b;
-   border: .05rem solid #ff009b;
+  border: .05rem solid #ff009b;
+  outline: none;
 }
 
 .btns-container{
@@ -518,6 +522,7 @@ input[type="button"]:focus{
   outline: none;
   font-size: 48px;
   padding-bottom: 6px;
+  background: transparent;
 }
 .btns-si-no{
   text-align: center;
@@ -557,6 +562,7 @@ input[type="radio"]:checked + label {
   color: #9b9b9b;
   margin-right: 42px;
   vertical-align: top;
+  background: #f7f7f7;
 }
 
 #inputMulti{
@@ -609,3 +615,117 @@ input:checked + .slider:before {
   -ms-transform: translateX(35px);
   transform: translateX(35px);
 }
+
+input[type=range]{
+  -webkit-appearance: none;
+  background: url('../img/range-bg.png') no-repeat;
+  background-size: 100% auto;
+  background-position: 0 7px;
+}
+
+/*#contenedor-resultados{
+  max-width: 840px;
+}
+
+#contenedor-resultados h2{
+  font-size: 36px;
+  margin-left: 0px;
+  color: #9b9b9b;
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 85px;
+}
+
+.header-resultados{
+  margin-bottom: 100px;
+}
+
+.header-resultados .regresar-cuestionario{
+  display: inline-block;
+  padding-left: 44px;
+  color: #9b9b9b;
+  line-height: normal;
+  background: url('../img/prev.png') no-repeat;
+  background-position: 0px 3px;
+}
+
+#contenedor-resultados .header-resultados h2{
+  display: inline-block;
+  font-size: 36px;
+  margin-left: 90px;
+  color: #9b9b9b;
+  margin-bottom: 0;
+}
+
+.container-recomendados{
+  margin-bottom: 110px;
+}
+.container-recomendados .recomendado{
+  margin-bottom: 38px;
+}
+
+.container-recomendados .recomendado p{
+  font-size: 16px;
+  color: #9b9b9b;
+  text-align: left;
+  margin-bottom: 0;
+  line-height: normal;
+}
+
+.green .icon{
+  background: #1da600;
+}
+.green p{
+  color: #1da600 !important;
+}
+
+.yellow .icon{
+  background: #fae700;
+}
+.yellow p{
+  color: #fae700 !important;
+}
+
+.icon{
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  margin-right: 11px;
+  float: left;
+}
+.icon img{
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 14px;
+}
+.icon.wc img{
+  width: 53%;
+  margin-left: 24%;
+  margin-top: 12px;
+}
+
+#contenedor-resultados .container-resultados h2{
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+#contenedor-resultados .container-resultados p{
+  font-size: 16px;
+  color: #9b9b9b;
+  line-height: normal;
+  margin-bottom: 22px;
+  text-align: left;
+}
+#contenedor-resultados .container-resultados .graficas{
+  margin-bottom: 96px;
+}
+.text-red{
+  color: #d0021b !important;
+}
+.recomendado-all .icon{
+  margin-right: 42px !important;
+}
+
+.recomendado-all p{
+  font-size: 24px !important;
+}*/
