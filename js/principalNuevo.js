@@ -1216,8 +1216,8 @@ function evaluaConsumo(){
 function creaColInput(pregunta){
   var listadecolonias = listacol.map(function(x){ return  "<option value='" + x[2] + " -" + x[1] + "- " +x[0] + "'></option>" })
   salidaopt= "<datalist id='coloniasopt'>" + listadecolonias + "</datalist>";
-  salida = '<div class ="row">'+
-				'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">' +
+  salida = '<div class="row">'+
+				'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">' +
 			       '<input id="lstCol"  class="awesomplete wfull" list="coloniasopt"  data-minChars="3" data-maxItems="15"  onfocusout="verificaColonia()" />' + salidaopt +
 				'</div>'+
 			'</div>';

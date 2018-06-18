@@ -19,8 +19,8 @@ h1, h2, h3, h4, p, li{
   text-align: right;
 }
 .wfull{
-  width: 900px !important;
-  height: 50px !important;  
+  width: 100%;
+  height: 60px !important;  
   text-align: center;
 }
 
@@ -93,7 +93,7 @@ a:hover {
   overflow: hidden;
   width: 100%;
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 0px;
 }
 
 .btns-container .btn{
@@ -145,14 +145,21 @@ body {
   max-width: 968px;
 }
 
-#contenedor-intro{
-  padding-top: 210px;
-
+.contenedor-general{
+  position: absolute;
+  width: 100%;
+   max-width: 968px;
+  top: 50%;
+  left: 50%;
+  margin-top: -45px;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  padding: 0 15px;
 }
 
 #contenedor-intro p{
   max-width: 719px;
-  margin: 0 auto 220px;
+  margin: 0 auto 100px;
   height: auto;
   line-height: normal;
 }
@@ -325,7 +332,6 @@ p{
   color: rgba(255, 255, 255, .5);
 }
 
-
 @media only screen and (min-width: 50px) and (max-width: 480px){
   .imge {
     display: block;
@@ -474,14 +480,11 @@ input[type="button"]:focus{
  * PREGUNTAS
  */
 
-#contenedor-preguntas{
-  padding-top: 155px;
-}
 
 #preguntas {
   text-align: center;
   height: auto;
-  margin: 0 0 180px 0;
+  margin: 0 0 70px 0;
   font-size: 36px;
 }
 
@@ -489,7 +492,7 @@ input[type="button"]:focus{
   display: inline-block;
   margin-left: 20px;
   margin-right: 35px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 #dotsLine .dotgreen {
@@ -515,12 +518,15 @@ input[type="button"]:focus{
   cursor: pointer;
   margin-top: -9px
 }
+#contenedor-preguntas .awesomplete{
+  width: 100%;
+}
 
 #contenedor-preguntas .awesomplete > input{
   border: none;
   border-bottom: 5px solid #979797;
   outline: none;
-  font-size: 48px;
+  font-size: 40px;
   padding-bottom: 6px;
   background: transparent;
 }
@@ -529,7 +535,7 @@ input[type="button"]:focus{
 }
 
 #inputCOL, #areaInput{
-  margin-bottom: 185px;
+  margin-bottom: 100px;
 }
 
 input[type="radio"] {
@@ -572,10 +578,36 @@ input[type="radio"]:checked + label {
   background-color: transparent;
   font-size: 1.5em;
   text-align: center;
+  outline: none;
+}
+
+input[type=range]::-ms-thumb {
+    border: 1px solid #979797;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #4a4a4a;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: 1px solid #979797;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #4a4a4a;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #979797;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #4a4a4a;
 }
 
 .switch-slider{
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .switch-slider .colmagt{
@@ -621,6 +653,103 @@ input[type=range]{
   background: url('../img/range-bg.png') no-repeat;
   background-size: 100% auto;
   background-position: 0 7px;
+}
+
+footer{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 15px 0;
+  background: #f7f7f7;
+}
+
+@media only screen and (max-width: 767px){
+  .contenedor-general{
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    transform: translate(0,0%);
+    -webkit-transform: translate(0%,0%);
+    padding-bottom: 130px;
+    padding-top: 50px;
+  }
+  h1{
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  #contenedor-intro p{
+    font-size: 20px;
+    margin-bottom: 60px;
+  }
+  .btns-container .btn {
+    margin: 0 20px 20px;
+    width: 200px;
+    font-size: 18px;
+  }
+  #preguntas {
+    margin: 0 0 40px 0 !important;
+    font-size: 25px !important;
+  }
+  #inputCOL, #areaInput {
+    margin-bottom: 40px;
+  }
+  .wfull{
+    height: 40px !important;
+  }
+  #contenedor-preguntas .awesomplete > input{
+    font-size: 23px;
+    padding-bottom: 0;
+  }
+  
+
+}
+
+@media only screen and (max-width: 556px){
+  .nav-questions{
+    position: absolute;
+  }
+  .nav-questions.next{
+    top: 13px;
+    right: 17px;
+  }
+  .nav-questions.prev{
+    top: 13px;
+  }
+  .switch-slider .colmagt{
+    margin-left: 0;
+    font-size: 18px; 
+    width: 100%;
+  }
+  #areaInput input[type="number"]{
+    margin-right: 0;
+    height: 40px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 515px){
+  input[type=range]{
+    background-image: none;
+  }
+  input[type=range]::-moz-range-track {
+      width: 300px;
+      height: 5px;
+      background: #979797;
+      border: none;
+      border-radius: 3px;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #979797;
+    border: none;
+    border-radius: 3px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    margin-top: -7px;
+  }
 }
 
 /*#contenedor-resultados{
