@@ -12,7 +12,7 @@ elseif($_SERVER['HTTP_HOST'] == 'example-productive.com')
 }
 else
 {
-	$mysqli = mysqli_connect('192.168.10.10','homestead','secret','agua_db'); //Stage Server
+	$mysqli = mysqli_connect('localhost','user','pass','db_name'); //Stage Server
 }
 
 // Check connection
@@ -21,8 +21,6 @@ if (mysqli_connect_errno($mysqli)) {
   die;
 }
 
-// Set constant DB Prefix
-define('DB_PREFIX', 'prefix_');
 
 // Set everything on MySQL to UTF8
 mysqli_query($mysqli, 'SET NAMES UTF8');
