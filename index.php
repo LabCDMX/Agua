@@ -1,4 +1,7 @@
 
+<?php 
+	require __DIR__ . '/functions/functions.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
