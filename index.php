@@ -1,4 +1,3 @@
-
 <?php 
 	require __DIR__ . '/functions/functions.php';
 ?>
@@ -36,7 +35,7 @@
 	<script type="text/javascript" src="leaflet/leaflet.js"></script>
 
 	<!-- llamarAPI, no existe -->
-	<script src="js/llamarAPI.js" type="text/javascript"></script>  
+	<!-- <script src="js/llamarAPI.js" type="text/javascript"></script>   -->
 	
 	<!-- Plotly.js -->
 	

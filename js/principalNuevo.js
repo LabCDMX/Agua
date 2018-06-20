@@ -824,7 +824,7 @@ var txtTipoInput =[
 
 // VERIFICADO es el array donde se almacenan las respuestas
 var txtRespuestas =[ 
-					['Colonia', ""],
+					['Colonia', "", ""],
 					['sabe monto pago', ""],
 					['monto pago', ""],
 					['# personas',"" ],
@@ -923,12 +923,13 @@ function pregSiguiente(){
 	}
 	if (nvaPreg >= 0 & nvaPreg < 12){
 		muestraPreg(nvaPreg);
+		saveAjaxQuestion(txtRespuestas, nvaPreg);
 	}else{
 		$('#contenedor-preguntas').addClass('hidden');	
 		$('#contenedor-resultados').removeClass('hidden');
-		mostrarRespuestas()
-		evaluaConsumo()
-		mostrarEvaluado()
+		mostrarRespuestas();
+		evaluaConsumo();
+		mostrarEvaluado();
 	}
 }
 
@@ -1329,7 +1330,6 @@ function creaDots(verdes,grises){
 
 // VERIFICADO visualiza una tabla con las respuesta proporcionadas
 function mostrarRespuestas(){
-
 	$("#Respuestas").empty();
 	var titResp= "<h5 class= 'magenta2'>Información proporcionada . . .</h5><p>Cambia las respuestas visualizando la pregunta deseada</p> "
 	//var valores = "<table class= 'respues'>" + txtRespuestas.map(function(z){return "<tr>" + z.map(function(ss){return "<td class='res'>" + ss + "</td>"}) +"</tr>"}).toString().replace(/,/g,'') + "</table>"
@@ -1349,6 +1349,28 @@ function mostrarEvaluado(){
 	var valores = "<table class= 'respues'> " + anchos + encabedado  +txtEvaluacion.slice(4, 13).map(function(z,i){ return "<tr><td class='"+ z[4]+"'><img  src= 'img/"+ listaimg[i+3] +"' height='35px'></td><td>" +  z[0] +  "</td>"  +"<td class='res'>" + (z[2].toLocaleString()) +   "</td>" +"<td class='res'>" + z[1].toLocaleString() +   "</td>" +"<td class='res'>" + z[3].toLocaleString() +   "</td>" +"<td class='res'>" + z[4] +   "</td>" + "<td>" +    "</td>" +"</tr>" }).toString().replace(/,</g,'<').replace(/>,/g,'>') + "</table>" //.replace(/undefined/g,'')
 	var contenido =  "<div class= 'row'><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>"+valores+"</div>"
 	$("#Evaluados").append(titResp+contenido +"<p style='width:900px'>Para el límite óptimo se consideran 130 litros diarios por persona y para el nivel negligente 673.5 litros diarios por persona </p>")
+}
+
+/**
+ * SAVE QUESTIONS DB
+ * @param  {[type]} txtRespuestas [description]
+ * @return {[type]}               [description]
+ */
+function saveAjaxQuestion(txtRespuestas, nvaPreg)
+{
+	var index = nvaPreg - 1;
+	console.log(txtRespuestas);
+
+	var data = {
+		question: index,
+		answers: txtRespuestas,
+		action: 'saveAnswerAjax'
+	}
+
+	$.post( "ajax.php", data, function(result) {
+		console.log(result);
+	});
+
 }
 
 // VERIFICADO elimina los casos indefined del array generado
