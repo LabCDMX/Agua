@@ -927,6 +927,7 @@ function pregSiguiente(){
 	}else{
 		$('#contenedor-preguntas').addClass('hidden');	
 		$('#contenedor-resultados').removeClass('hidden');
+		saveAjaxQuestion(txtRespuestas, nvaPreg);
 		mostrarRespuestas();
 		evaluaConsumo();
 		mostrarEvaluado();
@@ -1359,7 +1360,6 @@ function mostrarEvaluado(){
 function saveAjaxQuestion(txtRespuestas, nvaPreg)
 {
 	var index = nvaPreg - 1;
-	console.log(txtRespuestas);
 
 	var data = {
 		question: index,
@@ -1368,7 +1368,7 @@ function saveAjaxQuestion(txtRespuestas, nvaPreg)
 	}
 
 	$.post( "ajax.php", data, function(result) {
-		console.log(result);
+		// response
 	});
 
 }

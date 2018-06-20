@@ -12,7 +12,12 @@
 		if(!empty($columns)){
 			foreach ($columns as $key => $column) {
 				$index = $key + 1;
-				saveAnswer($column, $answers[$question][$index]);
+				if($column != 'status'){
+					saveAnswer($column, $answers[$question][$index]);
+				}else{
+					saveAnswer($column, 1);
+				}
+				
 			}
 		}
 
@@ -34,13 +39,7 @@
 				$column => getResponseSpecial($column, $answer),
 				'updated_at' => $date
 			);
-			echo '<pre>';
-			print_r($vars);
-			echo '</pre>';
 			$query = build_update_questions_query('ag_questions', $vars, $questions_id);
-			echo '<pre>';
-			print_r($query);
-			echo '</pre>';
 			$result = mysqli_query($mysqli, $query);
 		}else{
 			$vars = array( 
@@ -85,7 +84,7 @@
 			case 10:
 				return ['number_water_the_garden', 'garden_water_rinse'];
 			case 11:
-				return ['sanitary_saver'];
+				return ['sanitary_saver', 'status'];
 			default:
 				return [];
 				break;
@@ -111,7 +110,7 @@
 		}
 
 		if($column == 'sanitary_saver'){
-			return $answer == '' ? 0 : 1;
+			return $answer == 'NO' ? 0 : 1;
 		}
 
 		return $answer;
