@@ -77,7 +77,6 @@
 
 			<div class="btns-container">
 				<button id="boton-comenzar" class="btn btn-primary">Comenzar</button>
-				<button id="boton-mapa-interactivo" class="btn btn-secondary">Mapa interactivo</button>
 			</div>
 			
 
@@ -108,7 +107,6 @@
 			</div>  	
 			<div class="btns-container">
 				<button class="btn btn-primary" onclick="pregSiguiente()">Siguiente</button>
-				<button id="boton-mapa-interactivo" class="btn btn-secondary">Mapa interactivo</button>
 			</div>
 		</div>
 		<!-- End contenedor preguntas -->
