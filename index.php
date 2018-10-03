@@ -71,12 +71,19 @@
 		</header>
 
 		<div id="contenedor-intro" class="contenedor-general">
-			<h1>Consumo de agua responsable</h1>
+			<h1 class="text-semi-bold bottom-buffer-80">AguaCDMX</h1>
 
-			<p>El consumo de agua por persona es importante. Con esta encuesta podremos darte algunas recomendaciones para mejorar tu consumo.</p>
+			<p class="font-size-40 bottom-buffer-40 center">¿Sabes cuánta agua se consume en tu hogar?</p>
+
+			<p class="font-size-16 bottom-buffer-30 text-bold center">Al responder las siguientes preguntas obtendrás un diagnóstico para saber si tu consumo de agua está ubicado dentro de los estándares recomendados; podrás compararlo con el consumo que realizan tus vecinos en la colonia y delegación en la que vives; y recibirás algunas recomendaciones para optimizar tu uso del agua.</p>
+
+			<p class="font-size-16 bottom-buffer-30 center">En diversas regiones del mundo, vivir con escasez de agua es una preocupación cotidiana para diferentes personas; la CDMX no es ajena a esa realidad. Según el Sistema de Aguas de la Ciudad de México, el promedio de uso por persona debería de ser de 96 litros por día, sin embargo, consumimos tres veces la cantidad deseada.</p>
+
+			<p class="font-size-16 bottom-buffer-20 center">En este sentido, fomentar una cultura del uso responsable de agua es sólo una de las muchas acciones necesarias para preservar el vital recurso.</p>
 
 			<div class="btns-container">
-				<button id="boton-comenzar" class="btn btn-primary">Comenzar</button>
+				<button>Acerca de AguaCDMX</button>
+				<button id="boton-comenzar" class="btn btn-primary">Iniciar</button>
 			</div>
 			
 
@@ -379,17 +386,14 @@
 
 	<footer>
 		<div class="container">
-			<div class ="row">
-				<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div class ="row justify-content-md-center">
+				<div class= "col-xs-3 col-sm-3 col-md-3">
 					<img class= "imge" src="img/Logo-cdmx.png" >
 				</div>
-				<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
-					<img class= "imge"  src="img/sacmex.png"  >
-				</div>
-				<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<div class= "col-xs-3 col-sm-3 col-md-3">
 					<img class= "imge"  src="img/logolab.png">
 				</div>
-				<div class= "col-xs-3 col-sm-3 col-md-3 col-lg-3">
+				<div class= "col-xs-3 col-sm-3 col-md-3">
 					<img  class= "imge"  src="img/LogoCAD.png" >
 				 </div>
 			</div>

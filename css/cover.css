@@ -1,12 +1,64 @@
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600,700');
 body{
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   background: #f7f7f7;
 }
 
 h1, h2, h3, h4, p, li{
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.font-size-40 {
+  font-size: 40px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.bottom-buffer-10 {
+  margin-bottom: 10px;
+}
+
+.bottom-buffer-20 {
+  margin-bottom: 20px;
+}
+
+.bottom-buffer-30 {
+  margin-bottom: 30px;
+}
+
+.bottom-buffer-40 {
+  margin-bottom: 40px;
+}
+
+.bottom-buffer-50 {
+  margin-bottom: 50px;
+}
+
+.bottom-buffer-60 {
+  margin-bottom: 60px;
+}
+
+.bottom-buffer-80 {
+  margin-bottom: 80px;
+}
+
+.text-normal {
+  font-weight: 400;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-semi-bold {
+  font-weight: 600;
 }
 
 .bleft {
@@ -14,6 +66,23 @@ h1, h2, h3, h4, p, li{
   width: 80%;
 }
 
+h1{
+  color: #004DFF;
+  font-size: 36px;
+  text-align: center;
+}
+p{
+  font-size: 36px;
+  text-align: center;
+}
+
+.h20{
+  height: 4rem;
+}
+
+.h50{
+  height: 150px;
+}
 
 .toR{
   text-align: right;
@@ -84,8 +153,8 @@ a:hover {
 .btn-primary:focus {
   color: #fff;
   text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #ff009b;
-  border: .05rem solid #ff009b;
+  background-color: #004DFF;
+  border: .05rem solid #004DFF;
   outline: none;
 }
 
@@ -160,28 +229,9 @@ body {
 
 #contenedor-intro p{
   max-width: 719px;
-  margin: 0 auto 100px;
   height: auto;
   line-height: normal;
-}
-
-h1{
-  color: #ff009b;
-  font-size: 36px;
-  text-align: center;
-  margin-bottom: 55px;
-}
-p{
-  font-size: 36px;
-  text-align: center;
-}
-
-.h20{
-  height: 4rem;
-}
-
-.h50{
-  height: 150px;
+  text-align: left;
 }
 
 
@@ -499,7 +549,7 @@ input[type="button"]:focus{
 #dotsLine .dotgreen {
   height: 17px;
   width: 17px;
-  background-color: #ff009b;
+  background-color: #004DFF;
   border: none;
   border-radius: 50%;
   display: inline-block;
@@ -555,7 +605,7 @@ input[type="radio"] + label {
 }
 
 input[type="radio"]:checked + label {
-    background-color: #ff009b;
+    background-color: #004DFF;
     cursor: default;
     color: #fff;
 }
@@ -613,7 +663,7 @@ input[type=range]::-webkit-slider-thumb {
 
 .switch-slider .colmagt{
   display: inline-block;
-  color: #ff009b;
+  color: #004DFF;
   text-shadow: none;
   font-size: 24px;
   width: 450px; 
@@ -636,7 +686,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input:checked + .slider {
-  background-color: #ff009b;
+  background-color: #004DFF;
 }
 
 input:focus + .slider {
