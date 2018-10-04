@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="468px" height="22px" viewBox="0 0 468 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52 (66869) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="RESULTADOS-002" transform="translate(-586.000000, -1051.000000)">
+            <g id="Group-7" transform="translate(587.000000, 1052.000000)">
+                <path d="M10,0.5 C4.75329488,0.5 0.5,4.75329488 0.5,10 C0.5,15.2467051 4.75329488,19.5 10,19.5 L457,19.5 C462.246705,19.5 466.5,15.2467051 466.5,10 C466.5,4.75329488 462.246705,0.5 457,0.5 L10,0.5 Z" id="Rectangle-Copy-11" stroke="#9B9B9B"></path>
+                <rect id="Rectangle-Copy-12" stroke="#FFFFFF" fill="#004DFF" x="0" y="0" width="158" height="20" rx="10"></rect>
+                <g id="Group-Copy-6" transform="translate(116.000000, 0.000000)" stroke="#979797" stroke-linecap="square">
+                    <path d="M1.525,19.5 L1.525,0.5" id="Line-4"></path>
+                    <path d="M119.2,19.5 L119.2,0.5" id="Line-4-Copy"></path>
+                    <path d="M235.225,19.5 L235.225,0.5" id="Line-4-Copy-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

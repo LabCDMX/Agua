@@ -14,6 +14,7 @@ var consumooptimo = 130.69; // http://www.cuidarelagua.cdmx.gob.mx/tips.html
 ///  "POBTOT" / "VIVTOT"  * 130.69  * 60.8 <  "DCONPRO" * 1000
 var listaimg=[,,,'regaderab.png','cocinab.png','ropab.png','casab.png','patiob.png','autob.png','jardinb.png','WCb.png','agua.png']
 
+var cali=''; // Datos colonia seleccionada
 
 //variales de referencia en colonia
 var propLAV = 0; // % de hogares con lavadora de ropa
@@ -116,7 +117,7 @@ var tarifaSinMedidor = [0,706,412,163,103]
 
 //VERIFICADO evalua si un numero esta dentro de un array
 function isInArray(value, array) {
-  return array.indexOf(value) > -1;
+	return array.indexOf(value) > -1;
 }
 
 // VERIFICADO es una funcion que simplemente se llama cuando se ha cncluido la carga de un js
@@ -134,17 +135,17 @@ function H20toMNT (litros,tipomza){
 	var metros3Adic=0;
 
 	switch(tipomza) {
-    case "Alto" : 
-        colBase=7;
-        break;
-    case "Medio":
-        colBase=6;
-        break;
-    case "Bajo" :
+		case "Alto" : 
+				colBase=7;
+				break;
+		case "Medio":
+				colBase=6;
+				break;
+		case "Bajo" :
 		colBase=5;
-        break;
-    default:  //popular
-        colBase=4;
+				break;
+		default:  //popular
+				colBase=4;
 	};
 	console.log (colBase);
 	for (var ii= 0; ii < 9; ii++){
@@ -174,17 +175,17 @@ function MNTtpH20 (pesos,tipomza){
 	var litrosBase = 0;
 
 	switch(tipomza) {
-    case "Alto" : 
-        colBase=7;
-        break;
-    case "Medio":
-        colBase=6;
-        break;
-    case "Bajo" :
+		case "Alto" : 
+				colBase=7;
+				break;
+		case "Medio":
+				colBase=6;
+				break;
+		case "Bajo" :
 		colBase=5;
-        break;
-    default:  //popular
-        colBase=4;
+				break;
+		default:  //popular
+				colBase=4;
 	};
 
 	for (var ii =0; ii < 9; ii++){
@@ -203,8 +204,6 @@ function MNTtpH20 (pesos,tipomza){
 
 };
 
-
-
 //VERIFICADO calcula la latitud en WSG084 a la que corresponde la latitud del recibo de agua
 function new_latitude  (latitude,dy){
 	return latitude  + (dy / r_earth) * (180 / math.pi);
@@ -218,13 +217,13 @@ function new_longitude (longitude,latitude,dx){
 
 //VERIFICADO separa las coordenadas a partir del numero de cuenta  y las almacena en las variables globales 
 function recibo2coordendas(texto) {
-    
-    var texto2 = texto.replace(/[^0-9]+/g, "");
-    coordenada_x= texto2.substring(0,2) + texto2.substring(4,7);
-    coordenada_y= texto2.substring(2,4) + texto2.substring(7,10); 
-    coordenada_ywsg84= new_latitude(bordeS,(coordenada_y-factY)/1000);
-    oordenada_xwsg84= new_longitude(bordeW,bordeS,(coordenada_x-factX)/1000);
-    return  [coordenada_ywsg84,oordenada_xwsg84];
+		
+		var texto2 = texto.replace(/[^0-9]+/g, "");
+		coordenada_x= texto2.substring(0,2) + texto2.substring(4,7);
+		coordenada_y= texto2.substring(2,4) + texto2.substring(7,10); 
+		coordenada_ywsg84= new_latitude(bordeS,(coordenada_y-factY)/1000);
+		oordenada_xwsg84= new_longitude(bordeW,bordeS,(coordenada_x-factX)/1000);
+		return  [coordenada_ywsg84,oordenada_xwsg84];
 };
 
 
@@ -253,9 +252,6 @@ function whichPolygonMPO(x,y){
 
 
 //VERIFICADO Indica dentro de cual poligono de Colonia / Código Postal se encuentra una coordenada (lon-lat)
-
-
-
 function whichPolygonCodPos(x,y){
 	var CodPos = "00000";
 	var Asentamiento = "";
@@ -287,207 +283,199 @@ function whichPolygonCodPos(x,y){
 
 //VERIFICADO indica si un punto esta dentro de un poligono
 function isPointInsidePolygon(x,y, poly) {
-    var inside = false;
-    //var x = marker.getLatLng().lat, y = marker.getLatLng().lng;
-    //for (var ii=0;ii<poly.length;ii++){
-        var polyPoints = poly;
-        for (var i = 0, j = polyPoints.length - 1; i < polyPoints.length; j = i++) {
-            var xi = polyPoints[i][0], yi = polyPoints[i][1];
-            var xj = polyPoints[j][0], yj = polyPoints[j][1];
+		var inside = false;
+		//var x = marker.getLatLng().lat, y = marker.getLatLng().lng;
+		//for (var ii=0;ii<poly.length;ii++){
+				var polyPoints = poly;
+				for (var i = 0, j = polyPoints.length - 1; i < polyPoints.length; j = i++) {
+						var xi = polyPoints[i][0], yi = polyPoints[i][1];
+						var xj = polyPoints[j][0], yj = polyPoints[j][1];
 
-            var intersect = ((yi > y) != (yj > y))
-                && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-            if (intersect) inside = !inside;
-        }
-    //}
+						var intersect = ((yi > y) != (yj > y))
+								&& (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+						if (intersect) inside = !inside;
+				}
+		//}
 
-    return inside;
+		return inside;
 };
-
-
-
-
-
 
 // VERIFICADO variable que gerera un script y deriva a una funccion callback al ternimar la creacion
 var JavaScript = {
-  load: function(src, callback) {
-    var script = document.createElement('script'),
-        loaded;
-        
-    script.setAttribute('src', src);
+	load: function(src, callback) {
+		var script = document.createElement('script'),
+				loaded;
+				
+		script.setAttribute('src', src);
 
-    if (callback) {
-      script.onreadystatechange = script.onload = function() {
-        if (!loaded) {
-          callback();
-        }
-        loaded = true;
-      };
-    }
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
+		if (callback) {
+			script.onreadystatechange = script.onload = function() {
+				if (!loaded) {
+					callback();
+				}
+				loaded = true;
+			};
+		}
+		document.getElementsByTagName('head')[0].appendChild(script);
+	}
 };
 
 
-/// VERIFICADO esta funcion es comlementaria de la anterior y asegura la carga completa de json esperando 
+/// VERIFICADO esta funcion es complementaria de la anterior y asegura la carga completa de json esperando 
 ///            el fin de la carga del script
 jQuery.loadScript = function (url, callback) {
-    jQuery.ajax({
-        url: url,
-        dataType: 'script',
-        success: callback,
-        async: true
-    });
+		jQuery.ajax({
+				url: url,
+				dataType: 'script',
+				success: callback,
+				async: true
+		});
 }
-
-
 
 // VERIFICADO Función inicial que prepara los objetos que presentan informaciòn goespacial (mapa leaflet)
 function initmapas(){
 	// centroide CDMX 
-    mapas = new L.map('mapas',{zoomSnap: 0.125,zoomControl: true }).setView(new L.LatLng(19.353890, -99.138817),9.8);
-    mapas.scrollWheelZoom.disable(); // sin mouse o pad wheel zoom
-    //mapas.dragging.disable(); // sin drah event
-    mapas.touchZoom.disable(); 
-    mapas.doubleClickZoom.disable();
-    mapas.scrollWheelZoom.disable(); // sin mouse o pad wheel zoom
-    // provvedor cartografivo
+		mapas = new L.map('mapas',{zoomSnap: 0.125,zoomControl: true }).setView(new L.LatLng(19.353890, -99.138817),9.8);
+		mapas.scrollWheelZoom.disable(); // sin mouse o pad wheel zoom
+		//mapas.dragging.disable(); // sin drah event
+		mapas.touchZoom.disable(); 
+		mapas.doubleClickZoom.disable();
+		mapas.scrollWheelZoom.disable(); // sin mouse o pad wheel zoom
+		// provvedor cartografivo
 	var orl= L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
 	maxZoom: 20//,
 		//attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	});
-     // otro provvedor cartografivo
+		 // otro provvedor cartografivo
 	OpenStreetMap_France = L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
 		maxZoom: 20,
 		attribution: '&copy; Openstreetmap France | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 	});
-    // aqui se carga uno de los dos los proveedores cartograficos (a veces no estan disponibles)
+		// aqui se carga uno de los dos los proveedores cartograficos (a veces no estan disponibles)
 	mapas.addLayer(OpenStreetMap_France);
 	//mapas.addLayer(orl);
 
-    /// carga del poligono CDMX 
+		/// carga del poligono CDMX 
 	geojsonCDMX =L.geoJson(CDMX, {
 			name:'regionestodos'	,
-	        style: function (feature) {
-	            return { 
-	            	color: "black",
+					style: function (feature) {
+							return { 
+								color: "black",
 					//fillColor: "gray",
 					fillColor: 'lightgreen',//getColor(checkTotal_mpo2(feature.properties.EDOMUN)),
-	            	weight: 1,
-	            	opacity: 1,
-	            	fillOpacity: 0,
-	            	clickable: false 
-	            };
-	        },
+								weight: 1,
+								opacity: 1,
+								fillOpacity: 0,
+								clickable: false 
+							};
+					},
 	}).addTo(mapas);
 	// carga poligonos de municipios / delelgaciones	
 	geojsonmunCDMX =L.geoJson(munCDMX, {
 			name:'regionestodos'	,
-	        style: function (feature) {
-	            return { 
-	            	color: "navy",
+					style: function (feature) {
+							return { 
+								color: "navy",
 					//fillColor: "gray",
 					fillColor: 'lightgreen',//getColor(checkTotal_mpo2(feature.properties.EDOMUN)),
-	            	weight: 1,
-	            	opacity: 0.4,
-	            	fillOpacity: 0,
-	            	clickable: false 
-	            };
-	        }
+								weight: 1,
+								opacity: 0.4,
+								fillOpacity: 0,
+								clickable: false 
+							};
+					}
 	}).addTo(mapas);
 	// carga polígonos de colonias
 	geojsonCOLCDMX =L.geoJson(colCDMX, {
-	        style: function (feature) {
-		            return { 
-		            	color: "black",
-		            	fillColor: 'pink',//getColor2(checkTotal_reg2(layer.feature.properties.ENTREG,4),imunac_breakr,imunac_colors),
-		            	weight: 0,
-		            	fill: true,
-		            	opacity: 0,
-		            	fillOpacity: 0,
-		            	clickable: false 
-		            };
-	        }
+					style: function (feature) {
+								return { 
+									color: "black",
+									fillColor: 'pink',//getColor2(checkTotal_reg2(layer.feature.properties.ENTREG,4),imunac_breakr,imunac_colors),
+									weight: 0,
+									fill: true,
+									opacity: 0,
+									fillOpacity: 0,
+									clickable: false 
+								};
+					}
 	}).addTo(mapas);
 	// zoom al layer del poligono CDMX
-    mapas.fitBounds(geojsonCDMX.getBounds());
+		mapas.fitBounds(geojsonCDMX.getBounds());
 
 }
 
 //VERIFICADO  ajusta mapas de acuerdo a la colonia seleccionada
-function muestramap(coloniaLong,largo){
-	console.log("ando por :" + coloniaLong);
+function muestramap( coloniaLong, largo ) {
 	actCOL = ""
-	if( mapas.hasLayer(geojsonCOLCDMX)){
+	if( mapas.hasLayer(geojsonCOLCDMX) ){
 		mapas.removeLayer(geojsonCOLCDMX);
 	}	 
 
 
-	geojsonCOLCDMX =L.geoJson(colCDMX, {
+	geojsonCOLCDMX = L.geoJson(colCDMX, {
 
-	        style: function (feature) {
-		            return { 
-		            	color: "#000000",
-		            	fillColor: 'blue',
-		            	weight: 3,
-		            	fill: true,
-		            	opacity: 0.6,
-		            	fillOpacity: 0.3,
-		            	clickable: false 
-		            };
-	        },
-		    onEachFeature(feature, layer) {
-		    layer.on({
-		        mouseover: //highlightFeatureR,
-		          function (layer){
-		          	var layerM = layer.target
-		        	layerM.setStyle({
-				        color: '#9999ff',
-				        weight: 2,
-				        fillColor: 'crimson',
-				        opacity : 1,
-				        fillOpacity: 0.2,
-				        clickable: true 
-				    });
+					style: function (feature) {
+								return { 
+									color: "#000000",
+									fillColor: 'blue',
+									weight: 3,
+									fill: true,
+									opacity: 0.6,
+									fillOpacity: 0.3,
+									clickable: false 
+								};
+					},
+				onEachFeature(feature, layer) {
+				layer.on({
+						mouseover: //highlightFeatureR,
+							function (layer){
+								var layerM = layer.target
+							layerM.setStyle({
+								color: '#9999ff',
+								weight: 2,
+								fillColor: 'crimson',
+								opacity : 1,
+								fillOpacity: 0.2,
+								clickable: true 
+						});
 
-		        },
+						},
 
-		        mouseout: //resetHighlightBR,
-		          function (layer){
-		        			var layerM = layer.target
-						        layerM.setStyle({
-				            	color: "#000000",
-				            	fillColor: 'blue',
-				            	weight: 3,
-				            	fill: true,
-				            	opacity: 0.6,
-				            	fillOpacity: 0.3,
-						    });
-						   $("#descMZA").text("");     
+						mouseout: //resetHighlightBR,
+							function (layer){
+									var layerM = layer.target
+										layerM.setStyle({
+											color: "#000000",
+											fillColor: 'blue',
+											weight: 3,
+											fill: true,
+											opacity: 0.6,
+											fillOpacity: 0.3,
+								});
+							 $("#descMZA").text("");     
 					//map2tbl('nada',"#TablaPilar")
 					//$('#mmre_sel').text("");
 
-		        },
-		        //click: zoomToFeatureR
-		        click: //highlightFeatureR,
-		        	console.log("has dado click")
+						},
+						//click: zoomToFeatureR
+						click: //highlightFeatureR,
+							console.log("click")
 					//mapLI.fitBounds(geojsonmunicipioLI3.getBounds())
-		    });
+				});
 		},	        
 		
-		    filter: function(feature, layer) {
-		    	var llaves= feature.properties.D_ASENTA2 + " -" + feature.properties.MUN_NAME + "- " +feature.properties.D_CP;
-		    	if (largo == false){
-		    		llaves = feature.properties.D_CP;
-		    	};
-		        if ( llaves=== coloniaLong){
-		        	propLAV = (feature.properties.VPH_LAVAD/feature.properties.VIVTOT); 
-		        	PropWC =  (feature.properties.VPH_EXCSA/feature.properties.VIVTOT); 
-	        		idxCUMD	= feature.properties.DIDXCUM;
+				filter: function(feature, layer) {
+					var llaves= feature.properties.D_ASENTA2 + " -" + feature.properties.MUN_NAME + "- " +feature.properties.D_CP;
+					if (largo == false){
+						llaves = feature.properties.D_CP;
+					};
+						if ( llaves=== coloniaLong){
+							propLAV = (feature.properties.VPH_LAVAD/feature.properties.VIVTOT); 
+							PropWC =  (feature.properties.VPH_EXCSA/feature.properties.VIVTOT); 
+							idxCUMD	= feature.properties.DIDXCUM;
 					idxCUMND	= feature.properties.NDIDXCUM;
 					idxCUMM	= feature.properties.MIDXCUM;
-	        		conProD	= feature.properties.DCONPRO;
+							conProD	= feature.properties.DCONPRO;
 					conProND	= feature.properties.NDCONPRO;
 					conProM	= feature.properties.MCONPRO;
 					tamFam = (feature.properties.POBTOT/feature.properties.VIVTOT);
@@ -496,10 +484,10 @@ function muestramap(coloniaLong,largo){
 					asentSelec = feature.properties.D_ASENTA;
 					cpSelec = feature.properties.D_CP;
 					generaRefCOL()
-		        	
-		        	return true;
-		        };
-		    }
+							
+							return true;
+						};
+				}
 		
 	}).addTo(mapas);
 
@@ -525,7 +513,6 @@ function generaRefCOL(){
 					[ Math.round(conProND * 1000,0) , math.round(refDELE[0][17]*1000,0) , math.round(refCDMX[0][17]*1000,0) ],
 					[ Math.round(conProM * 1000,0) , math.round(refDELE[0][11]*1000,0) , math.round(refCDMX[0][11]*1000,0)   ]
 					]
-		console.log(refDELE)
 		var anchos = '<col style="width:10%"><col style="width:30%"><col style="width:20%"><col style="width:20%"><col style="width:20%">'
 		var titulo = "<h4>" +  asentSelec + ", " + munSelec + "</h4>" + "<span><h6>(" + cpSelec + ")</h6></span>"
 		var encabezados1 = "<tr><th></th><th>Numeralia</th><th class='toR'>Tu colonia</th><th class='toR'>La Delegación</th> <th class='toR'>Nuestra <br> Ciudad</th></tr>"
@@ -546,12 +533,11 @@ function generaRefCOL(){
 		];
 
 var titResp= "<h5 class= 'magenta2'>Tu colonia .... la delegación ... nuestra ciudad.</h5>" + titulo
-console.log(arregoRefCOL)
 
 var numeralia = "<table class='p400'>" + anchos + encabezados1 + arregoRefCOL.slice(0, 3).map(function(z){  return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
 var quienpaga = "<table class='p400'>" + anchos + encabezados2 + arregoRefCOL.slice(3, 6).map(function(z){  return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
 var quiengasta = "<table class='p400'>" + anchos + encabezados3 + arregoRefCOL.slice(6, 9).map(function(z){ return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
-console.log(quiengasta)
+
 $("#valorRefCOL").append(titResp )
 $("#valorRefCOL").append(numeralia)
 $("#valorRefCOL").append("<h5>Cumplimiento en el pago del agua de acuerdo al tipo de uso </h5>")
@@ -586,87 +572,84 @@ var vecdeleg= emision_referencia.map(function(x){var dtl =abrev[trCP_del.indexOf
 
 
 var trace3 = {
-  name: "Doméstico",
-  hoverinfo: 'y -  x',
-  y: vecdeleg,
-  x: trdat03,
-  //text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
-  mode: 'markers',
-  marker: {
-    size:  trdat03.map( function(x){ return x * 50 + (( x- math.min(trdat03)) * 600/(math.max(trdat03)-math.min(trdat03)))}),
-    sizemode: 'area'
-  }
+	name: "Doméstico",
+	hoverinfo: 'y -  x',
+	y: vecdeleg,
+	x: trdat03,
+	//text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
+	mode: 'markers',
+	marker: {
+		size:  trdat03.map( function(x){ return x * 50 + (( x- math.min(trdat03)) * 600/(math.max(trdat03)-math.min(trdat03)))}),
+		sizemode: 'area'
+	}
 };
 
 var trace4 = {
 name: "No Doméstico",
 hoverinfo: 'y - x',
-  y: vecdeleg,
-  x: trdat04,
-  //text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
-  mode: 'markers',
-  marker: {
-    size: trdat04.map( function(x){ return x * 50 + (( x- math.min(trdat04)) * 600/(math.max(trdat04)-math.min(trdat04)))}),
-    sizemode: 'area'
-  }
+	y: vecdeleg,
+	x: trdat04,
+	//text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
+	mode: 'markers',
+	marker: {
+		size: trdat04.map( function(x){ return x * 50 + (( x- math.min(trdat04)) * 600/(math.max(trdat04)-math.min(trdat04)))}),
+		sizemode: 'area'
+	}
 };
 
 var trace5 = {
 	name: "Mixto",
 	hoverinfo: 'y - x',
 
-  y: vecdeleg,
-  x: trdat05,
-  //text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
-  mode: 'markers',
-  marker: {
-    size: trdat05.map( function(x){ return x * 50 + (( x- math.min(trdat05)) * 600/(math.max(trdat05)-math.min(trdat05)))}),
-    sizemode: 'area'
-  }
+	y: vecdeleg,
+	x: trdat05,
+	//text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
+	mode: 'markers',
+	marker: {
+		size: trdat05.map( function(x){ return x * 50 + (( x- math.min(trdat05)) * 600/(math.max(trdat05)-math.min(trdat05)))}),
+		sizemode: 'area'
+	}
 };
 
 
 var trace6 = {
-  name: "Doméstico",
-  hoverinfo: 'y - x',
-  y: vecdeleg,
-  x: trdat06,
-  //text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
-  mode: 'markers',
-  marker: {
-    size:  trdat06.map( function(x){ return x  + (( x- math.min(trdat06)) * 100/(math.max(trdat06)-math.min(trdat06)))}),
-    sizemode: 'area'
-  }
+	name: "Doméstico",
+	hoverinfo: 'y - x',
+	y: vecdeleg,
+	x: trdat06,
+	//text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
+	mode: 'markers',
+	marker: {
+		size:  trdat06.map( function(x){ return x  + (( x- math.min(trdat06)) * 100/(math.max(trdat06)-math.min(trdat06)))}),
+		sizemode: 'area'
+	}
 };
 
 var trace7 = {
 name: "No Doméstico",
 hoverinfo: 'y - x',
-  y: vecdeleg,
-  x: trdat07,
-  //text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
-  mode: 'markers',
-  marker: {
-    size: trdat07.map( function(x){ return x  + (( x- math.min(trdat07)) * 100/(math.max(trdat07)-math.min(trdat07)))}),
-    sizemode: 'area'
-  }
+	y: vecdeleg,
+	x: trdat07,
+	//text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
+	mode: 'markers',
+	marker: {
+		size: trdat07.map( function(x){ return x  + (( x- math.min(trdat07)) * 100/(math.max(trdat07)-math.min(trdat07)))}),
+		sizemode: 'area'
+	}
 };
 
 var trace8 = {
 	name: "Mixto",
 	hoverinfo: 'y - x',
-  y: vecdeleg,
-  x: trdat08,
-  //text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
-  mode: 'markers',
-  marker: {
-    size: trdat08.map( function(x){ return x  + (( x- math.min(trdat08)) * 100/(math.max(trdat08)-math.min(trdat08)))}),
-    sizemode: 'area'
-  }
+	y: vecdeleg,
+	x: trdat08,
+	//text: ['A<br>size: 40', 'B<br>size: 60', 'C<br>size: 80', 'D<br>size: 100'],
+	mode: 'markers',
+	marker: {
+		size: trdat08.map( function(x){ return x  + (( x- math.min(trdat08)) * 100/(math.max(trdat08)-math.min(trdat08)))}),
+		sizemode: 'area'
+	}
 };
-
-
-
 
 var data = [trace3,trace4,trace5]; 
 
@@ -674,23 +657,23 @@ var layout = {
 	hovermode:'compare',
 	xaxis: {        
 		title: 'Porcentaje de tomas pagadas',
-        tickformat:"%",
-    },
-  title: 'Cumplimiento por delegación en el pago de agua <br> Porcentaje de tomas pagadas',
-  showlegend: true,
-  height: 600,
-  width: 800,
-  margin: {
-    l: 150,
-    r: 50,
-    b: 100,
-    t: 100,
-    pad: 4
-  }
+				tickformat:"%",
+		},
+	title: 'Cumplimiento por delegación en el pago de agua <br> Porcentaje de tomas pagadas',
+	showlegend: true,
+	height: 600,
+	width: 800,
+	margin: {
+		l: 150,
+		r: 50,
+		b: 100,
+		t: 100,
+		pad: 4
+	}
 
 };
 
-Plotly.newPlot('plotref1', data, layout);
+// Plotly.newPlot('plotref1', data, layout);
 
 
 var data2 = [trace6,trace7,trace8];  //, trace2, trace3
@@ -699,34 +682,23 @@ var layout2 = {
 	hovermode:'compare',
 	xaxis: {        
 		title: 'Volumen de consumo de agua m<sup>3</sup>'
-    },
-  title: 'Consumo de agua por tipo de uso y delegación',
-  showlegend: true,
-  height: 600,
-  width: 800,
-  margin: {
-    l: 150,
-    r: 50,
-    b: 100,
-    t: 100,
-    pad: 4
-  }
+		},
+	title: 'Consumo de agua por tipo de uso y delegación',
+	showlegend: true,
+	height: 600,
+	width: 800,
+	margin: {
+		l: 150,
+		r: 50,
+		b: 100,
+		t: 100,
+		pad: 4
+	}
 
 };
 
-Plotly.newPlot('plotref2', data2, layout2);
-
-
-
-
-
-
-
+// Plotly.newPlot('plotref2', data2, layout2);
 }
-
-
-
-
 
 $(document).ready(function($){
 	// a partir de la información del geojson genera llaves de busqueda que se usan en la asignación de colonias
@@ -743,15 +715,26 @@ $(document).ready(function($){
 	creaDots(0,txtCuestionario.length - 0);
 
 	$("#areaInput").keydown(function(event) {
-    if (event.keyCode === 13) {
-        $("#encuesta").click();
-        $("#inputMulti").focus();
-    }
+		if (event.keyCode === 13) {
+				$("#encuesta").click();
+				$("#inputMulti").focus();
+		}
 	});
 
 	$( "#boton-comenzar" ).on( "click", function() {
 		$( "#contenedor-intro" ).addClass("hidden");
 		$( "#contenedor-preguntas" ).removeClass("hidden");
+	});
+
+	$(document).keydown(function(e) {
+		if(e.keyCode == 37) 
+		{ // left
+			pregAnterior();
+		}
+		else if(e.keyCode == 39) 
+		{ // right
+			pregSiguiente();
+		}
 	});
 
 
@@ -760,18 +743,18 @@ $(document).ready(function($){
 
 // VERIFICADO cuestionario que se presenta en la evaluacion
 var txtCuestionario =[ 
-			/*0*/	    "¿En qué colonia vives?",
+			/*0*/	    "¿En qué colonia vives?",
 			/*1*/		"¿Sabes cuánto pagas de agua?", 
 			/*2*/		"¿Cuánto pagan de agua al bimestre?",
-			/*3*/		"¿Cuántas personas viven en tu residencia?",										
-			/*4*/		"¿Cuántos minutos te toma bañarte?",
-			/*5*/		"¿Cuántas veces por semana preparas alimentos que requieran más de 30min de preparación?",
-			/*6*/		"¿Cuántas veces lavan ropa en la semana?",
-			/*7*/		"¿Cuántas veces por semana asean la casa?",
-			/*8*/		"¿Cuantas veces al mes lavan el patio?",
-			/*9*/		"¿Cuantas veces al mes lavan el auto en casa?", 
-			/*10*/		"¿Cuantas veces al mes riegan el jardín con agua de la llave?",
-			/*11*/		"¿Los sanitarios de mi residencia tienen depósitos de agua ahorradores.?"
+			/*3*/		"¿Cuántas personas viven en tu residencia?",										
+			/*4*/		"¿Cuántos minutos te toma bañarte?",
+			/*5*/		"¿Cuántas veces por semana preparas alimentos que requieran más de 30min de preparación?",
+			/*6*/		"¿Cuántas veces lavan ropa en la semana?",
+			/*7*/		"¿Cuántas veces por semana asean la casa?",
+			/*8*/		"¿Cuántas veces al mes lavan el patio?",
+			/*9*/		"¿Cuántas veces al mes lavan el auto en casa?", 
+			/*10*/		"¿Cuántas veces al mes riegan el jardín con agua de la llave?",
+			/*11*/		"¿Los sanitarios de mi residencia tienen depósitos de agua ahorradores?"
 					]
 
 // VERIFICADO  mensajes de contexto que acompañan al cuestionario
@@ -974,8 +957,8 @@ var txtRangos =[[], //cod pos
 				// NORMA Oficial Mexicana NOM-009-CNA-2001, Inodoros para uso sanitario-Especificaciones y métodos de prueba.
 				// https://www.gob.mx/cms/uploads/attachment/file/94217/NOM-010-CONAGUA-2000.pdf pruebas a 6 litros de capacidad
 				//ACUERDO mediante el cual se modifican los numerales 2, 7.1, 7.2 y 10.1 y se adiciona el numeral 6.11 Bis a la
-                 //Norma Oficial Mexicana NOM-009-CONAGUA-2001, Inodoros para uso sanitario-Especificaciones y métodos de prueba  // menos de 5 litros son ecologicos
-                 //NORMA Oficial Mexicana NOM-009-CONAGUA-2001, Inodoros para uso sanitario-Especificaciones y métodos de prueba.  // 6 litros maximo
+								 //Norma Oficial Mexicana NOM-009-CONAGUA-2001, Inodoros para uso sanitario-Especificaciones y métodos de prueba  // menos de 5 litros son ecologicos
+								 //NORMA Oficial Mexicana NOM-009-CONAGUA-2001, Inodoros para uso sanitario-Especificaciones y métodos de prueba.  // 6 litros maximo
 				]
 
 
@@ -998,21 +981,21 @@ var txtRecomendaciones =[
 
 
 // VERIFICADO array en el que se cargan los valores evaluados 
-var txtEvaluacion = [ ["0 Consumo de agua suficiente considerando " + consumooptimo +" litros diarios por persona",0,0,0,""],
-					 ["",0,0,0,""],
-					 ["",0,0,0,""],
-					 ["",0,0,0,""],
-					 ["Aseo personal",0,0,0,""],
-					 ["Preparacion de alimentos",0,0,0,""],
-					 ["Lavado de la ropa",0,0,0,""],
-					 ["Limpieza del hogar",0,0,0,""],
-					 ["Aseo del patio ",0,0,0,""],
-					 ["Lavado del automóvil",0,0,0,""],
-					 ["Riego del jardín",0,0,0,""],
-					 ["Saneamiento de inodoro (WC)",0,0,0,""],
-					 ["CONSUMO TOTAL",0,0,0,""]]
-
-
+var txtEvaluacion = [ 
+						["0 Consumo de agua suficiente considerando " + consumooptimo +" litros diarios por persona",0,0,0,""],
+						[ "", 0, 0, 0, "" ],
+						[ "",0,0,0,"" ],
+						[ "",0,0,0,"" ],
+						[ "Aseo personal",0,0,0,"", 'A. ' ],
+						[ "Preparacion de alimentos",0,0,0,"", 'B. ' ],
+						[ "Lavado de la ropa",0,0,0,"", 'C. ' ],
+						[ "Limpieza del hogar",0,0,0,"", 'D. ' ],
+						[ "Aseo del patio ",0,0,0,"", 'E. ' ],
+						[ "Lavado del automóvil",0,0,0,"", 'F. ' ],
+						[ "Riego del jardín",0,0,0,"", 'G. ' ],
+						[ "Saneamiento de inodoro",0,0,0,"", 'H. ' ],
+						[ "<span class='font-size-27'>Total</span>",0,0,0,"", '', '' ]
+					 ];
 
 // VERIFICADO  Realiza la evalaucion de lar respuestas, genera el grafico, elige recomendaciones
 function evaluaConsumo(){
@@ -1104,7 +1087,7 @@ function evaluaConsumo(){
 
 	txtEvaluacion[12][1] = txtEvaluacion.slice(4,12).reduce(function (r, a) {a.forEach(function (b, i) {r[i] = (r[i] || 0) + b;});return r;}, [])[1];
 	txtEvaluacion[12][2] = txtEvaluacion.slice(4,12).reduce(function (r, a) {a.forEach(function (b, i) {r[i] = (r[i] || 0) + b;});return r;}, [])[2];
-    txtEvaluacion[12][3] = txtEvaluacion.slice(4,12).reduce(function (r, a) {a.forEach(function (b, i) {r[i] = (r[i] || 0) + b;});return r;}, [])[3];
+		txtEvaluacion[12][3] = txtEvaluacion.slice(4,12).reduce(function (r, a) {a.forEach(function (b, i) {r[i] = (r[i] || 0) + b;});return r;}, [])[3];
 
  // colorea la tabla de acuerdo a la catergoria de consumo
 	txtEvaluacion.map(function(z,i){ 
@@ -1120,22 +1103,22 @@ function evaluaConsumo(){
 	$('#pastelote').empty();
 	var cali=["nada","Responsable","Sobrado","Preocupante","Negligente","todos"]
 
-    var dataSetXcon2 = txtEvaluacion.map(function(x,i){ if (i > 3 & i < 12){return '<ul>'+txtRecomendaciones[i][cali.indexOf(x[4])].map(function(y){return '<li>'+y+'</li>'}) + '</ul>'} }).clean(undefined) 
+		var dataSetXcon2 = txtEvaluacion.map(function(x,i){ if (i > 3 & i < 12){return '<ul>'+txtRecomendaciones[i][cali.indexOf(x[4])].map(function(y){return '<li>'+y+'</li>'}) + '</ul>'} }).clean(undefined) 
 
 	var data = [{
 		name: 'Distribucion',
 		
 		mpo: dataSetXcon2,
 		values:[
-		        txtEvaluacion[4][1]*100/txtEvaluacion[12][1],
-		        txtEvaluacion[5][1]*100/txtEvaluacion[12][1],
-		        txtEvaluacion[6][1]*100/txtEvaluacion[12][1],
-		        txtEvaluacion[7][1]*100/txtEvaluacion[12][1],
-		        txtEvaluacion[8][1]*100/txtEvaluacion[12][1],
-		        txtEvaluacion[9][1]*100/txtEvaluacion[12][1],
-		        txtEvaluacion[10][1]*100/txtEvaluacion[12][1],
-		        txtEvaluacion[11][1]*100/txtEvaluacion[12][1]
-		        ],
+						txtEvaluacion[4][1]*100/txtEvaluacion[12][1],
+						txtEvaluacion[5][1]*100/txtEvaluacion[12][1],
+						txtEvaluacion[6][1]*100/txtEvaluacion[12][1],
+						txtEvaluacion[7][1]*100/txtEvaluacion[12][1],
+						txtEvaluacion[8][1]*100/txtEvaluacion[12][1],
+						txtEvaluacion[9][1]*100/txtEvaluacion[12][1],
+						txtEvaluacion[10][1]*100/txtEvaluacion[12][1],
+						txtEvaluacion[11][1]*100/txtEvaluacion[12][1]
+						],
 		labels: [ txtEvaluacion[4][4] + "<br> gastas "+ math.round(txtEvaluacion[4][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[4][2] /60.8 / txtRespuestas[3][1],0) +" litros",
 				txtEvaluacion[5][4] + "<br> gastas "+ math.round(txtEvaluacion[5][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[5][2] /60.8 / txtRespuestas[3][1],0) +" litros",
 				txtEvaluacion[6][4] + "<br> gastas "+ math.round(txtEvaluacion[6][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[6][2] /60.8 / txtRespuestas[3][1],0) +" litros",
@@ -1145,17 +1128,17 @@ function evaluaConsumo(){
 				txtEvaluacion[10][4] + "<br> gastas "+ math.round(txtEvaluacion[10][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[10][2] /60.8 / txtRespuestas[3][1],0) +" litros",
 				txtEvaluacion[11][4] + "<br> gastas "+ math.round(txtEvaluacion[11][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[11][2] /60.8 / txtRespuestas[3][1],0) +" litros"
 				],
-	    hoverinfo: 'label',
+			hoverinfo: 'label',
 		text: [
-		        'Regadera',
-		        'Cocinar',
-		        'Lavar ropa',
-		        'Aseo del hogar',
-		        'Lavar patio',
-		        'Lavar el auto',
-		        'Regar jardín',
-		        'Inodoro'
-		    ],
+						'Regadera',
+						'Cocinar',
+						'Lavar ropa',
+						'Aseo del hogar',
+						'Lavar patio',
+						'Lavar el auto',
+						'Regar jardín',
+						'Inodoro'
+				],
 		type: 'pie',
 		
 		rotation: 90,
@@ -1167,10 +1150,12 @@ function evaluaConsumo(){
 		}
 		}];
 
+		console.log(data);
+
 		var layout = {
-		  title: 'Resultados Personales <b>' + math.round(txtEvaluacion[12][1] /60.8 / txtRespuestas[3][1],2) + '</b> litros diarios por persona.',
-		  height: 550,
-		  width: 500
+			title: 'Resultados Personales <b>' + math.round(txtEvaluacion[12][1] /60.8 / txtRespuestas[3][1],2) + '</b> litros diarios por persona.',
+			height: 550,
+			width: 500
 		};
 
 
@@ -1178,52 +1163,50 @@ function evaluaConsumo(){
 
 		var elemento = 'pastelote';
 		var hovinfo = "hoverinfo01";
-        var algo = data;
-        var datosextra = []
-        var hoverInfo2 = document.getElementById(hovinfo)
-        var myPlot2 = document.getElementById(elemento)
+				var algo = data;
+				var datosextra = []
+				var hoverInfo2 = document.getElementById(hovinfo)
+				var myPlot2 = document.getElementById(elemento)
 
-     // acciona mostrar mensaje de recomendacion on hover 
-        myPlot2.on('plotly_hover', function(algo){
-            var infotext = algo.points.map(function(d){
-              //console.log( d );
-              var pesos="";
-              if(txtRespuestas[1][1]=='SI'){pesos = txtRespuestas[2][1] * d.value / 100 };
-              var mensaje = ( "<h5>Consumo de agua  " + d.text + " " + math.round(d.value,1) + "%" + (txtRespuestas[1][1]=="SI" ? " ($" + math.round(pesos,2) +")" : "") + "<br> categoría de uso: " + txtEvaluacion[d.i+4][4] + "</h5>" );
+		 // acciona mostrar mensaje de recomendacion on hover 
+				myPlot2.on('plotly_hover', function(algo){
+						var infotext = algo.points.map(function(d){
+							console.log( 'd: ');
+							console.log(d);
+							console.log( 'data: ');
+							console.log(data);
+							var pesos="";
+							if(txtRespuestas[1][1]=='SI'){pesos = txtRespuestas[2][1] * d.v / 100 };
+							var mensaje = ( "<h5>Consumo de agua  " + d.text + " " + (txtRespuestas[1][1]=="SI" ? " ($" + math.round(pesos,2) +")" : "") + "<br> categoría de uso: " + txtEvaluacion[d.i+4][4] + "</h5>" );
+							// var mensaje = 'mensaje';
 
-              $("#imgConcep").attr('src','img/'+listaimg[d.i+3] );
-              var datosextra = d.data.mpo[d.pointNumber].toString().replace(/>,</g,'><');
-              var sali = {msg:mensaje,dta:datosextra};
-              //console.log(sali)
-              return sali;
-              
-            });
-            hoverinfo01.innerHTML = infotext[0].msg +"<hr> <h6>Recomendaciones</h6>" + infotext[0].dta;
-        })
-         .on('plotly_unhover', function(algo){
+							$("#imgConcep").attr('src','img/'+listaimg[d.i+3] );
+							var datosextra = data[0].mpo[d.i].toString().replace(/>,</g,'><');
+							 // var datosextra = 'datosextra';
+							var sali = {msg:mensaje,dta:datosextra};
+							//console.log(sali)
+							return sali;
+							
+						});
+						hoverinfo01.innerHTML = infotext[0].msg +"<hr> <h6>Recomendaciones</h6>" + infotext[0].dta;
+				})
+				 .on('plotly_unhover', function(algo){
 
-            hoverinfo01.innerHTML = '-';
-            $("#imgConcep").attr('src',"" );
-        });
+						hoverinfo01.innerHTML = '-';
+						$("#imgConcep").attr('src',"" );
+				});
 }
-
-
-
-
-
-
-
 
 // VERIFICADO integra los valores de las colonias en el selector 
 function creaColInput(pregunta){
-  var listadecolonias = listacol.map(function(x){ return  "<option value='" + x[2] + " -" + x[1] + "- " +x[0] + "'></option>" })
-  salidaopt= "<datalist id='coloniasopt'>" + listadecolonias + "</datalist>";
-  salida = '<div class="row">'+
+	var listadecolonias = listacol.map(function(x){ return  "<option value='" + x[2] + " -" + x[1] + "- " +x[0] + "'></option>" })
+	salidaopt= "<datalist id='coloniasopt'>" + listadecolonias + "</datalist>";
+	salida = '<div class="row">'+
 				'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">' +
-			       '<input id="lstCol"  class="awesomplete wfull" list="coloniasopt"  data-minChars="3" data-maxItems="15"  onfocusout="verificaColonia()" />' + salidaopt +
+						 '<input id="lstCol"  class="awesomplete wfull" list="coloniasopt"  data-minChars="3" data-maxItems="15"  onfocusout="verificaColonia()" />' + salidaopt +
 				'</div>'+
 			'</div>';
-  //return salida;	
+	//return salida;	
  $('#inputCOL').append(salida);
 
 }
@@ -1232,32 +1215,45 @@ function creaColInput(pregunta){
 // VERIFICADO evalua el cambio en la seleccion del selector de colonias
 function verificaColonia() {
 	console.log('verificaColonia');
-	var cali= lstCol.value
+	
+	cali= lstCol.value
+	console.log('cali: ' + cali);
+	
 	var cpO= cali.substr(cali.length - 5);
-	  if (arrVals.indexOf(lstCol.value) !=(-1)){
-		  muestramap(lstCol.value,true) 
-		  
-		  asignaRespuesta(1,0,this.lstCol.value)
-	  }else {
-	  	if(arrVals2.indexOf(cpO) !=(-1)){
-		   muestramap(cpO,false) 
-		  
-		  asignaRespuesta(1,0,this.lstCol.value)
-	  	}else{
-		  	mapas.fitBounds(geojsonCDMX.getBounds());
-	  	};
-};
+	console.log('cpO: ' + cpO);
+
+	if (arrVals.indexOf(lstCol.value) !=(-1))
+	{
+		console.log('pasa verificación valor lstCol');
+		muestramap(lstCol.value,true) 
+		
+		asignaRespuesta(1,0,this.lstCol.value)
+	}
+	else
+	{
+		if(arrVals2.indexOf(cpO) !=(-1))
+		{
+			console.log('pasa verificación cp0');
+			muestramap(cpO,false) 
+			asignaRespuesta(1,0,this.lstCol.value)
+		}
+		else
+		{
+			console.log('no pasa verificación cp0');
+			mapas.fitBounds(geojsonCDMX.getBounds());
+		}
+	}
 }; 
 
 
-// VERIFICADO crea codigo HTML ajustado para generar los botores SI NO 
+// VERIFICADO crea codigo HTML ajustado para generar los botones SI NO 
 function creaSNbtn(preg){
-  var salida = '<div class="row btns-si-no" id="btsn">'+
+	var salida = '<div class="row btns-si-no" id="btsn">'+
 					 '<div class="col-md-12 ">'+
 						'<input id="btn-SI" name="grpSN" type="radio" value= "SI" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-SI">Si</label>'+
 						'<input id="btn-NO" name="grpSN" type="radio" value = "NO" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-NO">No</label>'+
 					 '</div>'+
-			    '</div>';
+					'</div>';
 	return salida;
 }
 
@@ -1266,10 +1262,10 @@ function creaSNbtn(preg){
 function creaInptSlider(incr, mini,maxi,defa,swch,msg,preg){
 	var salida = '<div class ="row">'+
 						'<div class="col-md-12 text-center">' +
-                 			'<input id="inputMultiB" type="number"  min="'+mini+'" max="'+maxi+'" value="'+defa+'" oninput="ajustaInp('+preg+',this.value)" />'+
-                 			'<input id="inputMulti" type="range"  min="'+mini+'" max="'+maxi+'" step="'+incr+'" oninput="ajustaBInp('+preg+',this.value)"   />'+
-                 		'</div>'+
-                 	'</div>';
+											'<input id="inputMultiB" type="number"  min="'+mini+'" max="'+maxi+'" value="'+defa+'" oninput="ajustaInp('+preg+',this.value)" />'+
+											'<input id="inputMulti" type="range"  min="'+mini+'" max="'+maxi+'" step="'+incr+'" oninput="ajustaBInp('+preg+',this.value)"   />'+
+										'</div>'+
+									'</div>';
 
 	if (swch==true){
 		var cls ='class="colmagt"'
@@ -1278,11 +1274,11 @@ function creaInptSlider(incr, mini,maxi,defa,swch,msg,preg){
 		}
 		var ckh='<div class= "row switch-slider">'+
 							'<div class="col-md-12 text-center">' +
+								'<p '+cls+' >'+msg+'</p>'+
 								'<label class="switch">'+
 									' <input id= "sldchk" type="checkbox" onclick="asignaRespuesta(2,'+preg+',this.checked)"> '+
 									'<span class="slider round "></span>'+
 								'</label>'+
-								'<p '+cls+' >'+msg+'</p>'+
 							'</div>'+					
 				'</div>';
 		salida = salida + ckh;				
@@ -1332,24 +1328,66 @@ function creaDots(verdes,grises){
 // VERIFICADO visualiza una tabla con las respuesta proporcionadas
 function mostrarRespuestas(){
 	$("#Respuestas").empty();
-	var titResp= "<h5 class= 'magenta2'>Información proporcionada . . .</h5><p>Cambia las respuestas visualizando la pregunta deseada</p> "
-	//var valores = "<table class= 'respues'>" + txtRespuestas.map(function(z){return "<tr>" + z.map(function(ss){return "<td class='res'>" + ss + "</td>"}) +"</tr>"}).toString().replace(/,/g,'') + "</table>"
-	//var valores = "<table class= 'respues'>" + txtRespuestas.map(function(z,i){return "<tr>" + "<td class=' " + cssAtr[i] + "'>" + z[0] +  "</td>"  +"<td class='res'>" + z[1] + (i>=3 & i<6 ?  (txtRespuestas[i][2] == true ? " c/ahorro " : "") : "") +  "</td>" +"</tr>"}).toString().replace(/,/g,'').replace(/undefined/g,'') + "</table>"
-	var valores = "<table class= 'respues'>" + txtRespuestas.map(function(z,i){return "<tr><td>" +  z[0] +  "</td>"  +"<td class='res'>" + z[1] +   "</td>" + "<td>" + (isInArray(i,[4,5,6,7,8,9,10]) ?  txtRespuestas[i][2]  : "") +  "</td>" +"</tr>"}).toString().replace(/,/g,'').replace(/undefined/g,'') + "</table>"
-	$("#Respuestas").append(titResp+valores)
+	var titResp = '<h2 class="titulo-resultados bottom-buffer-50">Evaluación del consumo de agua en tu hogar</h2>';
+	titResp += '<h3 class="subtitulo-resultados">Conoce el consumo bimestral de agua de tu hogar</h3>';
 
+	var valores = '';
+	
+	// var valores = "<table class= 'respues'>" + txtRespuestas.map(function(z){return "<tr>" + z.map(function(ss){return "<td class='res'>" + ss + "</td>"}) +"</tr>"}).toString().replace(/,/g,'') + "</table>";
+	
+	// var valores = "<table class= 'respues'>" + txtRespuestas.map(function(z,i){return "<tr>" + "<td class=' " + cssAtr[i] + "'>" + z[0] +  "</td>"  +"<td class='res'>" + z[1] + (i>=3 & i<6 ?  (txtRespuestas[i][2] == true ? " c/ahorro " : "") : "") +  "</td>" +"</tr>"}).toString().replace(/,/g,'').replace(/undefined/g,'') + "</table>";
+	
+	// var valores = "<table class= 'respues'>" + txtRespuestas.map(function(z,i){return "<tr><td>" +  z[0] +  "</td>"  +"<td class='res'>" + z[1] +   "</td>" + "<td>" + (isInArray(i,[4,5,6,7,8,9,10]) ?  txtRespuestas[i][2]  : "") +  "</td>" +"</tr>"}).toString().replace(/,/g,'').replace(/undefined/g,'') + "</table>";
+	
+	$("#Respuestas").append( titResp + valores );
 }
 
-// VERIFICADO muestra la tabla con la información de la evaluacion del consulo y los niveles de referencia 
+// VERIFICADO muestra la tabla con la información de la evaluacion del consumo y los niveles de referencia 
 //            de un consumo responsable y un consumo negligente 
 function mostrarEvaluado(){
 	$("#Evaluados").empty();
-	var titResp= "<h5 class= 'magenta2'>Evaluación del consumo a partir de sus respuestas  </h5><p></p> "
-	var encabedado = "<tr><th></th><th>Segmento de consumo</th><th class='toR'>Límite <br> Optimo</th><th class='toR'>Tu consumo <br> bimestral </th><th class='toR'>Límite <br>Negligente</th><th class='toR'> Categoria de <br> consumo</th></tr>"
-	var anchos = '<col style="width:7%"><col style="width:33%"><col style="width:15%"><col style="width:15%"><col style="width:15%"><col style="width:15%">'
-	var valores = "<table class= 'respues'> " + anchos + encabedado  +txtEvaluacion.slice(4, 13).map(function(z,i){ return "<tr><td class='"+ z[4]+"'><img  src= 'img/"+ listaimg[i+3] +"' height='35px'></td><td>" +  z[0] +  "</td>"  +"<td class='res'>" + (z[2].toLocaleString()) +   "</td>" +"<td class='res'>" + z[1].toLocaleString() +   "</td>" +"<td class='res'>" + z[3].toLocaleString() +   "</td>" +"<td class='res'>" + z[4] +   "</td>" + "<td>" +    "</td>" +"</tr>" }).toString().replace(/,</g,'<').replace(/>,/g,'>') + "</table>" //.replace(/undefined/g,'')
-	var contenido =  "<div class= 'row'><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>"+valores+"</div>"
-	$("#Evaluados").append(titResp+contenido +"<p style='width:900px'>Para el límite óptimo se consideran 130 litros diarios por persona y para el nivel negligente 673.5 litros diarios por persona </p>")
+
+	var valores = "<div class='table-responsive'><table class='table table-borderless respues font-size-18'> " + txtEvaluacion.slice(4, 13).map(function(z,i){ return "<tr><td id='letra' class='font-weight-black'>" + z[5] + "</td>" + "<td>" +  z[0] +  "</td>" + "<td id='etiqueta-categoria-consumo' class='res "+ z[4]+"'>" + z[4] +   " </td>" + "<td class='text-right'><img src='img/barra-consumo-" + z[4] + ".svg' /></td>" + "<td id='tu-consumo-bimestral' class='res font-space-mono font-size-14 text-grey'>" + z[1].toLocaleString() +   " l</td></tr>" }).toString().replace(/,</g,'<').replace(/>,/g,'>') + "</table></div>";
+	
+	var contenido =  valores;
+
+	$("#Evaluados").append( contenido );
+
+	var tuConsumo = txtEvaluacion[12][1];
+	var tuConsumoHeight = tuConsumo / 420 * .100;
+	tuConsumoHeight = tuConsumoHeight.toFixed(2);
+
+	var consumoColonia = matrixRef[6][0];
+	var consumoColoniaHeight = consumoColonia / 420 * .100;
+	consumoColoniaHeight = consumoColoniaHeight.toFixed(2);
+
+	var consumoDelegacion = matrixRef[6][1];
+	var consumoDelegacionHeight = consumoDelegacion / 420 * .100;
+	consumoDelegacionHeight = consumoDelegacionHeight.toFixed(2);
+
+	var consumoCiudad = matrixRef[6][2];
+	var consumoCiudadHeight = consumoCiudad / 420 * .100;
+	consumoCiudadHeight = consumoCiudadHeight.toFixed(2);
+
+	var caliEspacios = cali.split(' ');
+	var nombreColonia = caliEspacios.shift();
+
+	var caliGuiones = cali.split('-');
+	var nombreDelegacion = caliGuiones[1];
+
+	console.log( matrixRef );
+	console.log( 'colonia: ' );
+	console.log( nombreColonia );
+	console.log( 'delegación: ' );
+	console.log( nombreDelegacion );
+
+	console.log( tuConsumo, consumoColonia, consumoDelegacion, consumoCiudad );
+	console.log( tuConsumoHeight, consumoColoniaHeight, consumoDelegacionHeight, consumoCiudadHeight );
+
+	$('#barra-tu-consumo').css( 'bottom', '-' + tuConsumoHeight + '%' );
+	$('#barra-consumo-colonia').css( 'bottom', '-' + consumoColoniaHeight + '%' );
+	$('#barra-consumo-delegacion').css( 'bottom', '-' + consumoDelegacionHeight + '%' );
+	$('#barra-consumo-ciudad').css( 'bottom', '-' + consumoCiudadHeight + '%' );
 }
 
 /**
@@ -1375,13 +1413,13 @@ function saveAjaxQuestion(txtRespuestas, nvaPreg)
 
 // VERIFICADO elimina los casos indefined del array generado
 Array.prototype.clean = function(deleteValue) {
-  for (var i = 0; i < this.length; i++) {
-    if (this[i] == deleteValue) {         
-      this.splice(i, 1);
-      i--;
-    }
-  }
-  return this;
+	for (var i = 0; i < this.length; i++) {
+		if (this[i] == deleteValue) {         
+			this.splice(i, 1);
+			i--;
+		}
+	}
+	return this;
 };
 
 
@@ -1391,30 +1429,30 @@ Array.prototype.clean = function(deleteValue) {
 function rgb2hex(rgb){
  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
  return (rgb && rgb.length === 4) ? "#" +
-  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
+	("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+	("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+	("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
 }
 
 
 // VERIFICADO ordena los elementos de un array 
 function sortNumber(a,b) {
-    return Number(a) - Number(b);
+		return Number(a) - Number(b);
 }
 
 
 // VERIFICADO dado un array nos indica el corte en el percentil indicado
 function quantile(array, percentile) {
-    array.sort(sortNumber);
-    index = percentile/100.0 * (array.length-1);
-    if (Math.floor(index) == index) {
-    	result = Number(array[index]);
-    } else {
-        i = Math.floor(index)
-        fraction = index - i;
-        result = Number(array[i]) + (Number(array[i+1]) - Number(array[i])) * fraction;
-    }
-    return result;
+		array.sort(sortNumber);
+		index = percentile/100.0 * (array.length-1);
+		if (Math.floor(index) == index) {
+			result = Number(array[index]);
+		} else {
+				i = Math.floor(index)
+				fraction = index - i;
+				result = Number(array[i]) + (Number(array[i+1]) - Number(array[i])) * fraction;
+		}
+		return result;
 }
 
 
@@ -1424,7 +1462,7 @@ function quantile(array, percentile) {
 /// 75 3er cuartil  97 es para el corte muy alto
 
 function logArrayElements(element, index, array) {
-    console.log(element + " --> " + quantile(data, element));
+		console.log(element + " --> " + quantile(data, element));
 }
 
 //VERIFICADO equivalente a anterior sin uso de foreach
@@ -1436,5 +1474,3 @@ function cortesqtl(data){
 	var cortes = [c1,c2,c3,c4];
 	return cortes;
 };
-
-
