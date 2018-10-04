@@ -1354,19 +1354,19 @@ function mostrarEvaluado(){
 	$("#Evaluados").append( contenido );
 
 	var tuConsumo = txtEvaluacion[12][1];
-	var tuConsumoHeight = tuConsumo / 1000;
+	var tuConsumoHeight = tuConsumo / 420;
 	tuConsumoHeight = tuConsumoHeight.toFixed(2);
 
 	var consumoColonia = matrixRef[6][0];
-	var consumoColoniaHeight = consumoColonia / 1000;
+	var consumoColoniaHeight = consumoColonia / 420;
 	consumoColoniaHeight = consumoColoniaHeight.toFixed(2);
 
 	var consumoDelegacion = matrixRef[6][1];
-	var consumoDelegacionHeight = consumoDelegacion / 1000;
+	var consumoDelegacionHeight = consumoDelegacion / 420;
 	consumoDelegacionHeight = consumoDelegacionHeight.toFixed(2);
 
 	var consumoCiudad = matrixRef[6][2];
-	var consumoCiudadHeight = consumoCiudad / 1000;
+	var consumoCiudadHeight = consumoCiudad / 420;
 	consumoCiudadHeight = consumoCiudadHeight.toFixed(2);
 
 	var caliEspacios = cali.split(' ');
