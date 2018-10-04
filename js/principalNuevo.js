@@ -711,7 +711,7 @@ $(document).ready(function($){
 	$("#preguntas").text(txtCuestionario[0]);
 	$("#contexto").text(txtContexto[0]);
 
-	creaColInput(0);
+	creaColInput(2);
 	creaDots(0,txtCuestionario.length - 0);
 
 	$("#areaInput").keydown(function(event) {
@@ -724,6 +724,7 @@ $(document).ready(function($){
 	$( "#boton-comenzar" ).on( "click", function() {
 		$( "#contenedor-intro" ).addClass("hidden");
 		$( "#contenedor-preguntas" ).removeClass("hidden");
+		muestraPreg( pregActiva );
 	});
 
 	$(document).keydown(function(e) {
@@ -743,6 +744,8 @@ $(document).ready(function($){
 
 // VERIFICADO cuestionario que se presenta en la evaluacion
 var txtCuestionario =[ 
+						"En tu opinión, el consumo de agua en tu casa es:",
+						"En tu opinión, ¿cómo es el suministro de agua en tu hogar",
 			/*0*/	    "¿En qué colonia vives?",
 			/*1*/		"¿Sabes cuánto pagas de agua?", 
 			/*2*/		"¿Cuánto pagan de agua al bimestre?",
@@ -759,6 +762,8 @@ var txtCuestionario =[
 
 // VERIFICADO  mensajes de contexto que acompañan al cuestionario
 var txtContexto =[ 
+						"",
+						"",
 			/*0*/		"Con esta información podemos comparar tu consumo general con el de tus vecinos.",
 			/*1*/		'Responder si / no',
 			/*2*/		"Indique el importe total pagado",
@@ -774,39 +779,59 @@ var txtContexto =[
 					]
 
 // VERIFICADO  array de espuestas en default que se consideran cuando presina siguiente sin elegor
-var defaults= ['--', //0
-				"SI", //1
-				390, //2
-				4, //3
-				12,//4
-				6,//5
+// var defaults= ['--', //0
+// 				"SI", //1
+// 				390, //2
+// 				4, //3
+// 				12,//4
+// 				6,//5
+// 				4,//6
+// 				5,//7
+// 				2,//8
+// 				2,//9
+// 				4,//10
+// 				'NO'//11
+// 				]
+
+var defaults= [
+				"bueno", //0
+				"bueno", //1
+				'--', //2
+				"SI", //3
+				150, //4
+				2, //5
 				4,//6
 				5,//7
-				2,//8
-				2,//9
-				4,//10
-				'NO'//11
+				1,//8
+				1,//9
+				1,//10
+				2,//11
+				4,//12
+				'SI'//13
 				]
 
 // VERIFICADO array de instrucciones que genera las vistas HTML dependiendo de la pregunta
 var txtTipoInput =[ 
-					"",//este input es fijo y se oculta / muestra, 
-					creaSNbtn(1),
-					creaInptSlider(10, 30,5000,	defaults[1],false,'',2),
-					creaInptSlider(1, 1,20,defaults[3],false,'',3),
-					creaInptSlider(1, 3,30,defaults[4],true,'Recupero el agua en cubeta en lo que sale caliente y/o Mi regadera es Ahorradora.',4),
-					creaInptSlider(1, 0,21,defaults[5],true,'La llave de la tarja es ahorradora y/o Tengo sistema de trampa de  grasa instalado en la cocina.',5),
-					creaInptSlider(1, 0,30,defaults[6],true,'Tengo lavadora de carga frontal con  sistema de reutilización de agua.',6),
-					creaInptSlider(1, 0,10,defaults[7],true,'Reutilizo el agua de enjuague de la lavadora para el aseo de la casa',7),
-					creaInptSlider(1, 0,30,defaults[8],true,'Reutilizo el agua de enjuague de la lavadora para lavar el patio',8),
-					creaInptSlider(1, 0,30,defaults[9],true,'Reutilizo el agua de enjuague de la lavadora para lavar el automóvil',9),
-					creaInptSlider(1, 0,30,defaults[10],true,'Reutilizo el agua de enjuague de la lavadora para riego y/o riego después de las 5 de la tarde',10),
-					creaSNbtn(11) 
-					//'<span>NO<input type="range" id="inputMulti" data-slider-step="1" min="0" max="1" oninput="verifica(7,0,1,true)">SI</span>'
+					creaOpcionMultipleConsumo(0),
+					creaOpcionMultipleSuministro(1),
+					"",//este es el input de COLONIA es fijo. Se construye en con esta funcíon creaColInput(). Se muestra o se oculta al final de muestraPreg().
+					creaSNbtn(3),
+					creaInptSlider(10, 30,5000,	defaults[4],false,'',4),
+					creaInptSlider(1, 1,20,defaults[5],false,'',5),
+					creaInptSlider(1, 3,30,defaults[6],true,'Recupero el agua en cubeta en lo que sale caliente y/o Mi regadera es Ahorradora.',6),
+					creaInptSlider(1, 0,21,defaults[7],true,'La llave de la tarja es ahorradora y/o Tengo sistema de trampa de  grasa instalado en la cocina.',7), // Lavado de trastes
+					creaInptSlider(1, 0,30,defaults[8],true,'Tengo lavadora de carga frontal con  sistema de reutilización de agua.',8), // Lavado de ropa
+					creaInptSlider(1, 0,10,defaults[9],true,'Reutilizo el agua de enjuague de la lavadora para el aseo de la casa',9),  // Aseo de la casa
+					creaInptSlider(1, 0,30,defaults[10],true,'Reutilizo el agua de enjuague de la lavadora para lavar el patio',10),  // Lavado de patio
+					creaInptSlider(1, 0,30,defaults[11],true,'Reutilizo el agua de enjuague de la lavadora para lavar el automóvil',11), // Lavado de auto
+					creaInptSlider(1, 0,30,defaults[12],true,'Reutilizo el agua de enjuague de la lavadora para riego y/o riego después de las 5 de la tarde',12), // Riego de jardín
+					creaSNbtn(13)
 					]
 
 // VERIFICADO es el array donde se almacenan las respuestas
 var txtRespuestas =[ 
+					['bueno', "", ""],
+					['bueno', "", ""],
 					['Colonia', "", ""],
 					['sabe monto pago', ""],
 					['monto pago', ""],
@@ -834,7 +859,7 @@ function RegresarInicio(){
 function pregAnterior(){
 	var nvaPreg = pregActiva -1;
 	if (nvaPreg < 0){nvaPreg =0 }
-	if(pregActiva ==3 & txtRespuestas[1][1]=='NO'){nvaPreg= pregActiva - 2}	
+	if(pregActiva ==3 & txtRespuestas[3][1]=='NO'){nvaPreg= pregActiva - 2}	
 	muestraPreg(nvaPreg)
 }
 
@@ -844,9 +869,10 @@ function muestraPreg(preg){
 	$("#areaInput").empty();
 	$("#preguntas").text(txtCuestionario[pregActiva]);
 	$("#contexto").html(txtContexto[pregActiva]);
-	if (pregActiva !=0)
+	//Si la pregunta activa no es la colonia
+	if ( pregActiva != 2 )
 	{
-		console.log(pregActiva)
+		console.log(pregActiva);
 		$("#areaInput").append(txtTipoInput[pregActiva]);
 		$("#inputMulti").val(txtRespuestas[pregActiva][1]);
 			//Ajuste del slider e inputbox
@@ -890,27 +916,40 @@ function muestraPreg(preg){
 
 // VERIFICADO regresa a la pregunta siguiente y en caso de ser la ultima despliega la evaluacion
 function pregSiguiente(){
+	
 	var nvaPreg = pregActiva + 1;
-	if (nvaPreg > 12){
-		nvaPreg =12; 
+	
+	if (nvaPreg > 14)
+	{
+		nvaPreg = 14; 
 		pregActiva = preg
-	};
-	if(pregActiva ==1 & txtRespuestas[1][1]=='NO'){nvaPreg= pregActiva + 2}	;	
-	if (isInArray( pregActiva,[2,3,4,5,6,7,8,9,10]) &  txtRespuestas[pregActiva][1]=='' ) {
-		//console.log('entrando sin respuestas ' + pregActiva)
-		var pert=defaults[pregActiva];
-		asignaRespuesta(1, pregActiva, pert);
-		if (isInArray( pregActiva,[4,5,6,7,8,9,10] )) {
+	}
+	
+	if ( pregActiva == 4 & txtRespuestas[3][1]=='NO' )
+	{
+		nvaPreg= pregActiva + 2
+	}
+	
+	if ( isInArray( pregActiva, [ 4,5,6,7,8,9,10,11,12,13,14 ] ) & txtRespuestas[pregActiva][1] == '' ) 
+	{
+		console.log('entrando sin respuestas ' + pregActiva)
+		var pert = defaults[ pregActiva ];
+		asignaRespuesta( 1, pregActiva, pert );
+		if (isInArray( pregActiva,[ 6,7,8,9,10,11,12 ] )) {
 			$('#sldchk').prop('checked', false);
 		}
 	}
-	if (nvaPreg >= 0 & nvaPreg < 12){
+	
+	if (nvaPreg >= 0 & nvaPreg < 14)
+	{
 		muestraPreg(nvaPreg);
 		saveAjaxQuestion(txtRespuestas, nvaPreg);
-	}else{
+	}
+	else
+	{
 		$('#contenedor-preguntas').addClass('hidden');	
 		$('#contenedor-resultados').removeClass('hidden');
-		saveAjaxQuestion(txtRespuestas, nvaPreg);
+		saveAjaxQuestion( txtRespuestas, nvaPreg );
 		mostrarRespuestas();
 		evaluaConsumo();
 		mostrarEvaluado();
@@ -1001,89 +1040,93 @@ var txtEvaluacion = [
 function evaluaConsumo(){
 
 	//litros por bimestre optimos considerando el # de personas 
-	txtEvaluacion[0][1]=math.floor(txtRespuestas[3][1] * consumooptimo * 60.8);
+	txtEvaluacion[0][1] = math.floor(txtRespuestas[5][1] * consumooptimo * 60.8);
+	
 	//litros por bimestre ponderados por disponibilidad considerando el # de personas
-	//txtEvaluacion[1][1]=math.floor(txtRespuestas[3][1] * consumooptimo * Const_disp);
+	//txtEvaluacion[1][1]=math.floor(txtRespuestas[5][1] * consumooptimo * Const_disp);
 
 	//litros a los que corresponde el pago bimestral
 	// estimando el tipo de manzana igual a la moda de tipo de manzana en el CP
-	//txtEvaluacion[2][1]=math.floor(MNTtpH20(txtRespuestas[1][1], modamza )[3]);
+	//txtEvaluacion[2][1]=math.floor(MNTtpH20(txtRespuestas[3][1], modamza )[3]);
 	
 	// aplicando constante de disponibilidad
 	//litros consumidos durante la regadera al bimestre por todos los miembros de la casa
 	//                               minutos                litros min         personas          dias        ¿     es ahorrador      ?
-	txtEvaluacion[4][1]=math.floor(txtRespuestas[4][1]*  txtRangos[4][2] * txtRespuestas[3][1] * 60.8 * (txtRespuestas[4][2] ==true ? 0.6 : 1) );
-	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[4][2]=math.floor(txtRespuestas[3][1] * 60.8 * (0.69 + 10 + 2.5 + 25) );
-	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[4][3]=math.floor(txtRespuestas[3][1] * 60.8 * (16.5 + 39.3 + 38.5 + 264) );
+	txtEvaluacion[4][1]=math.floor(txtRespuestas[7][1]*  txtRangos[4][2] * txtRespuestas[5][1] * 60.8 * (txtRespuestas[6][2] ==true ? 0.6 : 1) );
+	
+	//consumo responsable      personas    dias    litros diarios optimos
+	txtEvaluacion[4][2]=math.floor(txtRespuestas[5][1] * 60.8 * (0.69 + 10 + 2.5 + 25) );
+	
+	//consumo negligente    personas    dias    litros diarios optimos
+	txtEvaluacion[4][3]=math.floor(txtRespuestas[5][1] * 60.8 * (16.5 + 39.3 + 38.5 + 264) );
 	
 
 	//litros consumidos para cocinar al  bimestre
-	//                               veces X semana         litros X evento ponderado X personas       semanas bimestre          ¿     es ahorrador      ?
-	txtEvaluacion[5][1]=math.floor(txtRespuestas[5][1]*  (txtRangos[5][2] * txtRespuestas[3][1] / 3)  *     4.3 * 2        * (txtRespuestas[5][2] ==true ? 0.5 : 1) );
+	// veces X semana  litros X evento ponderado X personas  semanas bimestre          ¿     es ahorrador      ?
+	txtEvaluacion[5][1]=math.floor(txtRespuestas[7][1]*  (txtRangos[5][2] * txtRespuestas[5][1] / 3)  *     4.3 * 2        * (txtRespuestas[7][2] ==true ? 0.5 : 1) );
+	
 	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[5][2]=math.floor(txtRespuestas[3][1] * 60.8 * (22.5) );
+	txtEvaluacion[5][2]=math.floor(txtRespuestas[5][1] * 60.8 * (22.5) );
 	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[5][3]=math.floor(txtRespuestas[3][1] * 60.8 * (82.5) );
+	txtEvaluacion[5][3]=math.floor(txtRespuestas[5][1] * 60.8 * (82.5) );
 
 
 	//litros consumidos para lavado de ropa al bimestre
 	//                               veces X semana         litros X evento ponderado X personas       semanas bimestre          ¿     es ahorrador      ?  
-	txtEvaluacion[6][1]=math.floor(txtRespuestas[6][1]* (txtRangos[6][2] * txtRespuestas[3][1] / 2)   *      4.3 * 2      * (txtRespuestas[6][2] ==true ? 0.6 : 1) );
+	txtEvaluacion[6][1]=math.floor(txtRespuestas[8][1]* (txtRangos[6][2] * txtRespuestas[5][1] / 2)   *      4.3 * 2      * (txtRespuestas[8][2] ==true ? 0.6 : 1) );
 	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[6][2]=math.floor(txtRespuestas[3][1] * 60.8 * (20) );
+	txtEvaluacion[6][2]=math.floor(txtRespuestas[5][1] * 60.8 * (20) );
 	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[6][3]=math.floor(txtRespuestas[3][1] * 60.8 * (40) );
+	txtEvaluacion[6][3]=math.floor(txtRespuestas[5][1] * 60.8 * (40) );
 	
 
 	//litros consumidos para aseo casa al bimestre
 	//                               veces X semana         litros X evento        semanas bimestre          ¿     es ahorrador      ?  
-	txtEvaluacion[7][1]=math.floor(txtRespuestas[7][1]*     txtRangos[7][2]    *      4.3 * 2      * (txtRespuestas[7][2] ==true ? 0.2 : 1) );
+	txtEvaluacion[7][1]=math.floor(txtRespuestas[9][1]*     txtRangos[7][2]    *      4.3 * 2      * (txtRespuestas[9][2] ==true ? 0.2 : 1) );
 	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[7][2]=math.floor(txtRespuestas[3][1] * 60.8 * (14) );
+	txtEvaluacion[7][2]=math.floor(txtRespuestas[5][1] * 60.8 * (14) );
 	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[7][3]=math.floor(txtRespuestas[3][1] * 60.8 * (35.85) );
+	txtEvaluacion[7][3]=math.floor(txtRespuestas[5][1] * 60.8 * (35.85) );
 
 
 	//litros consumidos para lavar patio bimestre
 	//                               veces X semana         litros X evento         mes a bimestre          ¿     es ahorrador      ?  
-	txtEvaluacion[8][1]=math.floor(txtRespuestas[8][1]*     txtRangos[8][2]    *        2      * (txtRespuestas[8][2] ==true ? 0.2 : 1) );
+	txtEvaluacion[8][1]=math.floor(txtRespuestas[10][1]*     txtRangos[8][2]    *        2      * (txtRespuestas[10][2] ==true ? 0.2 : 1) );
 	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[8][2]=math.floor(txtRespuestas[3][1] * 60.8 * (4) );
+	txtEvaluacion[8][2]=math.floor(txtRespuestas[5][1] * 60.8 * (4) );
 	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[8][3]=math.floor(txtRespuestas[3][1] * 60.8 * (15.425) );
+	txtEvaluacion[8][3]=math.floor(txtRespuestas[5][1] * 60.8 * (15.425) );
 
 
 
 	//litros consumidos para lavar auto bimestre
 	//                               veces X semana         litros X evento         mes a bimestre          ¿     es ahorrador      ?  
-	txtEvaluacion[9][1]=math.floor(txtRespuestas[9][1]*     txtRangos[9][2]    *        2      * (txtRespuestas[9][2] ==true ? 0.2 : 1) );
+	txtEvaluacion[9][1]=math.floor(txtRespuestas[11][1]*     txtRangos[9][2]    *        2      * (txtRespuestas[9][2] ==true ? 0.2 : 1) );
 	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[9][2]=math.floor(txtRespuestas[3][1] /2  * 60.8 * (8) );
+	txtEvaluacion[9][2]=math.floor(txtRespuestas[5][1] /2  * 60.8 * (8) );
 	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[9][3]=math.floor(txtRespuestas[3][1] /2 * 60.8 * (100) );
+	txtEvaluacion[9][3]=math.floor(txtRespuestas[5][1] /2 * 60.8 * (100) );
 
 
 
 
 	//litros consumidos para regar jardin bimestre
 	//                               veces X semana         litros X evento         mes a bimestre          ¿     es ahorrador      ?  
-	txtEvaluacion[10][1]=math.floor(txtRespuestas[10][1]*     txtRangos[10][2]    *        2      * (txtRespuestas[10][2] ==true ? 0.2 : 1) );
+	txtEvaluacion[10][1]=math.floor(txtRespuestas[11][1]*     txtRangos[10][2]    *        2      * (txtRespuestas[12][2] ==true ? 0.2 : 1) );
 	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[10][2]=math.floor(txtRespuestas[3][1] * 60.8 * (4) );
+	txtEvaluacion[10][2]=math.floor(txtRespuestas[5][1] * 60.8 * (4) );
 	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[10][3]=math.floor(txtRespuestas[3][1] * 60.8 * (30.85) );
+	txtEvaluacion[10][3]=math.floor(txtRespuestas[5][1] * 60.8 * (30.85) );
 
 
 
 	//litros consumidos para WC al bimestre se asume que cada persona va al baño entre 1 y 2 veces al día
 	//                               personas               dias                   ¿ ahorrador ?             3 veces al baño 
-	txtEvaluacion[11][1]= math.floor(txtRespuestas[3][1] *  60.8    * (txtRespuestas[11][1] == "SI" ?  6 : 12) * 3  );
+	txtEvaluacion[11][1]= math.floor(txtRespuestas[5][1] *  60.8    * (txtRespuestas[13][1] == "SI" ?  6 : 12) * 3  );
 	//consumo responsable            personas            dias       litros diarios optimos
-	txtEvaluacion[11][2]=math.floor(txtRespuestas[3][1] * 60.8 * (20) );
+	txtEvaluacion[11][2]=math.floor(txtRespuestas[5][1] * 60.8 * (20) );
 	//consumo negligente            personas            dias       litros diarios optimos
-	txtEvaluacion[11][3]=math.floor(txtRespuestas[3][1] * 60.8 * (36) );
+	txtEvaluacion[11][3]=math.floor(txtRespuestas[5][1] * 60.8 * (36) );
 
 	txtEvaluacion[12][1] = txtEvaluacion.slice(4,12).reduce(function (r, a) {a.forEach(function (b, i) {r[i] = (r[i] || 0) + b;});return r;}, [])[1];
 	txtEvaluacion[12][2] = txtEvaluacion.slice(4,12).reduce(function (r, a) {a.forEach(function (b, i) {r[i] = (r[i] || 0) + b;});return r;}, [])[2];
@@ -1119,14 +1162,14 @@ function evaluaConsumo(){
 						txtEvaluacion[10][1]*100/txtEvaluacion[12][1],
 						txtEvaluacion[11][1]*100/txtEvaluacion[12][1]
 						],
-		labels: [ txtEvaluacion[4][4] + "<br> gastas "+ math.round(txtEvaluacion[4][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[4][2] /60.8 / txtRespuestas[3][1],0) +" litros",
-				txtEvaluacion[5][4] + "<br> gastas "+ math.round(txtEvaluacion[5][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[5][2] /60.8 / txtRespuestas[3][1],0) +" litros",
-				txtEvaluacion[6][4] + "<br> gastas "+ math.round(txtEvaluacion[6][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[6][2] /60.8 / txtRespuestas[3][1],0) +" litros",
-				txtEvaluacion[7][4] + "<br> gastas "+ math.round(txtEvaluacion[7][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[7][2] /60.8 / txtRespuestas[3][1],0) +" litros",
-				txtEvaluacion[8][4] + "<br> gastas "+ math.round(txtEvaluacion[8][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[8][2] /60.8 / txtRespuestas[3][1],0) +" litros",
-				txtEvaluacion[9][4] + "<br> gastas "+ math.round(txtEvaluacion[9][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[9][2] /60.8 / txtRespuestas[3][1],0) +" litros",
-				txtEvaluacion[10][4] + "<br> gastas "+ math.round(txtEvaluacion[10][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[10][2] /60.8 / txtRespuestas[3][1],0) +" litros",
-				txtEvaluacion[11][4] + "<br> gastas "+ math.round(txtEvaluacion[11][1] /60.8 / txtRespuestas[3][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[11][2] /60.8 / txtRespuestas[3][1],0) +" litros"
+		labels: [ txtEvaluacion[4][4] + "<br> gastas "+ math.round(txtEvaluacion[4][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[4][2] /60.8 / txtRespuestas[5][1],0) +" litros",
+				txtEvaluacion[5][4] + "<br> gastas "+ math.round(txtEvaluacion[5][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[5][2] /60.8 / txtRespuestas[5][1],0) +" litros",
+				txtEvaluacion[6][4] + "<br> gastas "+ math.round(txtEvaluacion[6][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[6][2] /60.8 / txtRespuestas[5][1],0) +" litros",
+				txtEvaluacion[7][4] + "<br> gastas "+ math.round(txtEvaluacion[7][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[7][2] /60.8 / txtRespuestas[5][1],0) +" litros",
+				txtEvaluacion[8][4] + "<br> gastas "+ math.round(txtEvaluacion[8][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[8][2] /60.8 / txtRespuestas[5][1],0) +" litros",
+				txtEvaluacion[9][4] + "<br> gastas "+ math.round(txtEvaluacion[9][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[9][2] /60.8 / txtRespuestas[5][1],0) +" litros",
+				txtEvaluacion[10][4] + "<br> gastas "+ math.round(txtEvaluacion[10][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[10][2] /60.8 / txtRespuestas[5][1],0) +" litros",
+				txtEvaluacion[11][4] + "<br> gastas "+ math.round(txtEvaluacion[11][1] /60.8 / txtRespuestas[5][1],0) +" litros diarios <br> consumo óptimo: " + math.round(txtEvaluacion[11][2] /60.8 / txtRespuestas[5][1],0) +" litros"
 				],
 			hoverinfo: 'label',
 		text: [
@@ -1151,9 +1194,14 @@ function evaluaConsumo(){
 		}];
 
 		console.log(data);
+		console.log( 'txtEvaluacion: ' );
+		console.log( txtEvaluacion );
+
+		var litros_por_persona = txtEvaluacion[12][1] / 60.8 / txtRespuestas[5][1];
+		litros_por_persona = litros_por_persona.toFixed(2);
 
 		var layout = {
-			title: 'Resultados Personales <b>' + math.round(txtEvaluacion[12][1] /60.8 / txtRespuestas[3][1],2) + '</b> litros diarios por persona.',
+			title: 'Resultados Personales <b>' + litros_por_persona + '</b> litros diarios por persona.',
 			height: 550,
 			width: 500
 		};
@@ -1176,8 +1224,8 @@ function evaluaConsumo(){
 							console.log( 'data: ');
 							console.log(data);
 							var pesos="";
-							if(txtRespuestas[1][1]=='SI'){pesos = txtRespuestas[2][1] * d.v / 100 };
-							var mensaje = ( "<h5>Consumo de agua  " + d.text + " " + (txtRespuestas[1][1]=="SI" ? " ($" + math.round(pesos,2) +")" : "") + "<br> categoría de uso: " + txtEvaluacion[d.i+4][4] + "</h5>" );
+							if(txtRespuestas[3][1]=='SI'){pesos = txtRespuestas[4][1] * d.v / 100 };
+							var mensaje = ( "<h5>Consumo de agua  " + d.text + " " + (txtRespuestas[3][1]=="SI" ? " ($" + math.round(pesos,2) +")" : "") + "<br> categoría de uso: " + txtEvaluacion[d.i+4][4] + "</h5>" );
 							// var mensaje = 'mensaje';
 
 							$("#imgConcep").attr('src','img/'+listaimg[d.i+3] );
@@ -1227,7 +1275,7 @@ function verificaColonia() {
 		console.log('pasa verificación valor lstCol');
 		muestramap(lstCol.value,true) 
 		
-		asignaRespuesta(1,0,this.lstCol.value)
+		asignaRespuesta(1,2,this.lstCol.value)
 	}
 	else
 	{
@@ -1235,7 +1283,7 @@ function verificaColonia() {
 		{
 			console.log('pasa verificación cp0');
 			muestramap(cpO,false) 
-			asignaRespuesta(1,0,this.lstCol.value)
+			asignaRespuesta(1,2,this.lstCol.value)
 		}
 		else
 		{
@@ -1253,6 +1301,30 @@ function creaSNbtn(preg){
 						'<input id="btn-SI" name="grpSN" type="radio" value= "SI" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-SI">Si</label>'+
 						'<input id="btn-NO" name="grpSN" type="radio" value = "NO" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-NO">No</label>'+
 					 '</div>'+
+					'</div>';
+	return salida;
+}
+
+function creaOpcionMultipleConsumo(preg){
+	var salida = 	'<div class="row btns-si-no" id="btsn">'+
+						'<div class="col-md-12">'+
+							'<input id="btn-consumo-responsable" name="consumo-hogar" type="radio" value="responsable" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-responsable" class="opcion-multiple"><b>Responsable.</b> En mi hogar cuidamos el agua.</label>'+
+							'<input id="btn-consumo-sobrado" name="consumo-hogar" type="radio" value="sobrado" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-sobrado" class="opcion-multiple"><b>Sobrado.</b> El consumo de agua en mi hogar es aceptable aunque pudiera mejorar</label>'+
+							'<input id="btn-consumo-preocupante" name="consumo-hogar" type="radio" value="preocupante" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-preocupante" class="opcion-multiple"><b>Preocupante.</b> En mi hogar suele desperdiciarse demasiada agua.</label>'+
+							'<input id="btn-consumo-negligente" name="consumo-hogar" type="radio" value="negligente" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-negligente" class="opcion-multiple"><b>Negligente.</b> En mi hogar no cuidamos en lo absoluto el agua.</label>'+
+						'</div>'+
+					'</div>';
+	return salida;
+}
+
+function creaOpcionMultipleSuministro(preg){
+	var salida = 	'<div class="row btns-si-no" id="btsn">'+
+						'<div class="col-md-12">'+
+							'<input id="btn-suministro-muy-bueno" name="suministro-hogar" type="radio" value="muy bueno" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-suministro-muy-bueno" class="opcion-multiple"><b>Muy bueno</b>. Jamás tengo que preocuparme por falta de agua en mi hogar.</label>'+
+							'<input id="btn-suministro-bueno" name="suministro-hogar" type="radio" value="bueno" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-suministro-bueno" class="opcion-multiple">En general es <b>bueno</b>, aunque en ocasiones falta agua en mi hogar.</label>'+
+							'<input id="btn-suministro-malo" name="suministro-hogar" type="radio" value="malo" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-suministro-malo" class="opcion-multiple">En general es <b>malo</b>, en mi hogar hay problemas de abastecimiento de agua frecuentemente.</label>'+
+							'<input id="btn-suministro-muy-malo" name="suministro-hogar" type="radio" value="muy malo" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-suministro-muy-malo" class="opcion-multiple">Es <b>muy difícil</b> que haya agua en mi hogar.</label>'+
+						'</div>'+
 					'</div>';
 	return salida;
 }
@@ -1276,7 +1348,7 @@ function creaInptSlider(incr, mini,maxi,defa,swch,msg,preg){
 							'<div class="col-md-12 text-center">' +
 								'<p '+cls+' >'+msg+'</p>'+
 								'<label class="switch">'+
-									' <input id= "sldchk" type="checkbox" onclick="asignaRespuesta(2,'+preg+',this.checked)"> '+
+									' <input id= "sldchk" type="checkbox" onclick="asignaRespuesta( 2, '+preg+', this.checked )"> '+
 									'<span class="slider round "></span>'+
 								'</label>'+
 							'</div>'+					
@@ -1290,20 +1362,25 @@ function creaInptSlider(incr, mini,maxi,defa,swch,msg,preg){
 
 // VERIFICADO integra la respuesta a un array que guarda las respuestas del cuestionario
 function asignaRespuesta(idx, preg, resp){
-	var anw= resp;
-	txtRespuestas[preg][idx]=anw;
+	var anw = resp;
+	txtRespuestas[preg][idx] = anw;
+	console.log('txtRespuestas en asignaRespuesta(): ');
+	console.log( idx, preg, resp );
+	console.log(txtRespuestas);
 }
 
 
 //VERIFCADO función que sincroniza el valor del slider al valor capturado en el inputbox
 function ajustaInp(preg,valor){
 	$("#inputMulti").val(valor);
+	console.log('ajusta Inp');
 	asignaRespuesta(1,preg, valor);
 }
 
 //VERIFCADO función que sincroniza el valor del  inputbox  al valor capturado en el slider
 function ajustaBInp(preg,valor){
 	$("#inputMultiB").val(valor);
+	console.log('ajusta B Inp');
 	asignaRespuesta(1,preg, valor);
 }
 
@@ -1369,8 +1446,8 @@ function mostrarEvaluado(){
 	var consumoCiudadHeight = consumoCiudad / 420;
 	consumoCiudadHeight = consumoCiudadHeight.toFixed(2);
 
-	var caliEspacios = cali.split(' ');
-	var nombreColonia = caliEspacios.shift();
+	var caliParentesis = cali.split('(');
+	var nombreColonia = caliParentesis[0];
 
 	var caliGuiones = cali.split('-');
 	var nombreDelegacion = caliGuiones[1];
@@ -1388,6 +1465,16 @@ function mostrarEvaluado(){
 	$('#barra-consumo-colonia').css( 'height', consumoColoniaHeight + '%' );
 	$('#barra-consumo-delegacion').css( 'height', consumoDelegacionHeight + '%' );
 	$('#barra-consumo-ciudad').css( 'height', consumoCiudadHeight + '%' );
+
+	console.log($('#resultado-tu-consumo'));
+
+	$('#titulo-barra-colonia').text( nombreColonia );
+	$('#titulo-barra-delegacion').text( nombreDelegacion );
+
+	$('#resultado-tu-consumo').text( tuConsumo.toLocaleString() + ' l' );
+	$('#resultado-consumo-colonia').text( consumoColonia.toLocaleString() + ' l' );
+	$('#resultado-consumo-delegacion').text( consumoDelegacion.toLocaleString() + ' l' );
+	$('#resultado-consumo-ciudad').text( consumoCiudad.toLocaleString() + ' l' );
 }
 
 /**
@@ -1405,8 +1492,11 @@ function saveAjaxQuestion(txtRespuestas, nvaPreg)
 		action: 'saveAnswerAjax'
 	}
 
+	console.log('saveAjax');
+	console.log(data);
+
 	$.post( "ajax.php", data, function(result) {
-		// response
+		console.log(result);
 	});
 
 }

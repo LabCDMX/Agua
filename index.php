@@ -38,8 +38,8 @@
 	<script src="js/numeric.min.js"></script>
 	
 	<!-- Awesomplete.css -->
-	<link rel="stylesheet" href="css/awesomplete.css" />
-	<script src="js/awesomplete.js" async></script>
+	<link rel="stylesheet" href="css/awesomplete.min.css" />
+	<script src="js/awesomplete.min.js" async></script>
 	
 	<!-- cover -->
 	<link href="css/cover.css" rel="stylesheet">
@@ -59,21 +59,30 @@
 	<!-- Contenedor principal -->
 	<div class="d-flex h-100 p-3 mx-auto flex-column">
 
-		<div id="contenedor-intro" class="contenedor-general">
-			<h1 class="text-semi-bold bottom-buffer-60">AguaCDMX</h1>
+		<div id="contenedor-intro" class="container">
+			<div class="row">
+				<div class="col-md-12 bottom-buffer-60">
+					<h1 class="text-semi-bold bottom-buffer-60">AguaCDMX</h1>
 
-			<p class="font-size-40 bottom-buffer-40 center">¿Sabes cuánta agua se consume en tu hogar?</p>
+					<p class="font-size-40 bottom-buffer-40 center">¿Sabes cuánta agua se consume en tu hogar?</p>
 
-			<p class="font-size-16 bottom-buffer-30 text-bold center">Al responder las siguientes preguntas obtendrás un diagnóstico para saber si tu consumo de agua está ubicado dentro de los estándares recomendados; podrás compararlo con el consumo que realizan tus vecinos en la colonia y delegación en la que vives; y recibirás algunas recomendaciones para optimizar tu uso del agua.</p>
+					<p class="font-size-16 bottom-buffer-30 text-bold center">Al responder las siguientes preguntas obtendrás un diagnóstico para saber si tu consumo de agua está ubicado dentro de los estándares recomendados; podrás compararlo con el consumo que realizan tus vecinos en la colonia y delegación en la que vives; y recibirás algunas recomendaciones para optimizar tu uso del agua.</p>
 
-			<p class="font-size-16 bottom-buffer-30 center">En diversas regiones del mundo, vivir con escasez de agua es una preocupación cotidiana para diferentes personas; la CDMX no es ajena a esa realidad. Según el Sistema de Aguas de la Ciudad de México, el promedio de uso por persona debería de ser de 96 litros por día, sin embargo, consumimos tres veces la cantidad deseada.</p>
+					<p class="font-size-16 bottom-buffer-30 center">En diversas regiones del mundo, vivir con escasez de agua es una preocupación cotidiana para diferentes personas; la CDMX no es ajena a esa realidad. Según el Sistema de Aguas de la Ciudad de México, el promedio de uso por persona debería de ser de 96 litros por día, sin embargo, consumimos tres veces la cantidad deseada.</p>
 
-			<p class="font-size-16 bottom-buffer-20 center">En este sentido, fomentar una cultura del uso responsable de agua es sólo una de las muchas acciones necesarias para preservar el vital recurso.</p>
-
-			<div class="btns-container">
-				<button>Acerca de AguaCDMX</button>
-				<button id="boton-comenzar" class="btn btn-primary">Iniciar</button>
+					<p class="font-size-16 bottom-buffer-20 center">En este sentido, fomentar una cultura del uso responsable de agua es sólo una de las muchas acciones necesarias para preservar el vital recurso.</p>	
+				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-md-4 offset-md-2 text-center">
+					<button class="btn btn-outline-primary btn-lg">Acerca de AguaCDMX</button>	
+				</div>
+				<div class="col-md-4 text-center">
+					<button id="boton-comenzar" class="btn btn-primary btn-lg btn-block">Iniciar</button>	
+				</div>
+			</div>
+
 		</div>
 
 		<!-- Contenedor preguntas -->
@@ -93,14 +102,16 @@
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<h3 id="preguntas" class= "pad30"></h3>
 					<p id="silderVal"></p>
-					<div id="inputCOL"> </div>
+					<div id="inputCOL" class="hidden"></div>
 					<div id="areaInput"> </div>
 					<h5 id="alertInput"> </h5>
 					<!-- <h4 id="contexto"></h4> -->
 				</div>
-			</div>  	
-			<div class="btns-container">
-				<button class="btn btn-primary" onclick="pregSiguiente()">siguiente</button>
+			</div>
+			<div class="row">
+				<div class="col-md-4 offset-md-4">
+					<button class="btn btn-primary btn-lg btn-block" onclick="pregSiguiente()">Siguiente</button>	
+				</div>
 			</div>
 		</div>
 		<!-- End contenedor preguntas -->
@@ -149,14 +160,38 @@
 				</div>
 				<div class="grafica-barras">
 					<div id="barra-tu-consumo" class="uno">
+						<p><span class="titulo-barra-tu-resultado">Tu resultado</span> <br> <span id="resultado-tu-consumo" class="resultado">algo</span></p>
 					</div>
 					<div id="barra-consumo-colonia" class="dos">
+						<p><span id="titulo-barra-colonia"></span> <br> <span id="resultado-consumo-colonia" class="resultado"></span></p>
 					</div>
 					<div id="barra-consumo-delegacion" class="tres">
+						<p><span id="titulo-barra-delegacion"></span> <br> <span id="resultado-consumo-delegacion" class="resultado"></span></p>
 					</div>
 					<div id="barra-consumo-ciudad" class="cuatro">
+						<p><span id="titulo-barra-ciudad">CDMX</span> <br> <span id="resultado-consumo-ciudad" class="resultado"></span></p>
 					</div>
 				</div>
+			</div>
+			<div class="col-md-10 bottom-buffer-80">
+				<p class="bottom-buffer-50">Los resultados muestran una comparación con la siguiente cantidad de habitantes promedio por vivienda:</p>
+				<table class="table table-bordered">
+					<tr>
+						<th class="text-right"></th>
+						<th class="text-right">Tu colonia</th>
+						<th class="text-right">Delegación</th>
+						<th class="text-right">Ciudad</th>
+					</tr>
+					<tr>
+						<td class="text-right"><img class="icono-gente" src="img/icono-gente.svg"></td>
+						<td class="text-right">3.5</td>
+						<td class="text-right">3</td>
+						<td class="text-right">3.6</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-12 text-center bottom-buffer-80">
+				<button class="btn btn-outline-primary btn-lg">Conoce más sobre tu resultado</button>
 			</div>
 		</div>
 

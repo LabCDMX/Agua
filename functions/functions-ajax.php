@@ -62,28 +62,32 @@
 	function questionsColumn($number){
 		switch ($number) {
 			case 0:
-				return ['colony'];
+				return ['consumo_en_casa'];
 			case 1:
-				return ['know_water_payment'];
+				return ['suministro_en_casa'];
 			case 2:
-				return ['water_payment'];
+				return ['colony'];
 			case 3:
-				return ['number_of_people'];
+				return ['know_water_payment'];
 			case 4:
-				return ['shower_time', 'shower_recover'];
+				return ['water_payment'];
 			case 5:
-				return ['number_prepare_food', 'tarja_is_thrifty'];
+				return ['number_of_people'];
 			case 6:
-				return ['washed_number', 'resycle_washing'];
+				return ['shower_time', 'shower_recover'];
 			case 7:
-				return ['house_toilet', 'house_water_rinse'];
+				return ['number_prepare_food', 'tarja_is_thrifty'];
 			case 8:
-				return ['number_wash_the_yard', 'yard_water_rinse'];
+				return ['washed_number', 'resycle_washing'];
 			case 9:
-				return ['number_wash_the_car', 'card_water_rinse'];
+				return ['house_toilet', 'house_water_rinse'];
 			case 10:
-				return ['number_water_the_garden', 'garden_water_rinse'];
+				return ['number_wash_the_yard', 'yard_water_rinse'];
 			case 11:
+				return ['number_wash_the_car', 'card_water_rinse'];
+			case 12:
+				return ['number_water_the_garden', 'garden_water_rinse'];
+			case 13:
 				return ['sanitary_saver', 'status'];
 			default:
 				return [];

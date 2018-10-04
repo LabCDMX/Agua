@@ -192,7 +192,6 @@ a:hover {
 
 .btn{
 	font-size: 20px;
-	width: 262px;
 	outline: none;
 	cursor: pointer;
 	border-radius: 2rem;
@@ -217,6 +216,7 @@ a:hover {
 	background-color: #004DFF;
 	border: .05rem solid #004DFF;
 	outline: none;
+	box-shadow: none;
 }
 
 .btns-container{
@@ -528,12 +528,23 @@ margin-top: 100px;
 	bottom: -20px;
 	background-color: #29D1D8;
 	display: block;
+	color: white;
+	padding: 10px;
 }
 
 .grafica-barras div.uno { left: 0; background-color: #004DFF; }
 .grafica-barras div.dos { left: 243px; }
 .grafica-barras div.tres { left: 486px; }
 .grafica-barras div.cuatro { left: 729px; }
+
+.grafica-barras span.resultado {
+	font-family: 'Space Mono', sans-serif;
+	font-size: 14px;
+}
+
+.icono-gente {
+	width: 35px;
+}
 
 #Respuestas {
 	font-size: 0.7em;
@@ -648,6 +659,11 @@ input[type="radio"] + label {
 	border-radius: 0.5rem; 
 	display: inline-block;
 	cursor: pointer;
+}
+
+.opcion-multiple {
+	width: 80%;
+	text-align: left;
 }
 
 input[type="radio"]:checked + label {
