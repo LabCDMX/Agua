@@ -520,15 +520,20 @@ margin-top: 100px;
 	position: relative;
 }
 
-.grafica-barras svg {
+.grafica-barras div {
 	position: absolute;
-	bottom: 0;
+	width: 238px;
+	height: 328px;
+	border-radius: 5px;
+	bottom: -20px;
+	background-color: #29D1D8;
+	display: block;
 }
 
-.grafica-barras svg.uno { left: 0; }
-.grafica-barras svg.dos { left: 243px; }
-.grafica-barras svg.tres { left: 486px; }
-.grafica-barras svg.cuatro { left: 729px; }
+.grafica-barras div.uno { left: 0; background-color: #004DFF; }
+.grafica-barras div.dos { left: 243px; }
+.grafica-barras div.tres { left: 486px; }
+.grafica-barras div.cuatro { left: 729px; }
 
 #Respuestas {
 	font-size: 0.7em;

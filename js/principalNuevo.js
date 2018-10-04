@@ -1354,19 +1354,19 @@ function mostrarEvaluado(){
 	$("#Evaluados").append( contenido );
 
 	var tuConsumo = txtEvaluacion[12][1];
-	var tuConsumoHeight = tuConsumo / 420 * .100;
+	var tuConsumoHeight = tuConsumo / 1000;
 	tuConsumoHeight = tuConsumoHeight.toFixed(2);
 
 	var consumoColonia = matrixRef[6][0];
-	var consumoColoniaHeight = consumoColonia / 420 * .100;
+	var consumoColoniaHeight = consumoColonia / 1000;
 	consumoColoniaHeight = consumoColoniaHeight.toFixed(2);
 
 	var consumoDelegacion = matrixRef[6][1];
-	var consumoDelegacionHeight = consumoDelegacion / 420 * .100;
+	var consumoDelegacionHeight = consumoDelegacion / 1000;
 	consumoDelegacionHeight = consumoDelegacionHeight.toFixed(2);
 
 	var consumoCiudad = matrixRef[6][2];
-	var consumoCiudadHeight = consumoCiudad / 420 * .100;
+	var consumoCiudadHeight = consumoCiudad / 1000;
 	consumoCiudadHeight = consumoCiudadHeight.toFixed(2);
 
 	var caliEspacios = cali.split(' ');
@@ -1384,10 +1384,10 @@ function mostrarEvaluado(){
 	console.log( tuConsumo, consumoColonia, consumoDelegacion, consumoCiudad );
 	console.log( tuConsumoHeight, consumoColoniaHeight, consumoDelegacionHeight, consumoCiudadHeight );
 
-	$('#barra-tu-consumo').css( 'bottom', '-' + tuConsumoHeight + '%' );
-	$('#barra-consumo-colonia').css( 'bottom', '-' + consumoColoniaHeight + '%' );
-	$('#barra-consumo-delegacion').css( 'bottom', '-' + consumoDelegacionHeight + '%' );
-	$('#barra-consumo-ciudad').css( 'bottom', '-' + consumoCiudadHeight + '%' );
+	$('#barra-tu-consumo').css( 'height', tuConsumoHeight + '%' );
+	$('#barra-consumo-colonia').css( 'height', consumoColoniaHeight + '%' );
+	$('#barra-consumo-delegacion').css( 'height', consumoDelegacionHeight + '%' );
+	$('#barra-consumo-ciudad').css( 'height', consumoCiudadHeight + '%' );
 }
 
 /**

@@ -148,34 +148,14 @@
 				<div id="datos-finales">
 				</div>
 				<div class="grafica-barras">
-					<svg id="barra-tu-consumo" class="uno" width="238px" height="328px" viewBox="0 0 238 328" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="RESULTADOS-002" transform="translate(-239.000000, -2363.000000)" fill="#004DFF">
-								<path d="M249,2363 L467,2363 C472.522847,2363 477,2367.47715 477,2373 L477,2691 L239,2691 L239,2373 C239,2367.47715 243.477153,2363 249,2363 Z" id="Rectangle-13"></path>
-							</g>
-						</g>
-					</svg>
-					<svg id="barra-consumo-colonia" class="dos" width="238px" height="328px" viewBox="0 0 238 328" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="RESULTADOS-002" transform="translate(-239.000000, -2363.000000)" fill="#29D1D8">
-								<path d="M249,2363 L467,2363 C472.522847,2363 477,2367.47715 477,2373 L477,2691 L239,2691 L239,2373 C239,2367.47715 243.477153,2363 249,2363 Z" id="Rectangle-13"></path>
-							</g>
-						</g>
-					</svg>
-					<svg id="barra-consumo-delegacion" class="tres" width="238px" height="328px" viewBox="0 0 238 328" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="RESULTADOS-002" transform="translate(-239.000000, -2363.000000)" fill="#29D1D8">
-								<path d="M249,2363 L467,2363 C472.522847,2363 477,2367.47715 477,2373 L477,2691 L239,2691 L239,2373 C239,2367.47715 243.477153,2363 249,2363 Z" id="Rectangle-13"></path>
-							</g>
-						</g>
-					</svg>
-					<svg id="barra-consumo-ciudad" class="cuatro" width="238px" height="328px" viewBox="0 0 238 328" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-							<g id="RESULTADOS-002" transform="translate(-239.000000, -2363.000000)" fill="#29D1D8">
-								<path d="M249,2363 L467,2363 C472.522847,2363 477,2367.47715 477,2373 L477,2691 L239,2691 L239,2373 C239,2367.47715 243.477153,2363 249,2363 Z" id="Rectangle-13"></path>
-							</g>
-						</g>
-					</svg>
+					<div id="barra-tu-consumo" class="uno">
+					</div>
+					<div id="barra-consumo-colonia" class="dos">
+					</div>
+					<div id="barra-consumo-delegacion" class="tres">
+					</div>
+					<div id="barra-consumo-ciudad" class="cuatro">
+					</div>
 				</div>
 			</div>
 		</div>
