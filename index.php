@@ -42,7 +42,7 @@
 	<script src="js/awesomplete.min.js" async></script>
 	
 	<!-- cover -->
-	<link href="css/cover.css" rel="stylesheet">
+	<link href="css/cover.css?ver=2.2.1" rel="stylesheet">
 
 	<!-- Data -->
 	<script type="text/javascript" src="data/col_CP.js"></script><!--primero-->
