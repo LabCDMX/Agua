@@ -88,7 +88,19 @@
 			case 12:
 				return ['number_water_the_garden', 'garden_water_rinse'];
 			case 13:
-				return ['sanitary_saver', 'status'];
+				return ['sanitary_saver'];
+			case 14:
+				return ['frase_identificado'];
+			case 15:
+				return ['modificar_para_cuidar'];
+			case 16:
+				return ['modificar_reducir_costo'];
+			case 17:
+				return ['otra_informacion'];
+			case 18:
+				return ['edad'];
+			case 19:
+				return ['genero', 'status'];
 			default:
 				return [];
 				break;

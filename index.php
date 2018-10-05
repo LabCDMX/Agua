@@ -10,11 +10,13 @@
 
 	<title>Reto Agua (CAD Salud - LabCDMX)</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css">
 	
 	<script type="text/javascript" src="js/jquery.min.js"></script>	
 	<script type="text/javascript" src="js/tether.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/math.min.js"></script>
+	<script type="text/javascript" src="js/jquery-confirm.min.js"></script>
 
 	<!-- jquery dataTables -->
 	<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
@@ -190,6 +192,14 @@
 					</tr>
 				</table>
 			</div>
+
+			<div class="col-md-12 text-center bottom-buffer-60">
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-opinion">
+					¿Qué opinas de tus resultados?
+				</button>
+			</div>
+
 			<div class="col-md-12 text-center bottom-buffer-80">
 				<button class="btn btn-outline-primary btn-lg">Conoce más sobre tu resultado</button>
 			</div>
@@ -246,6 +256,10 @@
 		</div>
 		
 	</footer>
+
+	<?php 
+		include('modal-opinion.php');
+	?>
 
 	<script type="text/javascript" src="js/canvasjs.min.js"></script>
 	<script> 

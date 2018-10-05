@@ -738,6 +738,20 @@ $(document).ready(function($){
 		}
 	});
 
+	$('.p-14').on('click', function() {
+		$('.p-14').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	$('.p-15').on('click', function() {
+		$('.p-15').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	$('.p-16').on('click', function() {
+		$('.p-16').removeClass('active');
+		$(this).addClass('active');
+	});
 
  } );
 
@@ -778,35 +792,20 @@ var txtContexto =[
 			/*11*/		"Indique si tiene un sanitario con bajo consumo de agua -6 litros por descarga-."
 					]
 
-// VERIFICADO  array de espuestas en default que se consideran cuando presina siguiente sin elegor
-// var defaults= ['--', //0
-// 				"SI", //1
-// 				390, //2
-// 				4, //3
-// 				12,//4
-// 				6,//5
-// 				4,//6
-// 				5,//7
-// 				2,//8
-// 				2,//9
-// 				4,//10
-// 				'NO'//11
-// 				]
-
 var defaults= [
 				"bueno", //0
 				"bueno", //1
 				'--', //2
 				"SI", //3
-				150, //4
-				2, //5
-				4,//6
-				5,//7
-				1,//8
-				1,//9
-				1,//10
-				2,//11
-				4,//12
+				'-', //4
+				'-', //5
+				'-',//6
+				'-',//7
+				'-',//8
+				'-',//9
+				'-',//10
+				'-',//11
+				'-',//12
 				'SI'//13
 				]
 
@@ -844,6 +843,12 @@ var txtRespuestas =[
 					['# lava auto mes / usa agua enjuague', "",false ],
 					['# riega jardin mes / usa agua enjuague', "",false],
 					['Tiene sanitario ahorrador', ""],
+					['Frase identificado', ""],
+					['Modificar para cuidar', ""],
+					['Modificar para reducir costo', ""],
+					['Otra información', ""],
+					['Edad', ""],
+					['Género', ""]
 					];
 
 
@@ -916,43 +921,53 @@ function muestraPreg(preg){
 
 // VERIFICADO regresa a la pregunta siguiente y en caso de ser la ultima despliega la evaluacion
 function pregSiguiente(){
-	
-	var nvaPreg = pregActiva + 1;
-	
-	if (nvaPreg > 14)
+
+	if( txtRespuestas[pregActiva][1] == '' )
 	{
-		nvaPreg = 14; 
-		pregActiva = preg
-	}
-	
-	if ( pregActiva == 4 & txtRespuestas[3][1]=='NO' )
-	{
-		nvaPreg= pregActiva + 2
-	}
-	
-	if ( isInArray( pregActiva, [ 4,5,6,7,8,9,10,11,12,13,14 ] ) & txtRespuestas[pregActiva][1] == '' ) 
-	{
-		console.log('entrando sin respuestas ' + pregActiva)
-		var pert = defaults[ pregActiva ];
-		asignaRespuesta( 1, pregActiva, pert );
-		if (isInArray( pregActiva,[ 6,7,8,9,10,11,12 ] )) {
-			$('#sldchk').prop('checked', false);
-		}
-	}
-	
-	if (nvaPreg >= 0 & nvaPreg < 14)
-	{
-		muestraPreg(nvaPreg);
-		saveAjaxQuestion(txtRespuestas, nvaPreg);
+		$.alert({
+		    title: 'Alerta',
+		    content: 'Para continuar, responde la pregunta.',
+		});
 	}
 	else
 	{
-		$('#contenedor-preguntas').addClass('hidden');	
-		$('#contenedor-resultados').removeClass('hidden');
-		saveAjaxQuestion( txtRespuestas, nvaPreg );
-		mostrarRespuestas();
-		evaluaConsumo();
-		mostrarEvaluado();
+		var nvaPreg = pregActiva + 1;
+	
+		if (nvaPreg > 14)
+		{
+			nvaPreg = 14; 
+			pregActiva = preg
+		}
+		
+		if ( pregActiva == 4 & txtRespuestas[3][1]=='NO' )
+		{
+			nvaPreg= pregActiva + 2
+		}
+		
+		if ( isInArray( pregActiva, [ 1,2,4,5,6,7,8,9,10,11,12,13,14 ] ) & txtRespuestas[pregActiva][1] == '' ) 
+		{
+			console.log('entrando sin respuestas ' + pregActiva)
+			var pert = defaults[ pregActiva ];
+			asignaRespuesta( 1, pregActiva, pert );
+			if (isInArray( pregActiva,[ 6,7,8,9,10,11,12 ] )) {
+				$('#sldchk').prop('checked', false);
+			}
+		}
+		
+		if (nvaPreg >= 0 & nvaPreg < 14)
+		{
+			muestraPreg(nvaPreg);
+			saveAjaxQuestion(txtRespuestas, nvaPreg);
+		}
+		else
+		{
+			$('#contenedor-preguntas').addClass('hidden');	
+			$('#contenedor-resultados').removeClass('hidden');
+			saveAjaxQuestion( txtRespuestas, nvaPreg );
+			mostrarRespuestas();
+			evaluaConsumo();
+			mostrarEvaluado();
+		}
 	}
 }
 
