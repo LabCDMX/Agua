@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="781px" height="148px" viewBox="0 0 781 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M18.5,0 L762.5,0 C772.717268,-1.87688166e-15 781,8.28273213 781,18.5 L781,18.5 C781,28.7172679 772.717268,37 762.5,37 L18.5,37 C8.28273213,37 1.25125444e-15,28.7172679 0,18.5 L0,18.5 C-1.25125444e-15,8.28273213 8.28273213,1.87688166e-15 18.5,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="EXPLICACION" transform="translate(-330.000000, -616.000000)">
+            <g id="Group" transform="translate(330.000000, 611.000000)">
+                <text id="Limite-bajo-130-litr" font-family="SpaceMono-Regular, Space Mono" font-size="14" font-weight="normal" fill="#787878">
+                    <tspan x="180" y="16">Limite bajo</tspan>
+                    <tspan x="180" y="37">130 litros </tspan>
+                </text>
+                <text id="Limite-medio-401.4-l" font-family="SpaceMono-Regular, Space Mono" font-size="14" font-weight="normal" fill="#787878">
+                    <tspan x="399" y="16">Limite medio</tspan>
+                    <tspan x="399" y="37">401.4 l</tspan>
+                </text>
+                <text id="Limite-Alto-673.5-l" font-family="SpaceMono-Regular, Space Mono" font-size="14" font-weight="normal" fill="#787878">
+                    <tspan x="597" y="16">Limite Alto</tspan>
+                    <tspan x="597" y="37">673.5 l</tspan>
+                </text>
+                <text id="Consumo-Responsable" font-family="WorkSans-Bold, Work Sans" font-size="20" font-weight="bold" fill="#37BB00">
+                    <tspan x="17" y="124">Consumo </tspan>
+                    <tspan x="17" y="148">Responsable</tspan>
+                </text>
+                <text id="Sobrado" font-family="WorkSans-Bold, Work Sans" font-size="20" font-weight="bold" fill="#FFC900">
+                    <tspan x="187" y="124">Sobrado</tspan>
+                </text>
+                <text id="Preocupante" font-family="WorkSans-Bold, Work Sans" font-size="20" font-weight="bold" fill="#F5A623">
+                    <tspan x="400" y="124">Preocupante</tspan>
+                </text>
+                <text id="Negligente" font-family="WorkSans-Bold, Work Sans" font-size="20" font-weight="bold" fill="#D0021B">
+                    <tspan x="609" y="124">Negligente</tspan>
+                </text>
+                <g id="Diagrama" transform="translate(0.000000, 58.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Rectangle-6"></g>
+                    <rect id="Rectangle-6" fill="#37BB00" mask="url(#mask-2)" x="-82" y="0" width="266" height="37"></rect>
+                    <rect id="Rectangle-6" fill="#D0021B" mask="url(#mask-2)" x="600" y="0" width="262" height="37"></rect>
+                    <rect id="Rectangle-6" fill="#FFC900" mask="url(#mask-2)" x="184" y="0" width="216" height="37"></rect>
+                    <rect id="Rectangle-6" fill="#FF8600" mask="url(#mask-2)" x="400" y="0" width="200" height="37"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

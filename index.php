@@ -78,7 +78,7 @@
 
 			<div class="row">
 				<div class="col-md-4 offset-md-2 text-center">
-					<button class="btn btn-outline-primary btn-lg">Acerca de AguaCDMX</button>	
+					<button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modal-acerca-de">Acerca de AguaCDMX</button>	
 				</div>
 				<div class="col-md-4 text-center">
 					<button id="boton-comenzar" class="btn btn-primary btn-lg btn-block">Iniciar</button>	
@@ -201,8 +201,14 @@
 			</div>
 
 			<div class="col-md-12 text-center bottom-buffer-80">
-				<button class="btn btn-outline-primary btn-lg">Conoce más sobre tu resultado</button>
+				<button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modal-de-donde">Conoce más sobre tu resultado</button>
 			</div>
+
+			<p class="text-center">
+				<a href="https://agua.labcd.mx">
+					Volver al inicio
+				</a>
+			</p>
 		</div>
 
 		<!-- Contenedor mapa y gráficas -->
@@ -259,6 +265,8 @@
 
 	<?php 
 		include('modal-opinion.php');
+		include('modal-de-donde-provienen.php');
+		include('modal-acerca-de.php');
 	?>
 
 	<script type="text/javascript" src="js/canvasjs.min.js"></script>
