@@ -22,11 +22,11 @@
 		}
 
 		header('Content-type: application/json; charset=utf-8');
-	    echo json_encode(['siii', questionsColumn($question)]);
+	    echo json_encode(['siii guardó', questionsColumn($question)]);
 	    exit();
 	}
 
-	function saveAnswer($column, $answer){
+	function saveAnswer($column, $answer) {
 		global $wpdb, $mysqli;
 		$session_id = session_id();
 		$client_ip = get_client_ip();

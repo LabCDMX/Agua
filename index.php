@@ -63,10 +63,10 @@
 
 		<div id="contenedor-intro" class="container">
 			<div class="row">
-				<div class="col-md-12 bottom-buffer-60">
-					<h1 class="text-semi-bold bottom-buffer-60">AguaCDMX</h1>
+				<div class="col-md-12 bottom-buffer-20">
+					<h1 class="text-semi-bold bottom-buffer-20">AguaCDMX</h1>
 
-					<p class="font-size-40 bottom-buffer-40 center">¿Sabes cuánta agua se consume en tu hogar?</p>
+					<p class="font-size-40 bottom-buffer-20 center">¿Sabes cuánta agua se consume en tu hogar?</p>
 
 					<p class="font-size-16 bottom-buffer-30 text-bold center">Al responder las siguientes preguntas obtendrás un diagnóstico para saber si tu consumo de agua está ubicado dentro de los estándares recomendados; podrás compararlo con el consumo que realizan tus vecinos en la colonia y delegación en la que vives; y recibirás algunas recomendaciones para optimizar tu uso del agua.</p>
 
@@ -76,7 +76,7 @@
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row bottom-buffer-240">
 				<div class="col-md-4 offset-md-2 text-center">
 					<button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modal-acerca-de">Acerca de AguaCDMX</button>	
 				</div>

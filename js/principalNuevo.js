@@ -798,7 +798,7 @@ var defaults= [
 				'--', //2
 				"SI", //3
 				'-', //4
-				'-', //5
+				'1', //5
 				'-',//6
 				'-',//7
 				'-',//8
@@ -939,9 +939,11 @@ function pregSiguiente(){
 			pregActiva = preg
 		}
 		
-		if ( pregActiva == 4 & txtRespuestas[3][1]=='NO' )
+		if ( pregActiva == 3 & txtRespuestas[3][1]=='NO' )
 		{
-			nvaPreg= pregActiva + 2
+			nvaPreg = pregActiva + 2
+			console.log( 'Respondió no sabe cuánto paga' );
+			console.log(nvaPreg);
 		}
 		
 		if ( isInArray( pregActiva, [ 1,2,4,5,6,7,8,9,10,11,12,13,14 ] ) & txtRespuestas[pregActiva][1] == '' ) 
@@ -1266,7 +1268,7 @@ function creaColInput(pregunta){
 	salidaopt= "<datalist id='coloniasopt'>" + listadecolonias + "</datalist>";
 	salida = '<div class="row">'+
 				'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">' +
-						 '<input id="lstCol"  class="awesomplete wfull" list="coloniasopt"  data-minChars="3" data-maxItems="15"  onfocusout="verificaColonia()" />' + salidaopt +
+						 '<input id="lstCol"  class="awesomplete wfull" list="coloniasopt"  data-minChars="3" data-maxItems="15" placeholder="Escribe tu código postal"  onfocusout="verificaColonia()" />' + salidaopt +
 				'</div>'+
 			'</div>';
 	//return salida;	

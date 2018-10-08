@@ -19,7 +19,7 @@
 
 						<h3 class="bottom-buffer-40">Consumo diario de agua</h3>
 
-						<img class="bottom-buffer-30" src="img/grafico-consumo-diario-de-agua.svg">
+						<img class="bottom-buffer-30" src="img/grafico-consumo-diario-de-agua.png">
 
 						<p>Si te gustaría conocer el algoritmo exacto de la plataforma, te invitamos a entrar al <span class="text-primary">github</span> del proyecto en donde encontrarás el procesamiento de las distintas fuentes de información.</p>
 
