@@ -77,8 +77,15 @@
 			</div>
 
 			<div class="row bottom-buffer-240">
-				<div class="col-md-4 offset-md-2 text-center">
+				<div class="col-md-4 text-center">
 					<button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modal-acerca-de">Acerca de AguaCDMX</button>	
+				</div>
+				<!-- Quitar y regresar offset-md-2 al primer botón -->
+				<div class="col-md-4 text-center bottom-buffer-60">
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-opinion">
+						¿Qué opinas de tus resultados?
+					</button>
 				</div>
 				<div class="col-md-4 text-center">
 					<button id="boton-comenzar" class="btn btn-primary btn-lg btn-block">Iniciar</button>	
@@ -250,13 +257,19 @@
 		<div class="container">
 			<div class ="row justify-content-md-center">
 				<div class= "col-xs-3 col-sm-3 col-md-3">
-					<img class= "imge" src="img/Logo-cdmx.png" >
+					<a href="https://cdmx.gob.mx" target="_blank">
+						<img class= "imge" src="img/Logo-cdmx.png" >
+					</a>
 				</div>
 				<div class= "col-xs-3 col-sm-3 col-md-3">
-					<img class= "imge"  src="img/logolab.png">
+					<a href="https://labcd.mx" target="_blank">
+						<img class= "imge"  src="img/logolab.png">
+					</a>
 				</div>
 				<div class= "col-xs-3 col-sm-3 col-md-3">
-					<img  class= "imge"  src="img/LogoCAD.png" >
+					<a href="https://www.cadsalud.org/" target="_blank">
+						<img  class= "imge"  src="img/LogoCAD.png" >
+					</a>
 				 </div>
 			</div>
 		</div>

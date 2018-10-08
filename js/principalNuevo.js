@@ -753,6 +753,10 @@ $(document).ready(function($){
 		$(this).addClass('active');
 	});
 
+	$(document).on('change', '.switch', function() {
+		$(this).siblings('p').toggleClass('active');
+	});
+
  } );
 
 
@@ -765,7 +769,7 @@ var txtCuestionario =[
 			/*2*/		"¿Cuánto pagan de agua al bimestre?",
 			/*3*/		"¿Cuántas personas viven en tu residencia?",										
 			/*4*/		"¿Cuántos minutos te toma bañarte?",
-			/*5*/		"¿Cuántas veces por semana preparas alimentos que requieran más de 30min de preparación?",
+			/*5*/		"¿Cuántas veces por semana preparas alimentos que requieran más de 30 minutos de preparación?",
 			/*6*/		"¿Cuántas veces lavan ropa en la semana?",
 			/*7*/		"¿Cuántas veces por semana asean la casa?",
 			/*8*/		"¿Cuántas veces al mes lavan el patio?",
@@ -817,8 +821,8 @@ var txtTipoInput =[
 					creaSNbtn(3),
 					creaInptSlider(10, 30,5000,	defaults[4],false,'',4),
 					creaInptSlider(1, 1,20,defaults[5],false,'',5),
-					creaInptSlider(1, 3,30,defaults[6],true,'Recupero el agua en cubeta en lo que sale caliente y/o Mi regadera es Ahorradora.',6),
-					creaInptSlider(1, 0,21,defaults[7],true,'La llave de la tarja es ahorradora y/o Tengo sistema de trampa de  grasa instalado en la cocina.',7), // Lavado de trastes
+					creaInptSlider(1, 3,30,defaults[6],true,'Recupero el agua en cubeta en lo que sale caliente y/o mi regadera es ahorradora.',6),
+					creaInptSlider(1, 0,21,defaults[7],true,'La llave de la tarja es ahorradora y/o tengo sistema de trampa de  grasa instalado en la cocina.',7), // Lavado de trastes
 					creaInptSlider(1, 0,30,defaults[8],true,'Tengo lavadora de carga frontal con  sistema de reutilización de agua.',8), // Lavado de ropa
 					creaInptSlider(1, 0,10,defaults[9],true,'Reutilizo el agua de enjuague de la lavadora para el aseo de la casa',9),  // Aseo de la casa
 					creaInptSlider(1, 0,30,defaults[10],true,'Reutilizo el agua de enjuague de la lavadora para lavar el patio',10),  // Lavado de patio
@@ -1315,7 +1319,7 @@ function verificaColonia() {
 function creaSNbtn(preg){
 	var salida = '<div class="row btns-si-no" id="btsn">'+
 					 '<div class="col-md-12 ">'+
-						'<input id="btn-SI" name="grpSN" type="radio" value= "SI" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-SI">Si</label>'+
+						'<input id="btn-SI" name="grpSN" type="radio" value= "SI" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-SI">Sí</label>'+
 						'<input id="btn-NO" name="grpSN" type="radio" value = "NO" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-NO">No</label>'+
 					 '</div>'+
 					'</div>';
@@ -1422,8 +1426,8 @@ function creaDots(verdes,grises){
 // VERIFICADO visualiza una tabla con las respuesta proporcionadas
 function mostrarRespuestas(){
 	$("#Respuestas").empty();
-	var titResp = '<h2 class="titulo-resultados bottom-buffer-50">Evaluación del consumo de agua en tu hogar</h2>';
-	titResp += '<h3 class="subtitulo-resultados">Conoce el consumo bimestral de agua de tu hogar</h3>';
+	var titResp = '<h2 class="titulo-resultados bottom-buffer-50">Resultados del consumo de agua en tu hogar</h2>';
+	titResp += '<h3 class="subtitulo-resultados">Este es el consumo bimestral de agua de tu hogar</h3>';
 
 	var valores = '';
 	

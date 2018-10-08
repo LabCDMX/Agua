@@ -20,7 +20,7 @@
 					<div class="col-md">
 						<button class="btn btn-outline-primary btn-block p-14" onclick="asignaRespuesta(1, 14, 'menos'); saveAjaxQuestion( txtRespuestas, 15);">Pensaba que en mi hogar se consumía <b>menos</b> agua.</button>
 						<button class="btn btn-outline-primary btn-block p-14" onclick="asignaRespuesta(1, 14, 'más'); saveAjaxQuestion( txtRespuestas, 15);">Pensaba que en mi hogar se consumía <b>más</b> agua.</button>
-						<button class="btn btn-outline-primary btn-block p-14" onclick="asignaRespuesta(1, 14, 'me son indiferentes'); saveAjaxQuestion( txtRespuestas, 15);">Los resultados de consumo de agua en mi hogar <b>me son indiferentes,</b> no me importan cuánto se consume.</button>
+						<button class="btn btn-outline-primary btn-block p-14" onclick="asignaRespuesta(1, 14, 'me son indiferentes'); saveAjaxQuestion( txtRespuestas, 15);">Los resultados <b>me son indiferentes,</b> no me importa cuánta agua se consume en mi hogar.</button>
 						<button class="btn btn-outline-primary btn-block p-14" onclick="asignaRespuesta(1, 14, 'es responsable'); saveAjaxQuestion( txtRespuestas, 15);">Yo ya sabía que el consumo de agua en mi hogar <b>es responsable.</b></button>
 						<button class="btn btn-outline-primary btn-block p-14" onclick="asignaRespuesta(1, 14, 'no del todo responsable'); saveAjaxQuestion( txtRespuestas, 15);">Yo ya sabía que el consumo de agua en mi hogar <b>no es del todo responsable.</b></button>	
 					</div>
