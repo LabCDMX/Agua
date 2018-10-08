@@ -96,10 +96,14 @@
 			case 16:
 				return ['modificar_reducir_costo'];
 			case 17:
-				return ['otra_informacion'];
+				return ['modificar_instalaciones'];
 			case 18:
-				return ['edad'];
+				return ['compartir_recomendaciones'];
 			case 19:
+				return ['otra_informacion'];
+			case 20:
+				return ['edad'];
+			case 21:
 				return ['genero', 'status'];
 			default:
 				return [];

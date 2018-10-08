@@ -269,6 +269,15 @@ a:hover {
 	padding: 0 15px;
 }
 
+#contenedor-intro {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -570px !important;
+	margin-top: -325px !important;
+	height: 650px !important;
+}
+
 #contenedor-intro p{
 	max-width: 719px;
 	height: auto;

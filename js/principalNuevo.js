@@ -753,6 +753,16 @@ $(document).ready(function($){
 		$(this).addClass('active');
 	});
 
+	$('.p-17').on('click', function() {
+		$('.p-17').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	$('.p-18').on('click', function() {
+		$('.p-18').removeClass('active');
+		$(this).addClass('active');
+	});
+
 	$(document).on('change', '.switch', function() {
 		$(this).siblings('p').toggleClass('active');
 	});
@@ -850,6 +860,8 @@ var txtRespuestas =[
 					['Frase identificado', ""],
 					['Modificar para cuidar', ""],
 					['Modificar para reducir costo', ""],
+					['Modificar instalaciones', ""],
+					['Compartir recomendaciones', ""],
 					['Otra información', ""],
 					['Edad', ""],
 					['Género', ""]

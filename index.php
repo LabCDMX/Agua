@@ -77,11 +77,11 @@
 			</div>
 
 			<div class="row bottom-buffer-240">
-				<div class="col-md-4 text-center">
+				<div class="col-md-4 offset-md-2 text-center">
 					<button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modal-acerca-de">Acerca de AguaCDMX</button>	
 				</div>
 				<!-- Quitar y regresar offset-md-2 al primer botón -->
-				<div class="col-md-4 text-center bottom-buffer-60">
+				<div class="col-md-4 text-center bottom-buffer-60 hidden">
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-opinion">
 						¿Qué opinas de tus resultados?
@@ -286,5 +286,10 @@
 	<script> 
 		initmapas();
 	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-74478095-10', 'auto');ga('send', 'pageview');</script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74478095-10"></script>
+
 </body>
 </html>

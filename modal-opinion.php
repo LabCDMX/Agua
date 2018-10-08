@@ -54,24 +54,46 @@
 					</div>
 				</div>
 
+				<p class="bottom-buffer-30">Pienso modificar las <b>instalaciones de mi vivienda</b> para lograr un <b>consumo de agua más responsable</b>.</p>
+
+				<div class="row bottom-buffer-40">
+					<div class="col-md-12">
+						<button class="btn btn-outline-primary btn-block p-17" onclick="asignaRespuesta(1, 17, 'definitivamente'); saveAjaxQuestion( txtRespuestas, 18);">Definitivamente, modificaremos las instalaciones en el hogar.</button>
+						<button class="btn btn-outline-primary btn-block p-17" onclick="asignaRespuesta(1, 17, 'no tengo tiempo'); saveAjaxQuestion( txtRespuestas, 18);">No lo sé, no tengo mucho tiempo disponible para ello.</button>
+						<button class="btn btn-outline-primary btn-block p-17" onclick="asignaRespuesta(1, 17, 'costo excesivo'); saveAjaxQuestion( txtRespuestas, 18);">No lo sé, algunas medidas representan un costo excesivo para mí.</button>
+						<button class="btn btn-outline-primary btn-block p-17" onclick="asignaRespuesta(1, 17, 'no voy a modificar'); saveAjaxQuestion( txtRespuestas, 18);">No voy a modificar las instalaciones en mi hogar.</button>
+					</div>
+				</div>
+
+				<p class="bottom-buffer-30">¿Estás <b>dispuesto a compartir algunas de las recomendaciones</b> que recibiste con familiares, amigos o conocidos?</p>
+
+				<div class="row bottom-buffer-40">
+					<div class="col-md-12">
+						<button class="btn btn-outline-primary btn-block p-18" onclick="asignaRespuesta(1, 18, 'sí'); saveAjaxQuestion( txtRespuestas, 19);">Sí, estoy dispuesto a sugerir algunas recomendaciones.</button>
+						<button class="btn btn-outline-primary btn-block p-18" onclick="asignaRespuesta(1, 18, 'quizás'); saveAjaxQuestion( txtRespuestas, 19);">Quizás, aunque no sé si recuerde las recomendaciones.</button>
+						<button class="btn btn-outline-primary btn-block p-18" onclick="asignaRespuesta(1, 18, 'no les interesa'); saveAjaxQuestion( txtRespuestas, 19);">A mis amigos/familiares/conocidos no les interesa recibir recomendaciones.</button>
+						<button class="btn btn-outline-primary btn-block p-18" onclick="asignaRespuesta(1, 18, 'no me interesa'); saveAjaxQuestion( txtRespuestas, 19);">No me interesa compartirlas</button>
+					</div>
+				</div>
+
 				<hr class="bottom-buffer-40">
 
 				<h3 class="bottom-buffer-40">¿Existe otra información que te gustaría haber recibido?</h3>
 
 				<div class="form-group">
-					<textarea class="form-control btn-outline-primary" onfocusout="asignaRespuesta(1, 17, this.value); saveAjaxQuestion( txtRespuestas, 18);"></textarea>
+					<textarea class="form-control btn-outline-primary" onfocusout="asignaRespuesta(1, 19, this.value); saveAjaxQuestion( txtRespuestas, 20);"></textarea>
 				</div>
 
 				<p>Edad</p>
 
 				<div class="form-group">
-					<input type="text" class="form-control btn-outline-primary" name="edad" value="" onfocusout="asignaRespuesta(1, 18, this.value); saveAjaxQuestion( txtRespuestas, 19);">	
+					<input type="text" class="form-control btn-outline-primary" name="edad" value="" onfocusout="asignaRespuesta(1, 20, this.value); saveAjaxQuestion( txtRespuestas, 21);">	
 				</div>
 				
 				<p>Género</p>
 
 				<div class="form-group">
-					<input type="text" class="form-control btn-outline-primary" name="genero" value="" onfocusout="asignaRespuesta(1, 19, this.value); saveAjaxQuestion( txtRespuestas, 20);">	
+					<input type="text" class="form-control btn-outline-primary" name="genero" value="" onfocusout="asignaRespuesta(1, 21, this.value); saveAjaxQuestion( txtRespuestas, 22);">	
 				</div>
 
 				<hr class="bottom-buffer-40">
