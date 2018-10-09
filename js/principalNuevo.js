@@ -773,7 +773,7 @@ $(document).ready(function($){
 // VERIFICADO cuestionario que se presenta en la evaluacion
 var txtCuestionario =[ 
 						"En tu opinión, el consumo de agua en tu casa es:",
-						"En tu opinión, ¿cómo es el suministro de agua en tu hogar",
+						"En tu opinión, ¿cómo es el suministro de agua en tu hogar?",
 			/*0*/	    "¿En qué colonia vives?",
 			/*1*/		"¿Sabes cuánto pagas de agua?", 
 			/*2*/		"¿Cuánto pagan de agua al bimestre?",
