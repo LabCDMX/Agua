@@ -414,17 +414,17 @@
 	<footer>
 		<div class="container">
 			<div class ="row justify-content-md-center">
-				<div class= "col-xs-3 col-sm-3 col-md-3">
+				<div class= "col-sm-1 col-md-3">
 					<a href="https://cdmx.gob.mx" target="_blank">
 						<img class= "imge" src="img/Logo-cdmx.png" >
 					</a>
 				</div>
-				<div class= "col-xs-3 col-sm-3 col-md-3">
+				<div class= "col-sm-1 col-md-3">
 					<a href="https://labcd.mx" target="_blank">
 						<img class= "imge"  src="img/logolab.png">
 					</a>
 				</div>
-				<div class= "col-xs-3 col-sm-3 col-md-3">
+				<div class= "col-sm-1 col-md-3">
 					<a href="https://www.cadsalud.org/" target="_blank">
 						<img  class= "imge"  src="img/LogoCAD.png" >
 					</a>
