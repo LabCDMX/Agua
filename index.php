@@ -44,7 +44,7 @@
 	<script src="js/awesomplete.min.js" async></script>
 	
 	<!-- cover -->
-	<link href="css/cover.css?ver=2.2.2" rel="stylesheet">
+	<link href="css/cover.css?ver=2.2.3" rel="stylesheet">
 
 	<!-- Data -->
 	<script type="text/javascript" src="data/col_CP.js"></script><!--primero-->
@@ -53,7 +53,7 @@
 	<script type="text/javascript" src="data/munCDMX.geojson.js"></script>
 	<script type="text/javascript" src="data/emision_referencia.js"></script>
 	<script type="text/javascript" src="data/DataRetoH2Obis.geojson.js"></script>
-	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.2"></script>
+	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.3"></script>
 </head>
 
 <body>
