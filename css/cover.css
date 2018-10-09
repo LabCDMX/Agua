@@ -276,6 +276,7 @@ a:hover {
 	margin-left: -570px !important;
 	margin-top: -325px !important;
 	height: 650px !important;
+	padding-top: 10px;
 }
 
 #contenedor-intro p{
@@ -654,6 +655,22 @@ input[type="button"]:focus {
 	padding-bottom: 6px;
 	background: transparent;
 }
+
+.botones-acerca {
+	position: absolute;
+	top: 5px;
+	right: 25px;
+	z-index: 10000;
+	color: black;
+	font-weight: normal;
+}
+
+.botones-acerca a {
+	color: #004DFF;;
+	margin-left: 15px;
+	font-size: 12px;
+}
+
 .btns-si-no {
 	text-align: center;
 }
@@ -792,6 +809,53 @@ input[type=range] {
 	background: url('../img/range-bg.png') no-repeat;
 	background-size: 100% auto;
 	background-position: 0 7px;
+}
+
+.single-share {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 50px;
+}
+
+.single-share li {
+	display: inline-block;
+	text-indent: -9999px;
+	overflow: hidden;
+	width: 22px;
+	height: 20px;
+	margin: 0 10px;
+	background-image: url('../img/sprite-social.png?v=1.0');
+	background-size: 132px;
+}
+
+.single-share li a {
+	width: 22px;
+	height: 20px;
+	display: block;
+}
+
+.single-share li.facebook {
+	background-position: 0 0;
+}
+
+.single-share li.twitter {
+	background-position: 110px 0;
+}
+
+.single-share li.mail {
+	background-position: 22px 0;
+}
+
+.single-share li.facebook:hover {
+	background-position: 0 -20px;
+}
+
+.single-share li.twitter:hover {
+	background-position: 110px -20px;
+}
+
+.single-share li.mail:hover {
+	background-position: 22px -20px;
 }
 
 footer {

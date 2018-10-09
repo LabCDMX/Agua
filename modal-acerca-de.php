@@ -11,7 +11,7 @@
 			<div class="modal-body">
 				
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-10 offset-md-1">
 
 						<p>Actualmente, todos los sistemas de agua en el mundo se enfrentan a problemas críticos. Desde la distribución desigual del recurso hídrico, hasta la explotación de mantos acuíferos y pérdidas de agua debido a sistemas de distribución desarrollado en el siglo pasado ahora deficientes y obsoletos. Garantizar el acceso universal y sustentable del agua es posiblemente el reto más grande al cual nos enfrentamos como humanidad.</p>
 

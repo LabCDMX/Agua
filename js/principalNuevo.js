@@ -722,8 +722,9 @@ $(document).ready(function($){
 	});
 
 	$( "#boton-comenzar" ).on( "click", function() {
-		$( "#contenedor-intro" ).addClass("hidden");
-		$( "#contenedor-preguntas" ).removeClass("hidden");
+		$( '#contenedor-intro' ).addClass('hidden');
+		$( '#contenedor-preguntas' ).removeClass('hidden');
+		$( '#link-acerca-de' ).removeClass('hidden');
 		muestraPreg( pregActiva );
 	});
 
@@ -812,7 +813,7 @@ var defaults= [
 				'--', //2
 				"SI", //3
 				'-', //4
-				'1', //5
+				'20', //5
 				'-',//6
 				'-',//7
 				'-',//8
@@ -980,6 +981,7 @@ function pregSiguiente(){
 		else
 		{
 			$('#contenedor-preguntas').addClass('hidden');	
+			$('#link-sobre-los-resultados').removeClass('hidden');
 			$('#contenedor-resultados').removeClass('hidden');
 			saveAjaxQuestion( txtRespuestas, nvaPreg );
 			mostrarRespuestas();

@@ -58,6 +58,11 @@
 
 <body>
 
+	<div class="botones-acerca">
+		<a href="#" id="link-acerca-de" data-toggle="modal" data-target="#modal-acerca-de" class="hidden">Acerca de AguaCDMX</a>
+		<a href="#" id="link-sobre-los-resultados" data-toggle="modal" data-target="#modal-de-donde" class="hidden">Sobre los resultados</a>
+	</div>
+
 	<!-- Contenedor principal -->
 	<div class="d-flex h-100 p-3 mx-auto flex-column">
 
@@ -76,7 +81,7 @@
 				</div>
 			</div>
 
-			<div class="row bottom-buffer-240">
+			<div class="row">
 				<div class="col-md-4 offset-md-2 text-center">
 					<button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modal-acerca-de">Acerca de AguaCDMX</button>	
 				</div>
@@ -325,14 +330,26 @@
 				<hr class="bottom-buffer-40">
 
 				<div class="row">
-					<div class="col-md-8 offset-md-2">
-						<h3 class="text-center">¡Muchas gracias por participar!</h3>
+					<div class="col-md-8 offset-md-2 text-center">
+						<h3>¡Muchas gracias por participar!</h3>
 
-						<p class="text-center">Los resultados de este estudio se publicarán a finales de 2018 en las redes sociales del Laboratorio para la Ciudad.</p>
+						<p>Los resultados de este estudio se publicarán a finales de 2018 en las redes sociales del Laboratorio para la Ciudad.</p>
 
-						<p class="text-center">Tomar conciencia sobre nuestro consumo de agua es un primer paso para exigir como ciudadanía la permanencia y uso sustentable de este recurso.</p>
+						<p>Tomar conciencia sobre nuestro consumo de agua es un primer paso para exigir como ciudadanía la permanencia y uso sustentable de este recurso.</p>
 
-						<p class="text-center">Comparte <span class="text-primary"><b>AguaCDMX</b></span> en tus redes.</p>	
+						<p>Comparte <span class="text-primary"><b>AguaCDMX</b></span> con tus redes:</p>	
+
+						<ul class="single-share bottom-buffer-50">
+							<li class="facebook first" data-object="AguaCDMX">
+								<a href="https://www.facebook.com/dialog/feed?app_id=1843503582563713&display=popup&amp;caption=AguaCDMX - LabCDMX&link=https://aguacdmx.labcd.mx&redirect_uri=https://aguacdmx.labcd.mx"></a>
+							</li>
+							<li class="twitter" data-object="AguaCDMX">
+								<a href="https://twitter.com/intent/tweet?url=https://aguacdmx.labcd.mx"></a>
+							</li>
+							<li class="mail" data-object="AguaCDMX">
+								<a href="mailto:?subject=Algo interesante en Ambulante.org&body=Checa esto: https://aguacdmx.labcd.mx 😃"></a>
+							</li>
+						</ul>
 					</div>
 				</div>	
 			</div>
@@ -399,7 +416,6 @@
 	</footer>
 
 	<?php 
-		include('modal-opinion.php');
 		include('modal-de-donde-provienen.php');
 		include('modal-acerca-de.php');
 	?>
