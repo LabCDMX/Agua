@@ -334,8 +334,13 @@
 						
 						<p>Género</p>
 
-						<div class="form-group">
+						<div class="form-group bottom-buffer-30">
 							<input type="text" class="form-control btn-outline-primary" name="genero" value="" onfocusout="asignaRespuesta(1, 21, this.value); saveAjaxQuestion( txtRespuestas, 22);">	
+						</div>
+
+						<div class="form-group text-center">
+							<button class="btn btn-primary btn-lg guardar-respuestas">Guardar respuestas</button>
+							<p class="respuestas-guardadas hidden">Tus respuestas ya fueron guardadas. ¡Mucha gracias! 🙂</p>
 						</div>
 					</div>
 				</div>

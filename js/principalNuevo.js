@@ -739,6 +739,10 @@ $(document).ready(function($){
 		}
 	});
 
+	$('.guardar-respuestas').on('click', function() {
+		$('.respuestas-guardadas').removeClass('hidden');
+	});
+
 	$('.p-14').on('click', function() {
 		$('.p-14').removeClass('active');
 		$(this).addClass('active');
