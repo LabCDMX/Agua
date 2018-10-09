@@ -21,7 +21,7 @@
 	<meta name="twitter:site" content="@labcdmx" />
 	<meta name="twitter:creator" content="@labcdmx" />
 
-	<title>Reto Agua (CAD Salud - LabCDMX)</title>
+	<title>AguaCDMX (CAD Salud - LabCDMX)</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css">
 	
