@@ -14,6 +14,8 @@
 	<meta property="og:url" content="https://aguacdmx.labcd.mx" />
 	<meta property="og:image" content="https://aguacdmx.labcd.mx/img/logo-LabCDMX_850x402.png" />
 	<meta property="og:site_name" content="AguaCDMX (CAD Salud - LabCDMX)" />
+	<meta property="og:description" content="Responde las siguientes preguntas y obtendrás un diagnóstico para saber si tu consumo de agua está ubicado dentro de los estándares recomendados." />
+	<meta property="fb:app_id" content="1399170320185695" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content="AguaCDMX (CAD Salud - LabCDMX)" />
 	<meta name="twitter:site" content="@labcdmx" />
