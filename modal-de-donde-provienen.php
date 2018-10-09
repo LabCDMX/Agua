@@ -21,7 +21,7 @@
 
 						<img class="bottom-buffer-30 img-fluid" src="img/grafico-consumo-diario-de-agua.png">
 
-						<p>Si te gustaría conocer el algoritmo exacto de la plataforma, te invitamos a entrar al <span class="text-primary">github</span> del proyecto en donde encontrarás el procesamiento de las distintas fuentes de información.</p>
+						<p>Si te gustaría conocer el algoritmo exacto de la plataforma, te invitamos a entrar al <a href="https://github.com/LabCDMX/Agua" target="_blank"><span class="text-primary">repositorio en GitHub</span></a> del proyecto. Ahí encontrarás el procesamiento de las distintas fuentes de información.</p>
 
 					</div>
 				</div>
