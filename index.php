@@ -339,7 +339,7 @@
 						</div>
 
 						<div class="form-group text-center">
-							<button class="btn btn-primary btn-lg guardar-respuestas">Guardar respuestas</button>
+							<button class="btn btn-primary btn-lg guardar-respuestas bottom-buffer-30">Guardar respuestas</button>
 							<p class="respuestas-guardadas hidden">Tus respuestas ya fueron guardadas. ¡Mucha gracias! 🙂</p>
 						</div>
 					</div>
