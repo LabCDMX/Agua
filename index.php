@@ -8,6 +8,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<meta property="og:locale" content="es_MX" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="AguaCDMX (CAD Salud - LabCDMX)" />
+	<meta property="og:url" content="https://aguacdmx.labcd.mx" />
+	<meta property="og:image" content="https://aguacdmx.labcd.mx/img/logolab.png" />
+	<meta property="og:site_name" content="AguaCDMX (CAD Salud - LabCDMX)" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="AguaCDMX (CAD Salud - LabCDMX)" />
+	<meta name="twitter:site" content="@labcdmx" />
+	<meta name="twitter:creator" content="@labcdmx" />
+
 	<title>Reto Agua (CAD Salud - LabCDMX)</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery-confirm.min.css">
@@ -342,13 +353,13 @@
 						<ul class="single-share bottom-buffer-50">
 							<li class="facebook first" data-object="AguaCDMX">
 								<a href="https://www.facebook.com/dialog/feed?app_id=1399170320185695
-&display=popup&amp;caption=AguaCDMX - LabCDMX&link=https://aguacdmx.labcd.mx&redirect_uri=https://aguacdmx.labcd.mx"></a>
+&display=popup&amp;caption=AguaCDMX - LabCDMX&link=https://aguacdmx.labcd.mx&redirect_uri=https://aguacdmx.labcd.mx" target="_blank"></a>
 							</li>
 							<li class="twitter" data-object="AguaCDMX">
-								<a href="https://twitter.com/intent/tweet?url=https://aguacdmx.labcd.mx"></a>
+								<a href="https://twitter.com/intent/tweet?url=https://aguacdmx.labcd.mx" target="_blank"></a>
 							</li>
 							<li class="mail" data-object="AguaCDMX">
-								<a href="mailto:?subject=Algo interesante en Ambulante.org&body=Checa esto: https://aguacdmx.labcd.mx 😃"></a>
+								<a href="mailto:?subject=Algo interesante en Ambulante.org&body=Checa esto: https://aguacdmx.labcd.mx 😃" target="_blank"></a>
 							</li>
 						</ul>
 					</div>
