@@ -361,7 +361,7 @@
 								<a href="https://twitter.com/intent/tweet?url=https://aguacdmx.labcd.mx" target="_blank"></a>
 							</li>
 							<li class="mail" data-object="AguaCDMX">
-								<a href="mailto:?subject=Algo interesante en Ambulante.org&body=Checa esto: https://aguacdmx.labcd.mx 😃" target="_blank"></a>
+								<a href="mailto:?subject=Consumo de agua responsable LabCDMX&body=Checa esto: https://aguacdmx.labcd.mx 😃" target="_blank"></a>
 							</li>
 						</ul>
 					</div>
