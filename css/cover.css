@@ -529,6 +529,18 @@ margin-top: 100px;
 	padding: 0 210px;
 }
 
+@media only screen and (max-width: 768px) {
+	.titulo-resultados {
+		padding: 0;
+		text-align: left;
+		font-size: 24px
+	}
+	.subtitulo-resultados {
+		width: 100%;
+		font-size: 18px;
+	}
+}
+
 .subtitulo-resultados {
 	width: 740px;
 	text-align: left;
@@ -567,6 +579,19 @@ margin-top: 100px;
 .grafica-barras span.resultado {
 	font-family: 'Space Mono', sans-serif;
 	font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+	.grafica-barras {
+
+	}
+	.grafica-barras div {
+		width: 35%;
+	}
+	.grafica-barras div.uno { left: 0; background-color: #004DFF; }
+	.grafica-barras div.dos { left: 25%; }
+	.grafica-barras div.tres { left: 50%; }
+	.grafica-barras div.cuatro { left: 75%; }
 }
 
 .icono-gente {
@@ -737,6 +762,12 @@ input[type="radio"]:checked + label {
 	font-size: 1.5em;
 	text-align: center;
 	outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+	#inputMulti {
+		max-width: 100%;
+	}
 }
 
 input[type=range]::-ms-thumb {
