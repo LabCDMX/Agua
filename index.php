@@ -106,7 +106,7 @@
 					</button>
 				</div>
 				<div class="col-md-4 text-center">
-					<button id="boton-comenzar" class="btn btn-primary btn-lg bottom-buffer-20">Iniciar</button>	
+					<button id="boton-comenzar" class="btn btn-primary btn-lg btn-block bottom-buffer-20">Iniciar</button>	
 				</div>
 			</div>
 
