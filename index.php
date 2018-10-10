@@ -96,17 +96,17 @@
 
 			<div class="row">
 				<div class="col-md-4 offset-md-2 text-center">
-					<button class="btn btn-outline-primary btn-lg" data-toggle="modal" data-target="#modal-acerca-de">Acerca de AguaCDMX</button>	
+					<button class="btn btn-outline-primary btn-lg bottom-buffer-20" data-toggle="modal" data-target="#modal-acerca-de">Acerca de AguaCDMX</button>	
 				</div>
 				<!-- Quitar y regresar offset-md-2 al primer botón -->
 				<div class="col-md-4 text-center bottom-buffer-60 hidden">
 					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-opinion">
+					<button type="button" class="btn btn-primary btn-lg bottom-buffer-20" data-toggle="modal" data-target="#modal-opinion">
 						¿Qué opinas de tus resultados?
 					</button>
 				</div>
 				<div class="col-md-4 text-center">
-					<button id="boton-comenzar" class="btn btn-primary btn-lg btn-block">Iniciar</button>	
+					<button id="boton-comenzar" class="btn btn-primary btn-lg bottom-buffer-20">Iniciar</button>	
 				</div>
 			</div>
 
