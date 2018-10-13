@@ -1091,7 +1091,7 @@ function evaluaConsumo(){
 	// aplicando constante de disponibilidad
 	//litros consumidos durante la regadera al bimestre por todos los miembros de la casa
 	//                               minutos                litros min         personas          dias        ¿     es ahorrador      ?
-	txtEvaluacion[4][1]=math.floor(txtRespuestas[7][1]*  txtRangos[4][2] * txtRespuestas[5][1] * 60.8 * (txtRespuestas[6][2] ==true ? 0.6 : 1) );
+	txtEvaluacion[4][1]=math.floor(txtRespuestas[6][1]*  txtRangos[4][2] * txtRespuestas[5][1] * 60.8 * (txtRespuestas[6][2] ==true ? 0.6 : 1) );
 	
 	//consumo responsable      personas    dias    litros diarios optimos
 	txtEvaluacion[4][2]=math.floor(txtRespuestas[5][1] * 60.8 * (0.69 + 10 + 2.5 + 25) );
@@ -1151,7 +1151,7 @@ function evaluaConsumo(){
 
 	//litros consumidos para regar jardin bimestre
 	//                               veces X semana         litros X evento         mes a bimestre          ¿     es ahorrador      ?  
-	txtEvaluacion[10][1]=math.floor(txtRespuestas[11][1]*     txtRangos[10][2]    *        2      * (txtRespuestas[12][2] ==true ? 0.2 : 1) );
+	txtEvaluacion[10][1]=math.floor(txtRespuestas[12][1]*     txtRangos[10][2]    *        2      * (txtRespuestas[12][2] ==true ? 0.2 : 1) );
 	//consumo responsable            personas            dias       litros diarios optimos
 	txtEvaluacion[10][2]=math.floor(txtRespuestas[5][1] * 60.8 * (4) );
 	//consumo negligente            personas            dias       litros diarios optimos
