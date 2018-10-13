@@ -66,7 +66,7 @@
 	<script type="text/javascript" src="data/munCDMX.geojson.js"></script>
 	<script type="text/javascript" src="data/emision_referencia.js"></script>
 	<script type="text/javascript" src="data/DataRetoH2Obis.geojson.js"></script>
-	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.4"></script>
+	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.5"></script>
 </head>
 
 <body>
