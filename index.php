@@ -60,7 +60,7 @@
 	<link href="css/cover.css?ver=2.2.6" rel="stylesheet">
 
 	<!-- Data -->
-	<script type="text/javascript" src="data/col_CP.js"></script><!--primero-->
+	<script type="text/javascript" src="data/col_CP.js?ver=1.2"></script><!--primero-->
 	
 	<script type="text/javascript" src="data/CDMX.js"></script>
 	<script type="text/javascript" src="data/munCDMX.geojson.js"></script>
