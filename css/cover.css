@@ -698,12 +698,14 @@ input[type="button"]:focus {
 }
 
 .botones-acerca {
-	position: absolute;
-	top: 5px;
-	right: 25px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
 	z-index: 10000;
 	color: black;
 	font-weight: normal;
+	background-color: #FFF;
+	padding-right: 10px;
 }
 
 .botones-acerca a {
