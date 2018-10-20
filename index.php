@@ -66,7 +66,7 @@
 	<script type="text/javascript" src="data/munCDMX.geojson.js"></script>
 	<script type="text/javascript" src="data/emision_referencia.js"></script>
 	<script type="text/javascript" src="data/DataRetoH2Obis.geojson.js"></script>
-	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.5"></script>
+	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.6"></script>
 </head>
 
 <body>
@@ -211,9 +211,9 @@
 					</tr>
 					<tr>
 						<td class="text-right"><img class="icono-gente" src="img/icono-gente.svg"></td>
-						<td class="text-right">3.5</td>
-						<td class="text-right">3</td>
-						<td class="text-right">3.6</td>
+						<td id="habitantes-colonia" class="text-right">3.5</td>
+						<td id="habitantes-delegacion" class="text-right">3</td>
+						<td id="habitantes-ciudad" class="text-right">3.6</td>
 					</tr>
 				</table>
 			</div>

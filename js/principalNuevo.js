@@ -501,53 +501,63 @@ function muestramap( coloniaLong, largo ) {
 ///            colonia, delegacion y CDMX
 function generaRefCOL(){
 	$("#valorRefCOL").empty()
-		var refCDMX= emision_referencia.map(function(x){if(x[0]=='000'){return x} }).clean(undefined);
-		var refDELE= emision_referencia.map(function(x){if(x[0]==muncveSelec){return x} }).clean(undefined);
-		matrixRef=[ [ parseFloat(Math.round(tamFam * 100) / 100).toFixed(1), math.round(refDELE[0][20]/refDELE[0][21],1), math.round(refCDMX[0][20]/refCDMX[0][21],1) ],
-					[ parseFloat(Math.round(propLAV * 10000) / 100).toFixed(1) ,math.round(refDELE[0][23]*100/refDELE[0][21],1) , math.round(refCDMX[0][23]*100/refCDMX[0][21],1)],
-					[ parseFloat(Math.round(PropWC * 10000) / 100).toFixed(1)  , math.round(refDELE[0][24]*100/refDELE[0][21],1) , math.round(refCDMX[0][24]*100/refCDMX[0][21],1) ],
-					[ parseFloat(Math.round(idxCUMD * 10000) / 100).toFixed(1)  , math.round(refDELE[0][4]*100,1) , math.round(refCDMX[0][4]*100,1)  ],
-					[ parseFloat(Math.round(idxCUMND * 10000) / 100).toFixed(1) ,math.round(refDELE[0][16]*100,1) , math.round(refCDMX[0][16]*100,1) ],
-					[ parseFloat(Math.round(idxCUMM * 10000) / 100).toFixed(1)   ,math.round(refDELE[0][10]*100,1) , math.round(refCDMX[0][10]*100,1) ],
-					[ Math.round(conProD * 1000,0) ,  math.round(refDELE[0][5]*1000,0),   math.round(refCDMX[0][5]*1000,0) ],
-					[ Math.round(conProND * 1000,0) , math.round(refDELE[0][17]*1000,0) , math.round(refCDMX[0][17]*1000,0) ],
-					[ Math.round(conProM * 1000,0) , math.round(refDELE[0][11]*1000,0) , math.round(refCDMX[0][11]*1000,0)   ]
-					]
-		var anchos = '<col style="width:10%"><col style="width:30%"><col style="width:20%"><col style="width:20%"><col style="width:20%">'
-		var titulo = "<h4>" +  asentSelec + ", " + munSelec + "</h4>" + "<span><h6>(" + cpSelec + ")</h6></span>"
-		var encabezados1 = "<tr><th></th><th>Numeralia</th><th class='toR'>Tu colonia</th><th class='toR'>La Delegación</th> <th class='toR'>Nuestra <br> Ciudad</th></tr>"
-		var encabezados2 = "<tr><th></th><th>¿Quién si paga?</th><th class='toR'>Tu colonia</th><th class='toR'>la Delegación</th> <th class='toR'>Nuestra <br> Ciudad</th></tr>"
-		var encabezados3 = "<tr><th></th><th>¿Dónde se consume agua?</th><th class='toR'>Tu colonia</th><th class='toR'>la Delegación</th> <th class='toR'>Nuestra <br> Ciudad</th></tr>"
-		var arregoRefCOL= [
-		["<img src= 'img/people.png' class='imgi'>","Habitantes promedio por vivienda: " , matrixRef[0][0]   ,  matrixRef[0][1],    matrixRef[0][2]     ],
-		["<img src= 'img/lavadora.png' class='imgi'>","Hogares con lavadora de ropa: " ,   matrixRef[1][0] +"%",matrixRef[1][1]+"%",matrixRef[1][2]+"%" ],
-		["<img src= 'img/instsanit.png' class='imgi'>","Hogares con instalaciones sanitarias: " ,  matrixRef[2][0] +"%",matrixRef[2][1]+"%",matrixRef[2][2]+"%" ],
-		
-		["<img src= 'img/domestico.png' class='imgip'>","Doméstico: " ,  matrixRef[3][0] +"%",matrixRef[3][1]+"%",matrixRef[3][2]+"%" ],
-		["<img src= 'img/establec.png' class='imgip'>","No doméstico -negocios- : " ,   matrixRef[4][0] +"%",matrixRef[4][1]+"%",matrixRef[4][2]+"%" ],
-		["<img src= 'img/mixto2.png' class='imgip '>","Mixto. <br>Hogares con accesoria" , 	 matrixRef[5][0] +"%",matrixRef[5][1]+"%",matrixRef[5][2]+"%" ],
 
-		["<img src= 'img/domestico.png' class='imgic'>","Consumo doméstico: " ,  matrixRef[6][0].toLocaleString() ,matrixRef[6][1].toLocaleString() , matrixRef[6][2].toLocaleString() ],
-		["<img src= 'img/establec.png' class='imgic'>","No doméstico -negocios- : " , matrixRef[7][0].toLocaleString() ,matrixRef[7][1].toLocaleString() , matrixRef[7][2].toLocaleString() ],
-		["<img src= 'img/mixto2.png' class='imgic'>","Mixto: " , matrixRef[8][0].toLocaleString() ,matrixRef[8][1].toLocaleString() , matrixRef[8][2].toLocaleString()   ]
-		];
+	var refCDMX= emision_referencia.map(function(x){if(x[0]=='000'){return x} }).clean(undefined);
+	var refDELE= emision_referencia.map(function(x){if(x[0]==muncveSelec){return x} }).clean(undefined);
+	matrixRef=[ [ parseFloat(Math.round(tamFam * 100) / 100).toFixed(1), math.round(refDELE[0][20]/refDELE[0][21],1), math.round(refCDMX[0][20]/refCDMX[0][21],1) ],
+				[ parseFloat(Math.round(propLAV * 10000) / 100).toFixed(1) ,math.round(refDELE[0][23]*100/refDELE[0][21],1) , math.round(refCDMX[0][23]*100/refCDMX[0][21],1)],
+				[ parseFloat(Math.round(PropWC * 10000) / 100).toFixed(1)  , math.round(refDELE[0][24]*100/refDELE[0][21],1) , math.round(refCDMX[0][24]*100/refCDMX[0][21],1) ],
+				[ parseFloat(Math.round(idxCUMD * 10000) / 100).toFixed(1)  , math.round(refDELE[0][4]*100,1) , math.round(refCDMX[0][4]*100,1)  ],
+				[ parseFloat(Math.round(idxCUMND * 10000) / 100).toFixed(1) ,math.round(refDELE[0][16]*100,1) , math.round(refCDMX[0][16]*100,1) ],
+				[ parseFloat(Math.round(idxCUMM * 10000) / 100).toFixed(1)   ,math.round(refDELE[0][10]*100,1) , math.round(refCDMX[0][10]*100,1) ],
+				[ Math.round(conProD * 1000,0) ,  math.round(refDELE[0][5]*1000,0),   math.round(refCDMX[0][5]*1000,0) ],
+				[ Math.round(conProND * 1000,0) , math.round(refDELE[0][17]*1000,0) , math.round(refCDMX[0][17]*1000,0) ],
+				[ Math.round(conProM * 1000,0) , math.round(refDELE[0][11]*1000,0) , math.round(refCDMX[0][11]*1000,0)   ]
+				]
+	var anchos = '<col style="width:10%"><col style="width:30%"><col style="width:20%"><col style="width:20%"><col style="width:20%">'
+	var titulo = "<h4>" +  asentSelec + ", " + munSelec + "</h4>" + "<span><h6>(" + cpSelec + ")</h6></span>"
+	var encabezados1 = "<tr><th></th><th>Numeralia</th><th class='toR'>Tu colonia</th><th class='toR'>La Delegación</th> <th class='toR'>Nuestra <br> Ciudad</th></tr>"
+	var encabezados2 = "<tr><th></th><th>¿Quién si paga?</th><th class='toR'>Tu colonia</th><th class='toR'>la Delegación</th> <th class='toR'>Nuestra <br> Ciudad</th></tr>"
+	var encabezados3 = "<tr><th></th><th>¿Dónde se consume agua?</th><th class='toR'>Tu colonia</th><th class='toR'>la Delegación</th> <th class='toR'>Nuestra <br> Ciudad</th></tr>"
+	var arregoRefCOL= [
+	["<img src= 'img/people.png' class='imgi'>","Habitantes promedio por vivienda: " , matrixRef[0][0]   ,  matrixRef[0][1],    matrixRef[0][2]     ],
+	["<img src= 'img/lavadora.png' class='imgi'>","Hogares con lavadora de ropa: " ,   matrixRef[1][0] +"%",matrixRef[1][1]+"%",matrixRef[1][2]+"%" ],
+	["<img src= 'img/instsanit.png' class='imgi'>","Hogares con instalaciones sanitarias: " ,  matrixRef[2][0] +"%",matrixRef[2][1]+"%",matrixRef[2][2]+"%" ],
+	
+	["<img src= 'img/domestico.png' class='imgip'>","Doméstico: " ,  matrixRef[3][0] +"%",matrixRef[3][1]+"%",matrixRef[3][2]+"%" ],
+	["<img src= 'img/establec.png' class='imgip'>","No doméstico -negocios- : " ,   matrixRef[4][0] +"%",matrixRef[4][1]+"%",matrixRef[4][2]+"%" ],
+	["<img src= 'img/mixto2.png' class='imgip '>","Mixto. <br>Hogares con accesoria" , 	 matrixRef[5][0] +"%",matrixRef[5][1]+"%",matrixRef[5][2]+"%" ],
 
-var titResp= "<h5 class= 'magenta2'>Tu colonia .... la delegación ... nuestra ciudad.</h5>" + titulo
+	["<img src= 'img/domestico.png' class='imgic'>","Consumo doméstico: " ,  matrixRef[6][0].toLocaleString() ,matrixRef[6][1].toLocaleString() , matrixRef[6][2].toLocaleString() ],
+	["<img src= 'img/establec.png' class='imgic'>","No doméstico -negocios- : " , matrixRef[7][0].toLocaleString() ,matrixRef[7][1].toLocaleString() , matrixRef[7][2].toLocaleString() ],
+	["<img src= 'img/mixto2.png' class='imgic'>","Mixto: " , matrixRef[8][0].toLocaleString() ,matrixRef[8][1].toLocaleString() , matrixRef[8][2].toLocaleString()   ]
+	];
 
-var numeralia = "<table class='p400'>" + anchos + encabezados1 + arregoRefCOL.slice(0, 3).map(function(z){  return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
-var quienpaga = "<table class='p400'>" + anchos + encabezados2 + arregoRefCOL.slice(3, 6).map(function(z){  return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
-var quiengasta = "<table class='p400'>" + anchos + encabezados3 + arregoRefCOL.slice(6, 9).map(function(z){ return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
+	var titResp= "<h5 class= 'magenta2'>Tu colonia .... la delegación ... nuestra ciudad.</h5>" + titulo
 
-$("#valorRefCOL").append(titResp )
-$("#valorRefCOL").append(numeralia)
-$("#valorRefCOL").append("<h5>Cumplimiento en el pago del agua de acuerdo al tipo de uso </h5>")
-$("#valorRefCOL").append(quienpaga)
-$("#valorRefCOL").append("<h5>Volumen de agua bimestral promedio -litros- por tipo de uso</h5>")
-$("#valorRefCOL").append(quiengasta)
+	var numeralia = "<table class='p400'>" + anchos + encabezados1 + arregoRefCOL.slice(0, 3).map(function(z){  return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
+	var quienpaga = "<table class='p400'>" + anchos + encabezados2 + arregoRefCOL.slice(3, 6).map(function(z){  return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
+	var quiengasta = "<table class='p400'>" + anchos + encabezados3 + arregoRefCOL.slice(6, 9).map(function(z){ return "<tr>" + z.map(function(ss,i){ if(i<2){var classname=""; }else{var classname=" class ='toR' ";}; return "<td "+ classname + ">" + ss + "</td>"}) +"</tr>"}).toString().replace(/,</g,'<') + "</table>"
 
-generaPlotRef(matrixRef)
+	$("#valorRefCOL").append(titResp )
+	$("#valorRefCOL").append(numeralia)
+	$("#valorRefCOL").append("<h5>Cumplimiento en el pago del agua de acuerdo al tipo de uso </h5>")
+	$("#valorRefCOL").append(quienpaga)
+	$("#valorRefCOL").append("<h5>Volumen de agua bimestral promedio -litros- por tipo de uso</h5>")
+	$("#valorRefCOL").append(quiengasta)
 
+	var habitantes_colonia = parseFloat(Math.round(tamFam * 100) / 100).toFixed(1)
+	var habitantes_ciudad = math.round(refDELE[0][20]/refDELE[0][21],1)
+	var habitantes_delegacion = math.round(refCDMX[0][20]/refCDMX[0][21],1)
+
+	$('#habitantes-colonia').html( habitantes_colonia )
+	$('#habitantes-delegacion').html( habitantes_delegacion )
+	$('#habitantes-ciudad').html( habitantes_ciudad )
+
+	generaPlotRef(matrixRef)
 }
+
+
 
 
 function generaPlotRef(matrixRefe){
