@@ -66,7 +66,7 @@
 	<script type="text/javascript" src="data/munCDMX.geojson.js"></script>
 	<script type="text/javascript" src="data/emision_referencia.js"></script>
 	<script type="text/javascript" src="data/DataRetoH2Obis.geojson.js"></script>
-	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.6"></script>
+	<script type="text/javascript" src="js/principalNuevo.js?ver=2.2.7"></script>
 </head>
 
 <body>
@@ -165,7 +165,7 @@
 				<h3 class="subtitulo-resultados">
 					Este es el consumo de agua por actividad en tu hogar
 				</h3>
-				<p class="text-primary">Da clic o pasa el mouse sobre las categoría en donde obtuviste un consumo sobrado, preocupante o negligente <b>para ver recomendaciones que te ayuden a tener un consumo responsable</b>.</p>
+				<p class="text-primary">Da clic o pasa el mouse sobre las categorías en donde obtuviste un consumo sobrado, preocupante o negligente <b>para ver recomendaciones que te ayuden a tener un consumo responsable</b>.</p>
 			</div>
 			<div class="col-md-6">
 				<div id="pastelote"></div>

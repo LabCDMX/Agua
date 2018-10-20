@@ -547,8 +547,8 @@ function generaRefCOL(){
 	$("#valorRefCOL").append(quiengasta)
 
 	var habitantes_colonia = parseFloat(Math.round(tamFam * 100) / 100).toFixed(1)
-	var habitantes_ciudad = math.round(refDELE[0][20]/refDELE[0][21],1)
-	var habitantes_delegacion = math.round(refCDMX[0][20]/refCDMX[0][21],1)
+	var habitantes_delegacion = math.round(refDELE[0][20]/refDELE[0][21],1)
+	var habitantes_ciudad = math.round(refCDMX[0][20]/refCDMX[0][21],1)
 
 	$('#habitantes-colonia').html( habitantes_colonia )
 	$('#habitantes-delegacion').html( habitantes_delegacion )
@@ -796,7 +796,7 @@ var txtCuestionario =[
 			/*4*/		"¿Cuántos minutos te toma bañarte?",
 			/*5*/		"¿Cuántas veces por semana preparas alimentos que requieran más de 30 minutos de preparación?",
 			/*6*/		'¿Cuántas veces lavan ropa en la semana?<br><span class="text-muted font-size-14">Nota: Puedes escribir número decimales. Por ejemplo, si lavas una vez cada dos semanas, escribe 0.5.</span>',
-			/*7*/		'¿Cuántas veces por semana asean la casa?<br><span class="text-muted font-size-14">Nota: Puedes escribir número decimales. Por ejemplo, si lavas una vez cada dos semanas, escribe 0.5.</span>',
+			/*7*/		'¿Cuántas veces por semana asean la casa?<br><span class="text-muted font-size-14">Nota: Puedes escribir número decimales. Por ejemplo, si aseas la casa una vez cada dos semanas, escribe 0.5.</span>',
 			/*8*/		"¿Cuántas veces al mes lavan el patio?",
 			/*9*/		"¿Cuántas veces al mes lavan el auto en casa?", 
 			/*10*/		"¿Cuántas veces al mes riegan el jardín con agua de la llave?",

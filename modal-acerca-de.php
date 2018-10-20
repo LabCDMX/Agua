@@ -27,7 +27,7 @@
 
 						<p>Los resultados de este estudio se publicarán a finales de 2018 en las redes sociales del Laboratorio para la Ciudad.</p>
 
-						<p><a href="https://labcd.mx" target="_blank"><b>Laboratorio para la Ciudad</b></a><br>El Laboratorio para la Ciudad es el área experimental y creativa del Gobierno de la Ciudad de México fundado a mediados de 2013. Dirigido por Gabriella Gómez-Mont, se trata de un espacio creativo, experimental, multidisciplinario y flexible que tiene como objetivo catalizar soluciones ante algunos de los mayores retos de la ciudad por medio de proyectos piloto y experimentos que deriven en rutas viables. Forma parte de la Agencia de Gestión Urbana de la CDMX.</p>
+						<p><a class="text-primary" href="https://labcd.mx" target="_blank"><b>Laboratorio para la Ciudad</b></a><br>El Laboratorio para la Ciudad es el área experimental y creativa del Gobierno de la Ciudad de México fundado a mediados de 2013. Dirigido por Gabriella Gómez-Mont, se trata de un espacio creativo, experimental, multidisciplinario y flexible que tiene como objetivo catalizar soluciones ante algunos de los mayores retos de la ciudad por medio de proyectos piloto y experimentos que deriven en rutas viables. Forma parte de la Agencia de Gestión Urbana de la CDMX.</p>
 
 						<p><a class="text-primary" href="https://www.cadsalud.org/" target="_blank"><b>Centro de Análisis de Datos</b></a><br> Especializados en desarrollar proyectos y herramientas de análisis estadístico, minería de datos y análisis geoespacial que permitan la capacidad de ejecución de las entidades públicas y privadas en temas relacionados con salud pública, desarrollo social y económico.</p>
 
