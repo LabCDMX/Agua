@@ -718,8 +718,8 @@ $(document).ready(function($){
 
 	coodenadaprueba ='23-43-430-071';  //apunta a laboratorio de datos
 
-	$("#preguntas").text(txtCuestionario[0]);
-	$("#contexto").text(txtContexto[0]);
+	$("#preguntas").html(txtCuestionario[0]);
+	$("#contexto").html(txtContexto[0]);
 
 	creaColInput(2);
 	creaDots(0,txtCuestionario.length - 0);
@@ -795,8 +795,8 @@ var txtCuestionario =[
 			/*3*/		"¿Cuántas personas viven en tu residencia?",										
 			/*4*/		"¿Cuántos minutos te toma bañarte?",
 			/*5*/		"¿Cuántas veces por semana preparas alimentos que requieran más de 30 minutos de preparación?",
-			/*6*/		"¿Cuántas veces lavan ropa en la semana?",
-			/*7*/		"¿Cuántas veces por semana asean la casa?",
+			/*6*/		'¿Cuántas veces lavan ropa en la semana?<br><span class="text-muted font-size-14">Nota: Puedes escribir número decimales. Por ejemplo, si lavas una vez cada dos semanas, escribe 0.5.</span>',
+			/*7*/		'¿Cuántas veces por semana asean la casa?<br><span class="text-muted font-size-14">Nota: Puedes escribir número decimales. Por ejemplo, si lavas una vez cada dos semanas, escribe 0.5.</span>',
 			/*8*/		"¿Cuántas veces al mes lavan el patio?",
 			/*9*/		"¿Cuántas veces al mes lavan el auto en casa?", 
 			/*10*/		"¿Cuántas veces al mes riegan el jardín con agua de la llave?",
@@ -903,7 +903,7 @@ function pregAnterior(){
 function muestraPreg(preg){
 	pregActiva = preg;
 	$("#areaInput").empty();
-	$("#preguntas").text(txtCuestionario[pregActiva]);
+	$("#preguntas").html(txtCuestionario[pregActiva]);
 	$("#contexto").html(txtContexto[pregActiva]);
 	//Si la pregunta activa no es la colonia
 	if ( pregActiva != 2 )
@@ -1358,7 +1358,7 @@ function creaOpcionMultipleConsumo(preg){
 	var salida = 	'<div class="row btns-si-no" id="btsn">'+
 						'<div class="col-md-12">'+
 							'<input id="btn-consumo-responsable" name="consumo-hogar" type="radio" value="responsable" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-responsable" class="opcion-multiple"><b>Responsable.</b> En mi hogar cuidamos el agua.</label>'+
-							'<input id="btn-consumo-sobrado" name="consumo-hogar" type="radio" value="sobrado" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-sobrado" class="opcion-multiple"><b>Sobrado.</b> El consumo de agua en mi hogar es aceptable aunque pudiera mejorar</label>'+
+							'<input id="btn-consumo-sobrado" name="consumo-hogar" type="radio" value="sobrado" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-sobrado" class="opcion-multiple"><b>Sobrado.</b> El consumo de agua en mi hogar es aceptable aunque pudiera mejorar.</label>'+
 							'<input id="btn-consumo-preocupante" name="consumo-hogar" type="radio" value="preocupante" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-preocupante" class="opcion-multiple"><b>Preocupante.</b> En mi hogar suele desperdiciarse demasiada agua.</label>'+
 							'<input id="btn-consumo-negligente" name="consumo-hogar" type="radio" value="negligente" onclick="asignaRespuesta(1,'+preg+',this.value)"><label for="btn-consumo-negligente" class="opcion-multiple"><b>Negligente.</b> En mi hogar no cuidamos en lo absoluto el agua.</label>'+
 						'</div>'+
