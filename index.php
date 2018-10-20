@@ -165,7 +165,7 @@
 				<h3 class="subtitulo-resultados">
 					Este es el consumo de agua por actividad en tu hogar
 				</h3>
-				<p>Pasa el mouse sobre la gráfica para ver recomendaciones</p>
+				<p class="text-primary">Da clic o pasa el mouse sobre las categoría en donde obtuviste un consumo sobrado, preocupante o negligente <b>para ver recomendaciones que te ayuden a tener un consumo responsable</b>.</p>
 			</div>
 			<div class="col-md-6">
 				<div id="pastelote"></div>
