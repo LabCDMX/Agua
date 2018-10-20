@@ -206,7 +206,7 @@
 					<tr>
 						<th class="text-right"></th>
 						<th class="text-right">Tu colonia</th>
-						<th class="text-right">Tu delegación</th>
+						<th class="text-right">Tu alcandía</th>
 						<th class="text-right">Ciudad</th>
 					</tr>
 					<tr>
