@@ -57,7 +57,7 @@
 	<script src="js/awesomplete.min.js" async></script>
 	
 	<!-- cover -->
-	<link href="css/cover.css?ver=2.2.7" rel="stylesheet">
+	<link href="css/cover.css?ver=2.2.73" rel="stylesheet">
 
 	<!-- Data -->
 	<script type="text/javascript" src="data/col_CP.js?ver=1.2"></script><!--primero-->
@@ -206,7 +206,7 @@
 					<tr>
 						<th class="text-right"></th>
 						<th class="text-right">Tu colonia</th>
-						<th class="text-right">Tu alcandía</th>
+						<th class="text-right">Tu alcaldía</th>
 						<th class="text-right">Ciudad</th>
 					</tr>
 					<tr>
